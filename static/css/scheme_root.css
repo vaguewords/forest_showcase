@@ -1,0 +1,282 @@
+@charset "utf-8";
+/* =========================================================
+    기본 스키마
+    ========================================================= */
+    :root {
+        --mint-100:#004D3F;
+        --mint-90:#00695B;
+        --mint-80:#00796A;
+        --mint-70:#00897A;
+        --mint-60:#009687;
+        --mint-50:#26A699;
+        --mint-40:#4DB6AB;
+        --mint-30:#80CBC3;
+        --mint-20:#B2DFDB;
+        --mint-15:#d8efed;
+        --mint-10:#E0F2F1;
+        --mint-5: #e6f5f4;
+
+        --sky-100:#086969;
+        --sky-90:#0A8D94;
+        --sky-80:#0BA1AC;
+        --sky-70:#0AB7C6;
+        --sky-60:#0BC8D9;
+        --sky-50:#2ED0DD;
+        --sky-40:#53D9E3;
+        --sky-30:#84E5EB;
+        --sky-20:#B4EFF2;
+        --sky-10:#E1F9FA;
+
+        --blue-100:#24296C;
+        --blue-90:#303A82;
+        --blue-85:#3b4fb6;
+        --blue-80:#37448F;
+        --blue-70:#404E9A;
+        --blue-60:#4656A4;
+        --blue-50:#616FB1;
+        --blue-40:#7784CC;
+        --blue-30:#A1AAD1;
+        --blue-20:#C6CBE4;
+        --blue-10:#E8EAF4;
+        --blue-5:#f1f2f8;
+
+        --red:#FF0004;
+        --blue: #1248b5;
+        --magenta: #f074c6;
+        --deeporange: #ff9600;
+        --softgreen: #9bd285;
+        --orange:#ffc770;
+        --orange-50:#f1d082;
+        --orange-10:#ffe0d0;
+        --yellow:#ffe680;
+        --lime:#d7ec9e;
+        --violet:#d5bceb;
+        --dimblue:#bcceeb;
+        --dimviolet:#fefbfe;
+
+        --alert:#a5171a;
+        --alert-2: #8c3a3b;
+
+        --label-orange:#f8e7c0;
+        --label-green:#d8efed;
+        --label-sky:#d9f7f8;
+        --label-peach:#ffe0d0;
+        --label-pink:#f5cfd0;
+        --label-violet:#e2e5f1;
+        --label-violet-deep:#eaddf5;
+        --label-lime:#eaf3c7;
+
+        --black:#000000;
+        --black-overlay-65:rgba(0,0,0,.65);
+        --black-overlay-60:rgba(0,0,0,.6);
+        --black-overlay-50:rgba(0,0,0,.5);
+        --black-overlay-25:rgba(0,0,0,.25);
+        --black-overlay-10:rgba(0,0,0,.10);
+        --grey-outline: #f1f2f8;
+        --grey-11:#141111;
+        --grey-22:#222222;
+        --grey-33:#333333;
+        --grey-44:#444444;
+        --grey-51:#515151;
+        --grey-55:#555555;
+        --grey-66:#666666;
+        --grey-77:#777777;
+        --grey-88:#888888;
+        --grey-99:#999999;
+        --grey-bb:#bbbbbb;
+        --grey-cc:#cccccc;
+        --grey-dd:#dddddd;
+        --grey-d1:#d1d1d1;
+        --grey-e1:#e1e1e1;
+        --grey-e5:#e5e5e5;
+        --grey-e7:#e7e7e7;
+        --grey-f1:#f1f1f1;
+        --grey-f2:#f2f2f2;
+        --grey-f3:#f3f3f3;
+        --grey-f4:#f4f4f4;
+        --grey-f5:#f5f5f5;
+        --grey-f6:#f6f6f6;
+        --grey-f7:#f7f7f7;
+        --grey-f9:#f9f9f9;
+        --grey-fb:#fbfbfb;
+        --white:#ffffff;
+        --white-overlay-80:rgba(255,255,255,.8);
+
+        --main-violet-1: #e2e6f2;
+        --main-violet-2:#efeff9;
+        --main-violet-3:#f9fafc;
+        --main-violet-4:#f1f2f8;
+        --main-mint-dark:#018172;
+        --main-mint-medium: #d9f1f1;
+        --main-mint-vivid: #71d4cf;
+        --main-mint-1:#004d3d;
+        --main-mint-2:#005d4b;
+        --main-mint-3:#88dac3;
+        --main-mint-4:#eef8f9;
+        --main-mint-5:#c8fffc;
+        --main-green:#d1dcc2;
+
+        --main-brown-1:#efebe0;
+        --main-brown-2:#47271b;
+        --main-orange-1:#fedec7;
+        --main-peach-1:#ffddc7;
+        --main-sky-1:#e2f2f8;
+
+        --kakao-yellow:#fde62f;
+        --kakao-dark:#372525;
+        --naver:#64b054;
+
+        --length-xs:1.5rem;
+        --length-sm:2rem;
+        --length-md:2.5rem;
+        --length-lg:3rem;
+
+        --space-0: 0;
+        --space-5: 0.25rem;
+        --space-10: 0.5rem;
+        --space-15: 0.75rem;
+        --space-20: 1rem;
+        --space-25: 1.25rem;
+        --space-30: 1.5rem;
+        --space-35: 1.75rem;
+        --space-40: 2rem;
+        --space-45: 2.25rem;
+        --space-50: 2.5rem;
+        --space-55: 2.75rem;
+        --space-60: 3rem;
+        --space-65: 3.25rem;
+        --space-70: 3.5rem;
+
+        --stage-1: 25%;
+        --stage-2: 50%;
+        --stage-3: 75%;
+        --stage-4: 100%;
+    }
+
+    *, ::before, ::after {
+      box-sizing: border-box;  border-width: 0;  border-style: solid;  border-color: var(--grey-d1);
+      --translate-x: 0;
+      --translate-y: 0;
+      --rotate: 0;
+      --skew-x: 0;
+      --skew-y: 0;
+      --scale-x: 1;
+      --scale-y: 1;
+      --pan-x:  ;
+      --pan-y:  ;
+      --pinch-zoom:  ;
+      --scroll-snap-strictness: proximity;
+      --ordinal:  ;
+      --slashed-zero:  ;
+      --numeric-figure:  ;
+      --numeric-spacing:  ;
+      --numeric-fraction:  ;
+      --ring-inset:  ;
+      --ring-offset-width: 0px;
+      --ring-offset-color: var(--white);
+      --ring-color: rgb(59 130 246 / 0.5);
+      --ring-offset-shadow: 0 0 var(--black);
+      --ring-shadow: 0 0 var(--black);
+      --shadow: 0 0 var(--black);
+      --shadow-colored: 0 0 var(--black);
+    }
+
+
+ /* =========================================================
+    다크모드 스키마
+    (팔레트만 여기에 작성하고, 개별 요소별 수정사항은 contrast.css에 작성하세요)
+    ========================================================= */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --mint-100:#e6f5f4;
+        --mint-90:#E0F2F1;
+        --mint-80:#d8efed;
+        --mint-70:#B2DFDB;
+        --mint-60:#80CBC3;
+        --mint-50:#4DB6AB;
+        --mint-40:#26A699;
+        --mint-30:#009687;
+        --mint-20:#00897A;
+        --mint-15:#00796A;
+        --mint-10:#00695B;
+        --mint-5:#004D3F;
+
+        --sky-100:#E1F9FA;
+        --sky-90:#B4EFF2;
+        --sky-80:#84E5EB;
+        --sky-70:#53D9E3;
+        --sky-60:#2ED0DD;
+        --sky-50:#0BC8D9;
+        --sky-40:#0AB7C6;
+        --sky-30:#0BA1AC;
+        --sky-20:#0A8D94;
+        --sky-10:#086969;
+
+        --blue-100:#f1f2f8;
+        --blue-90:#E8EAF4;
+        --blue-80:#C6CBE4;
+        --blue-70:#A1AAD1;
+        --blue-60:#7784CC;
+        --blue-50:#616FB1;
+        --blue-40:#4656A4;
+        --blue-30:#37448F;
+        --blue-20:#303A82;
+        --blue-10:#24296C;
+        --blue-5:#1a1a1a;
+
+        --red:#fff;
+        --blue:#f8f9ff;
+
+        --orange:#222;
+        --orange-50:#333;
+        --orange-10:#444;
+        --yellow:#555;
+        --lime:#666;
+        --violet:#777;
+        --dimblue:#888;
+
+        /* --label-orange:#222;
+        --label-green:#333;
+        --label-sky:#444;
+        --label-peach:#555;
+        --label-pink:#666;
+        --label-violet:#777;
+        --label-violet-deep:#888;
+        --label-lime:#999; */
+
+        --black:#fff;
+        --black-overlay-65:rgba(255,255,255,.65);
+        --black-overlay-60:rgba(255,255,255,.60);
+        --black-overlay-50:rgba(255,255,255,.5);
+        --grey-11:#f9f9f9;
+        --grey-22:#f7f7f7;
+        --grey-33:#f5f5f5;
+        --grey-44:#f4f4f4;
+        --grey-51:#f3f3f3;
+        --grey-55:#f2f2f2;
+        --grey-66:#f1f1f1;
+        --grey-77:#e5e5e5;
+        --grey-88:#ddd;
+        --grey-99:#ccc;
+        --grey-7c:#7c7c7c;
+        --grey-bb:#999;
+        --grey-cc:#888;
+        --grey-dd:#666;
+        --grey-d1:#555;
+        --grey-e1:#444;
+        --grey-e5:#333;
+        --grey-f1:#222;
+        --grey-f2:#111;
+        --grey-f3:#111;
+        --grey-f4:#111;
+        --grey-f5:#111;
+        --grey-f6:#000;
+        --grey-f7:#000;
+        --grey-f8:#000;
+        --grey-f9:#000;
+        --white:#000;
+        --white-overlay-80:rgba(0,0,0,.8);
+
+        color-scheme: dark;
+      }
+    }

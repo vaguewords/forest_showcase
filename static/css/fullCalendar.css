@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* ==============================================
+     fullCalendar 기본 css 클래스에 오버라이드되는 클래스는
+     sub.css 대신 여기에서 일괄 수정해 주세요.
+     ============================================== */
+    /* -------------- 캘린더 공통 -------------- */
+    .fc .fc-toolbar-title {font-size: 1.05rem;font-weight: 600}
+    .fc .fc-button-primary {background: transparent;border:0;}
+    .fc-icon {font-weight: 700;color:var(--grey-99)}
+    .fc-scroller {overflow: hidden;}
+    .fc * {border:0!important}
+    .fc table * {border:0!important; text-align: center!important}
+    .fc table th, .fc table td, .fc-col-header-cell, .fc-col-header-cell .fc-day  {text-align: center!important;width:100%}
+
+    .fc table th, .fc table td, .fc-col-header-cell, .fc-col-header-cell .fc-day, .fc-day-sun, .fc-day-past, .fc-day-other, .fc-daygrid-day, .fc-daygrid-day-frame,
+    .fc-scrollgrid-sync-inner, .fc .fc-daygrid-day-top {height: 47px!important;text-align: center!important}
+    @media screen and (max-width:768px) {
+      .fc table th, .fc table td, .fc-col-header-cell, .fc-col-header-cell .fc-day, .fc-day-sun, .fc-day-past, .fc-day-other, .fc-daygrid-day, .fc-daygrid-day-frame,
+      .fc-scrollgrid-sync-inner, .fc .fc-daygrid-day-top {height: 45px!important;text-align: center!important}
+    }
+
+    .fc .fc-daygrid-day-top {align-items: center;justify-content: center}
+    .fc .fc-daygrid-day.fc-day-today {background-color: transparent}
+    .fc .fc-daygrid-day.fc-day-today a {text-decoration: underline; color:var(--mint-60)}
+    .fc-daygrid-day-number{text-align: center!important;position: relative;}
+
+    .fc .fc-daygrid-day.has-event {background-repeat: no-repeat; background-position: center center; background-size: 45px;}
+
+    .fc-daygrid-event-harness {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);white-space: nowrap;border-width: 0;}
+
+
+    @media screen and (max-width:1024px) { .fc .fc-daygrid-day.has-event {background-size: 35px;}}
+    @media screen and (max-width:640px) { .fc .fc-daygrid-day.has-event {background-size: 30px;}}
+    @media screen and (max-width:330px) { .fc .fc-daygrid-day.has-event {background-size: 25px;}}
+    .fc-event-title.fc-sticky{white-space: normal;}
+
+
+    /* -------------- 마이페이지 캘린더 -------------- */
+    .my-page-calendar .fc .fc-daygrid-day-top.event .fc-daygrid-day-number {color: transparent;}
+
+    .my-page-calendar .fc .fc-daygrid-day.has-event.feel_1 {background-image:url('../images/sub/ico_mypage_calendar_feel_1.png');}
+    .my-page-calendar .fc .fc-daygrid-day.has-event.feel_2 {background-image:url('../images/sub/ico_mypage_calendar_feel_2.png');}
+    .my-page-calendar .fc .fc-daygrid-day.has-event.feel_3 {background-image:url('../images/sub/ico_mypage_calendar_feel_3.png');}
+    .my-page-calendar .fc .fc-daygrid-day.has-event.feel_4 {background-image:url('../images/sub/ico_mypage_calendar_feel_4.png');}
+    .my-page-calendar .fc .fc-daygrid-day.has-event.feel_5 {background-image:url('../images/sub/ico_mypage_calendar_feel_5.png');}
+
+
+    /* -------------- 상담예약 캘린더 -------------- */
+    .reservation-page-calendar .fc .fc-daygrid-day.fc-day-today a {text-decoration: underline; color:var(--blue-60);font-weight: 700}
+    .reservation-page-calendar .fc-scrollgrid-sync-inner, .reservation-page-calendar .fc .fc-daygrid-day-top {height: 70px!important}
+    .reservation-page-calendar .fc .fc-daygrid-day.fc-day-today {position: relative}
+    .reservation-page-calendar .fc .fc-daygrid-day.has-event a {font-weight: 600; color: var(--grey-33)}
+    .reservation-page-calendar .fc .fc-daygrid-day.has-event {background-image:url('../images/sub/ico_reservation_calendar_event.png');background-size:55px}
+
+    .reservation-page-calendar .fc .fc-toolbar {justify-content: center!important; gap: 1.5rem}
+    .reservation-page-calendar .fc .fc-button-primary {background: var(--blue-30);border:0;border-radius: 100%;width:2rem;height:2rem;display: flex;
+      align-items: center;      justify-content: center;}
+    .reservation-page-calendar .fc-icon {font-weight: 700;color:var(--white);font-size:.9rem}
+
+    .reservation-page-calendar .fc .fc-button .fc-icon {font-size: 1rem}
+    .reservation-page-calendar .fc-icon-chevron-left::before {content:url(../images/sub/ico_reservation_calendar_prev.png)}
+    .reservation-page-calendar .fc-icon-chevron-right::before {content:url(../images/sub/ico_reservation_calendar_next.png)}
+
+    .reservation-page-calendar .fc-title-year-num, .reservation-page-calendar .fc-title-month-num{font-weight: 600; font-size: 1.6rem!important;}
+    .reservation-page-calendar .fc-title-year-suffix, .reservation-page-calendar .fc-title-month-suffix {font-size: 1.2rem; font-weight: 500; margin:5px 0 0 5px}
+    .reservation-page-calendar .fc-title-year-suffix {margin-right:8px}
+
+    @media screen and (max-width:1024px) { .reservation-page-calendar .fc .fc-daygrid-day.has-event {background-size: 55px!important;}}
+    @media screen and (min-width: 768px) and (max-width: 880px) {.reservation-page-calendar .fc .fc-daygrid-day.has-event {background-size: 45px!important;}}
+    @media screen and (max-width:640px) { .reservation-page-calendar .fc .fc-daygrid-day.has-event {background-size: 40px!important;}}
+    @media screen and (max-width:400px) {
+      .reservation-page-calendar .fc-title-year-num, .reservation-page-calendar .fc-title-month-num{font-weight: 600; font-size: 1.25rem!important;}
+      .reservation-page-calendar .fc-title-year-suffix, .reservation-page-calendar .fc-title-month-suffix {font-size: 1rem; font-weight: 500; margin:5px 0 0 5px}
+      .reservation-page-calendar .fc-title-year-suffix {margin-right:5px}
+    }
+    @media screen and (max-width:360px) {
+      .reservation-page-calendar .fc-title-year-num, .reservation-page-calendar .fc-title-month-num{font-weight: 600; font-size: 1rem!important;}
+      .reservation-page-calendar .fc-title-year-suffix, .reservation-page-calendar .fc-title-month-suffix {font-size: 0.8rem; font-weight: 500; margin:5px 0 0 2px}
+      .reservation-page-calendar .fc-title-year-suffix {margin-right:5px}
+    }
+    @media screen and (max-width:330px) { .reservation-page-calendar .fc .fc-daygrid-day.has-event {background-size: 35px!important;}}

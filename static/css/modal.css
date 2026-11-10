@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* ==============================================
+     Modal
+     ============================================== */
+    /* -------------- 모달 오버레이 -------------- */
+    .modal {
+        background-color: rgba(0,0,0,0.6);
+        overflow: hidden!important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        z-index:101
+    }
+    /* -------------- 모달 활성화 시 외부 스크롤 방지 -------------- */
+    body:has(.modal-visible) {overflow: hidden!important;}
+    body:has(.modal-visible.ov-auto) {overflow: auto!important;}
+
+    /* -------------- 모달 활성화 시 레이아웃 및 모달 본문 -------------- */
+    .modal-visible {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index:150
+    }
+    .modal-content {
+        background-color: var(--white);
+        padding: 3rem 2rem 2rem 2rem;
+        position: relative;
+        border: 1px solid transparent;
+        width:100%;
+        max-width: calc(100% - 1.5rem);
+        word-break: keep-all
+    }
+    /* -------------- 모달 크기 -------------- */
+    @media screen and (min-width: 1024px) {
+        .modal-content.modal-xs {max-width: 400px}
+        .modal-content.modal-sm {max-width: 640px}
+        .modal-content.modal-md {max-width: 768px}
+        .modal-content.modal-lg {max-width: 960px}
+    }
+    @media screen and (min-width: 768px) {
+        .modal-content.modal-xs {max-width: 400px}
+        .modal-content.modal-sm {max-width: 540px}
+        .modal-content.modal-md {max-width: 740px}
+    }
+    /* -------------- 동영상 모달 전용 -------------- */
+    .modal-btn-box {position:absolute;padding: 0.75rem; bottom:0; left:0; width:100% ;display:flex;align-items:center;justify-content:space-between;gap:5px}
+    .modal-btn-rounded {width:50px;height:50px;line-height:50px;display: flex;align-items: center;justify-content: center;text-align: center;color:var(--white);background:var(--black-overlay-65);border-radius: 100%;}
+    .modal-btn-rounded .play-bar {min-width:100px;width:100%;height:2px;background: var(--white);}
+    .modal-btn-rounded img {width:20px}
+    .modal-btn-rounded i, .modal-btn-rounded span {color: var(--white);}
+    .modal-title-blow {padding-top:1rem;padding-left:1.5rem}
+
+    @media screen and (max-width: 540px) {
+        .modal-title-blow {padding-top:0.5rem;padding-left:1rem}
+        .modal-btn-rounded img {width:10px}
+        .modal-btn-rounded .play-bar {min-width:40px;}
+        .modal-btn-rounded {width:30px;height:30px;line-height: 30px;}
+        .modal-btn-rounded i:not(.fa-times), .modal-btn-rounded span {font-size:0.7rem; color: var(--white)}
+        .modal-btn-rounded span {line-height: 30px;}
+        .modal-btn-rounded img {max-height:20px}
+    }
