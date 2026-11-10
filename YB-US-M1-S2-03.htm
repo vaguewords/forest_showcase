@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>용산 온마음숲</title>
+  <link rel=" shortcut icon " href="./static/images/common/favicon.ico">
+  <link rel="icon" href="./static/images/common/favicon.ico">
+  <link rel="stylesheet" href="./static/css/cdn/fontawesome.css" />
+  <link rel="stylesheet" as="style" crossorigin href="./static/css/fonts.css"
+  />
+  <link rel="stylesheet" href="./static/css/cdn/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./static/css/scheme_root.css">
+  <link rel="stylesheet" href="./static/css/common.css">
+  <link rel="stylesheet" href="./static/css/grid.css">
+  <link rel="stylesheet" href="./static/css/spacing.css">
+  <link rel="stylesheet" href="./static/css/contrast.css">
+  <link rel="stylesheet" href="./static/css/scheme.css">
+  <link rel="stylesheet" href="./static/css/header.css">
+  <link rel="stylesheet" href="./static/css/footer.css">
+  <link rel="stylesheet" href="./static/css/sub.css">
+  <link rel="stylesheet" href="./static/css/cdn/bootstrap-icons.min.css">
+
+  <script src="./static/js/cdn/jquery-3.4.1.min.js"></script>
+  <script src="./static/js/subTab.js"></script>
+
+
+
+
+
+</head>
+
+<body data-current-page="menu-1-2">
+  <div id="loading" class="loading-overlay">
+    <div class="loader"></div>
+  </div>
+  <div id="skipNavigation" title="스킵 내비게이션">
+    <a href="#contents">본문 내용 바로가기</a>
+    <a href="#header">상단메뉴 가기</a>
+  </div>
+
+
+
+  <header class="header-top" id="header"></header>
+
+  <noscript>자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
+  <!-- wrap -->
+  <main class="container" id="contents">
+
+
+
+
+
+
+    <!-- content-area -->
+    <section class="content-area" id="content-area">
+      <!-- subTitle-wrapper -->
+      <div class="subTitle-wrapper new-style01">
+        <div class="subTitle-wrap">
+          <div class="local-navigation">
+            <ul class="navigation-list">
+              <li class="home">
+                <img src="./static/images/sub/snb_home.png" alt="홈">
+              </li>
+              <li>
+                <a href="#">소개/알림</a>
+              </li>
+              <li>
+                <a href="#">통계</a>
+              </li>
+              <li>
+                <a href="#">용산구 기본 현황</a>
+              </li>
+            </ul>
+          </div>
+          <div class="title-box">
+              <div class="title-box-con">
+                  <h2 class="title">
+                      통계
+            </h2>
+
+            <div class="title-btn">
+                <ul>
+                    <li class="scrap">
+                        <a href="#"
+                            >
+                            <img src="./static/images/common/ico_scrap.png" alt="스크랩하기">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+          </div>
+            <p>통계로 살펴보는 마음건강 현황입니다.
+              </p>
+
+        </div>
+        </div>
+
+      </div>
+      <!-- //subTitle-wrapper -->
+
+
+
+
+      <article class="sub_wrap">
+        <!-- tab -->
+        <div class="select_tab">
+          <ul class="sub-tabl1">
+            <li>
+              <a href="./YB-US-M1-S2-01.htm">
+                마음건강 통계
+              </a>
+            </li>
+            <li class="on">
+              <a href="#">
+                용산구 기본 현황
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div style="display: none;">용산구 기본 현황</div>
+
+        <!-- content start -->
+        <div class="divTab py-40" style="min-height:30vh">
+          <div class="w-100 text-right">출처 : 용산구 열린 데이터 광장</div>
+          <form name="frm" id="frm" method="get" action="">
+            <input type="hidden" name="viewType" value="">
+            <input type="hidden" name="type" value="">
+            <div id="content">
+              <!-- 본문 내용 -->
+              <!-- <div class="tab-nav">
+                <ul class="row g-10">
+                  <li class="col-sm-3">
+                    <a href="#box-chart00" class="btn btn-mint w-100">전체</a>
+                  </li>
+                  <li class="col-sm-3">
+                    <a href="#box-chart01" class="btn btn-mint w-100">등록인구</a>
+                  </li>
+                  <li class="col-sm-3">
+                    <a href="#box-chart02" class="btn btn-mint w-100">연령(5세 계급)별 및 성별 인구</a>
+                  </li>
+                  <li class="col-sm-3">
+                    <a href="#box-chart03" class="btn btn-mint w-100">인구추이</a>
+                  </li>
+                  <li class="col-sm-3">
+                    <a href="#box-chart04" class="btn btn-mint w-100">65세 이상 고령자</a>
+                  </li>
+                  <li class="col-sm-3">
+                    <a href="#box-chart05" class="btn btn-mint w-100">등록 외국인</a>
+                  </li>
+                  <li class="col-sm-3">
+                    <a href="#box-chart06" class="btn btn-mint w-100">사업체 및 종사자수</a>
+                  </li>
+                  <li class="col-sm-3">
+                    <a href="#box-chart07" class="btn btn-mint w-100">동별 사업체수</a>
+                  </li>
+                </ul>
+              </div> -->
+              <script src="https://www.yongsan.go.kr/static/jslibrary/echarts@5.3.2.js"></script>
+              <h2 class="blind" id="box-chart00">인구</h2>
+              <div class="box-chart mt-20" id="box-chart01">
+                <div class="box-chart__unit">
+                  <h3>등록인구</h3>
+
+                  <p>단위 : 명, Unit : person</p>
+                </div>
+                <div class="ovx">
+                  <div id="PopulationPieChart" style="width: 1024px; height: 350px; user-select: none; position: relative;" _echarts_instance_="ec_1766996707427"></div>
+                </div>
+              </div>
+              <div class="box-chart" id="box-chart02">
+                <div class="box-chart__unit">
+                  <h3>연령(5세 계급)별 및 성별 인구</h3>
+
+                  <p>단위 : 명, Unit : person</p>
+                </div>
+                <div class="ovx">
+                  <div id="AgeGenderPyramid" style="width: 960px; height: 700px; user-select: none; position: relative;" _echarts_instance_="ec_1766996707428">
+                  </div>
+                </div></div>
+                <div class="box-chart" id="box-chart03">
+                  <div class="box-chart__unit">
+                    <h3>인구추이</h3>
+
+                    <p>단위: 명, 세대 Unit: person, household</p>
+                  </div>
+                  <div class="ovx">
+                    <div id="TrendBarChart" style="width: 960px; height: 450px; user-select: none; position: relative;" _echarts_instance_="ec_1766996707429">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="box-chart2">
+                  <div class="box-chart" id="box-chart04">
+                    <div class="box-chart__unit">
+                      <h3>65세 이상 고령자</h3>
+
+                      <p>단위 : 명, Unit : person</p>
+                    </div>
+                    <div class="ovx">
+                      <div id="OlderBarChart" style="width: 450px; height: 380px; user-select: none; position: relative;" _echarts_instance_="ec_1766996707430">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-chart" id="box-chart05">
+                    <div class="box-chart__unit">
+                      <h3>등록 외국인</h3>
+
+                      <p>단위 : 명, Unit : person</p>
+                    </div>
+                    <div class="ovx">
+                      <div id="ForeignersBarChart" style="width: 450px; height: 380px; user-select: none; position: relative;" _echarts_instance_="ec_1766996707431">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h2 class="blind" id="box-chart00">사업체</h2>
+                <div class="box-chart" id="box-chart06">
+                  <div class="box-chart__unit">
+                    <h3>사업체 및 종사자수</h3>
+
+                    <p>단위: 개, 명 Unit: each, person</p>
+                  </div>
+                  <div class="ovx">
+                    <div id="WorkerBarChart" style="width: 960px; height: 450px; user-select: none; position: relative;" _echarts_instance_="ec_1766996707432">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="box-chart" id="box-chart07">
+                  <div class="box-chart__unit">
+                    <h3>동별 사업체수</h3>
+
+                    <p>단위: 개, 명 Unit: each, person</p>
+                  </div>
+                  <div class="ovx">
+                    <div id="DongBarChart" style="width: 960px; height: 630px; user-select: none; position: relative;" _echarts_instance_="ec_1766996707433">
+                    </div>
+                  </div>
+                </div>
+
+                <script src="https://www.yongsan.go.kr/static/portal/js/statistics_option.js"></script>
+                <!-- 차트 옵션 -->
+                <script src="https://www.yongsan.go.kr/static/portal/js/statistics.js"></script>
+                <!-- 차트 데이터 값 -->
+
+                <script>
+                  $(function () {
+                    var idx = $(".tab-nav ul li").index()
+                    $(".tab-nav ul li a").on("click", function () {
+                      $(".tab-nav ul li a").removeClass('on')
+                      $(this).eq(idx).addClass('on')
+                      var headerHeight = $("header").outerHeight();
+                      var href = $(this).attr("href");
+                      var target = $(href == "#" || href == "" ? "body" : href);
+                      var position = target.offset().top - headerHeight;
+                      $("html, body").animate({ scrollTop: position }, 600, "swing");
+                    });
+                  });
+                </script>
+                <!-- 본문 내용 -->
+              </div>
+          </form>
+
+          <!-- content end -->
+
+
+          <!-- satisfaction -->
+          <script>
+            jQuery(function ($) {
+              $('.satisfactionBtn').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var menuId = $('#satisfactionForm [name=menuId]').val();
+                if (!menuId || (menuId != GLOBAL.menuId)) {
+                  alert('페이지정보가 없어 평가를 처리할 수 없습니다.');
+                  return;
+                }
+                if ($('#satisfactionForm [name=satisScore]:checked').length < 1) {
+                  alert('평가점수를 선택해 주세요.');
+                  return;
+                }
+                var params = $('#satisfactionForm').serialize();
+                $.ajax({
+                  url: $('#satisfactionForm').attr('action')
+                  , type: 'post'
+                  , data: params
+                  , context: this
+                }).done(function (data) {
+                  if (data.success) {
+                    alert('평가해주셔서 감사합니다.');
+                    location.reload();
+                  } else {
+                    alert(data.text);
+                  }
+                }).fail(function () {
+                  alert('서버오류로 평가를 처리하지 못하였습니다.[failure]');
+                });
+              });
+            });
+          </script>
+          <!-- satisfaction form -->
+          <div class="survey_box_wrap" id="survey">
+          </div>
+      </article>
+      <!-- <script>
+                                  function fn_FooterUri(uri) {
+                                      if (uri != "") {
+                                          window.open(uri, '', );
+                                      }
+                                  }
+                                  function selLazyTab() {
+                                      var sSelLazyTab = "";
+                                      if (sSelLazyTab != "") {
+                                          $("[data-target=" + sSelLazyTab + "]").trigger("click");
+                                      } else {
+                                          $("[data-target=divTab1]").trigger('click');
+                                      }
+                                  }
+                              </script> -->
+    </section>
+
+
+    <a href="#" class="btn-scroll">
+      <img src="./static/images/common/btn_scroll.png" alt="페이지 최상단으로 가기">
+    </a>
+  </main>
+  <!-- footer-wrap -->
+  <footer class="footer" id="footer"></footer>
+  <script src="./static/js/modal.js"></script>
+
+  <script>
+    //#PopulationPieChart 등록인구
+    var option1 = {
+      title: {
+        text: "총 Total",
+        subtext: null,
+        left: "center",
+        top: "40%",
+        position: "center",
+        textStyle: {
+          fontSize: 24,
+          color: "#333",
+        },
+        subtextStyle: {
+          fontSize: 30,
+          color: "#009687",
+        },
+      },
+      tooltip: {
+        trigger: "item",
+      },
+      legend: {
+        data: ["여자(Female)", "남자(Male)"],
+        left: "center",
+        bottom: "0",
+        itemGap: 18,
+        textStyle: {
+          fontSize: 16,
+          color: "#333",
+        },
+      },
+      series: [
+        {
+          name: "등록인구",
+          type: "pie",
+          width: "100%",
+          height: "85%",
+          top: "8%",
+          color: ["#009687", "#eb4f50"],
+          radius: ["85%", "50%"],
+          center: ["50%", "50%"],
+          itemStyle: {
+            borderRadius: 5,
+            borderColor: "#fff",
+            borderWidth: 1,
+          },
+          data: [
+            { value: null, name: "여자(Female)" },
+            { value: null, name: "남자(Male)" },
+          ],
+          label: {
+            show: true,
+            alignTo: "edge",
+            margin: "18%",
+            formatter: function (params) {
+              let name = params.data.name;
+              let number = params.data.value.toString().replace(regex, ",");
+              if (name === "여자(Female)") {
+                var htmlTxt1 = '<span style="color:' + params.color + '">';
+                htmlTxt1 += number;
+                htmlTxt1 += "</span>";
+                return "{name|" + name + "}\n{number1|" + number + "}";
+              } else {
+                var htmlTxt2 = '<span style="color:' + params.color + '">';
+                htmlTxt2 += number;
+                htmlTxt2 += "</span>";
+              }
+              return "{name|" + name + "}\n{number2|" + number + "}";
+            },
+            lineHeight: 35,
+            rich: {
+              name: {
+                fontSize: 18,
+                color: "#333",
+                width: "100%",
+              },
+              number1: {
+                fontSize: 24,
+                width: "100%",
+                color: "#eb4f50",
+              },
+              number2: {
+                fontSize: 24,
+                width: "100%",
+                color: "#009687",
+              },
+            },
+          },
+          labelLine: {
+            smooth: 0.2,
+            length: 10,
+            length2: 60,
+          },
+          labelLayout: function (params) {
+            const isLeft = params.labelRect.x < myChart1.getWidth() / 2;
+            const points = params.labelLinePoints;
+            //  console.log(params)
+            // Update the end point.
+            points[2][0] = isLeft
+              ? params.labelRect.x
+              : params.labelRect.x + params.labelRect.width;
+            return {
+              labelLinePoints: points,
+            };
+          },
+        },
+      ],
+    };
+    // #AgeGenderPyramid 연령(5세 계급)별 및 성별 인구
+    var option2 = {
+      title: {
+        text: "{term|년도}",
+        left: "center",
+        position: "center",
+        textStyle: {
+          rich: {
+            term: {
+              fontSize: 22,
+              backgroundColor: "#009687",
+              color: "#fff",
+              width: 110,
+              height: 35,
+              borderRadius: 17.5,
+            },
+          },
+        },
+      },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow",
+        },
+        formatter: function (params) {
+          // console.log(params);
+          // let xy = (params[0].data * -1).toString().replace(regex, ",")
+          // let xx = (params[1].data).toString().replace(regex, ",")
+
+          // return `` +`남자 :   <br> 여자 : `
+          let colorSpan = function (color) {
+            return (
+              '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' +
+              color +
+              '"></span>'
+            );
+          };
+          //console.log(colorSpan)
+          let rez = '<p style="margin:0">' + params[0].axisValue + "</p>";
+          //console.log(params); //quite useful for debug
+          function comma(data) {
+            absData = Math.abs(data);
+            let x = absData.toString().replace(regex, ",");
+            return x;
+          }
+          params.forEach(function (item) {
+            //console.log(item); //quite useful for debug
+            var x =
+              '<p style="margin:0">' +
+              colorSpan(item.color) +
+              " " +
+              item.seriesName +
+              '<b class="fwb">' +
+              comma(item.data) +
+              "</b>" +
+              "</p>";
+            rez += x;
+          });
+          return rez;
+        },
+      },
+      legend: {
+        data: ["여자 (Female) ", "남자 (Male) "],
+        left: "center",
+        bottom: "bottom",
+        itemGap: 18,
+        textStyle: {
+          fontSize: 16,
+          color: "#000",
+        },
+      },
+      color: ["#009687", "#eb4f50"],
+      xAxis: [
+        {
+          type: "value",
+          axisLabel: {
+            formatter: function (v) {
+              return v < 0
+                ? (-v).toString().replace(regex, ",")
+                : v.toString().replace(regex, ",");
+            },
+          },
+        },
+      ],
+      yAxis: [
+        {
+          type: "category",
+          axisTick: {
+            show: false,
+          },
+          axisLabel: {
+            textStyle: {
+              fontSize: 14,
+            },
+          },
+          data: [
+            "0~4",
+            "5~9",
+            "10~14",
+            "15~19",
+            "20~24",
+            "25~29",
+            "30~34",
+            "35~39",
+            "40~44",
+            "45~49",
+            "50~54",
+            "55~59",
+            "60~64",
+            "65~69",
+            "70~74",
+            "75~79",
+            "80~84",
+            "85~",
+          ],
+        },
+      ],
+      series: [
+        {
+          name: "남자 (Male) ",
+          type: "bar",
+          stack: "Total",
+          label: {
+            show: true,
+            position: "right",
+            formatter: function (v) {
+              return v.data.toString().replace(regex, ",");
+            },
+          },
+          emphasis: {
+            focus: "series",
+          },
+          data: [null],
+        },
+        {
+          name: "여자 (Female) ",
+          type: "bar",
+          stack: "Total",
+          label: {
+            show: true,
+            position: "left",
+            formatter: function (v) {
+              return v.data < 0 && (-v.data).toString().replace(regex, ",");
+            },
+          },
+          emphasis: {
+            focus: "series",
+          },
+          data: [null].map(function (k) {
+            return -k;
+          }),
+        },
+      ],
+    };
+    // #TrendBarChart 인구추이
+    var option3 = {
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow",
+        },
+      },
+      toolbox: {
+        feature: {
+          dataView: { show: false, readOnly: false },
+          magicType: { show: false, type: ["line", "bar"] },
+          restore: { show: false },
+          saveAsImage: { show: false },
+        },
+      },
+      color: ["#00695B", "#4161a1", "#dbd301"],
+      legend: {
+        data: [
+          "인구 Population",
+          "세대 Household",
+          "세대당인구 Person per household",
+        ],
+        left: "center",
+        bottom: "bottom",
+        itemGap: 18,
+        textStyle: {
+          fontSize: 16,
+          color: "#000",
+        },
+      },
+      xAxis: [
+        {
+          type: "category",
+          data: [
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+          ],
+          axisPointer: {
+            type: "shadow",
+          },
+        },
+      ],
+      yAxis: [
+        {
+          type: "value",
+          // name: '명',
+          min: 0,
+          max: 300000,
+          interval: 50000,
+          axisLabel: {
+            formatter: "{value}",
+            textStyle: {
+              fontSize: 14,
+            },
+          },
+        },
+        {
+          type: "value",
+          // name: '세대',
+          min: 1.9,
+          max: 2.3,
+          interval: 0.1,
+          axisLabel: {
+            formatter: "{value}",
+            textStyle: {
+              fontSize: 14,
+            },
+          },
+        },
+      ],
+      series: [
+        {
+          name: "인구 Population",
+          type: "bar",
+          label: {
+            show: false,
+            //position: 'top'
+          },
+          data: [null],
+        },
+        {
+          name: "세대 Household",
+          type: "bar",
+          label: {
+            show: false,
+            //position: 'top'
+          },
+          data: [null],
+        },
+        {
+          name: "세대당인구 Person per household",
+          type: "line",
+          yAxisIndex: 1,
+          tooltip: {
+            valueFormatter: function (value) {
+              return value;
+            },
+          },
+          label: {
+            show: false,
+            //position: 'top'
+          },
+          data: [null],
+        },
+      ],
+    };
+    // #OlderBarChart 65세 이상 고령자
+    var option4 = {
+      legend: {
+        show: false,
+        left: "center",
+        bottom: "bottom",
+      },
+      grid: {
+        left: "50px",
+        bottom: "10%",
+      },
+      tooltip: {},
+      xAxis: {
+        type: "category",
+      },
+      yAxis: {
+        type: "value",
+      },
+      series: [
+        {
+          name: "65세 이상 고령자",
+          type: "bar",
+          center: ["50%", "50%"],
+          color: "#319c61",
+          label: {
+            show: false,
+            //position: 'top'
+          },
+        },
+      ],
+    };
+    // #ForeignersBarChart 등록 외국인
+    var option5 = {
+      legend: {
+        show: false,
+        left: "center",
+        bottom: "bottom",
+      },
+      grid: {
+        left: "50px",
+        bottom: "10%",
+      },
+      tooltip: {},
+      xAxis: {
+        type: "category",
+        data: ["2019", "2020", "2021", "2022", "2023"],
+      },
+      yAxis: {
+        type: "value",
+      },
+      series: [
+        {
+          name: "등록 외국인",
+          data: [null],
+          type: "bar",
+          center: ["50%", "50%"],
+          color: "#9bd285",
+          label: {
+            show: false,
+            //position: 'top'
+          },
+        },
+      ],
+    };
+    // #WorkerBarChart 사업체 및 종사자수
+    var option6 = {
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow",
+        },
+      },
+      legend: {
+        left: "center",
+        bottom: "bottom",
+        itemGap: 18,
+        textStyle: {
+          fontSize: 16,
+          color: "#000",
+        },
+      },
+      color: ["#303A82", "#d86060"],
+      yAxis: {
+        type: "value",
+        axisLabel: {
+          textStyle: {
+            fontSize: 14,
+          },
+        },
+      },
+      grid: {
+        left: "70px",
+      },
+      xAxis: {
+        type: "category",
+        data: ["2015", "2016", "2017", "2018", "2019"],
+      },
+      series: [
+        {
+          name: "종사자수",
+          type: "bar",
+          data: [null],
+          label: {
+            show: false,
+            //position: 'top'
+          },
+        },
+        {
+          name: "사업체수",
+          type: "bar",
+          data: [null],
+          label: {
+            show: false,
+            //position: 'top'
+          },
+        },
+      ],
+    };
+    // #DongBarChart 동별 사업체수
+    var option7 = {
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow",
+        },
+      },
+      legend: {
+        left: "center",
+        bottom: "bottom",
+        itemGap: 18,
+        textStyle: {
+          fontSize: 16,
+          color: "#000",
+        },
+      },
+      color: ["#6989cb", "#43ce9f"],
+      xAxis: {
+        type: "value",
+      },
+      grid: {
+        left: "180px",
+      },
+      yAxis: {
+        type: "category",
+        data: [
+          "후암동 Huam-dong",
+          "용산2가동 Yongsan 2-ga-dong",
+          "남영동 Namyeong-dong",
+          "청파동 Cheongpa-dong",
+          "원효로1동 wonhyoro 1-dong",
+          "원효로2동 wonhyoro 2-dong",
+          "효창동 Hyochang-dong",
+          "용문동 Yongmun-dong",
+          "한강로동 Hangangno-dong",
+          "이촌1동 Ichon 1-dong",
+          "이촌2동 Ichon 2-dong",
+          "이태원1동 Itaewon 1-dong",
+          "이태원2동 Itaewon 2-dong",
+          "한남동 Hannam-dong",
+          "서빙고동 Seobinggo-dong",
+          "보광동 Bogwang-dong",
+        ],
+      },
+      series: [
+        {
+          name: "사업체수",
+          type: "bar",
+          data: [null],
+          label: {
+            show: false,
+            //position: "right",
+          },
+        },
+        {
+          name: "종사자수",
+          type: "bar",
+          data: [null],
+          label: {
+            show: false,
+            //position: "right",
+          },
+        },
+      ],
+    };
+
+    //<!-- 차트 데이터 값 -->
+    var regex = /\B(?=(\d{3})+(?!\d))/g
+    // #PopulationPieChart 등록인구
+    var pieChartDom = document.getElementById("PopulationPieChart");
+    var myChart1 = echarts.init(pieChartDom);
+    // var option1;
+    // var option1_total_value =
+
+    // 데이터
+    option1.title.subtext = (109826 + 117280).toString().replace(regex, ",")
+    option1.series[0].data = [
+      { value: 109826, name: "남자(Male)" },
+      { value: 117280, name: "여자(Female)" },
+    ]
+
+    myChart1.setOption(option1);
+
+    // #AgeGenderPyramid 연령(5세 계급)별 및 성별 인구
+    var pyramidDom = document.getElementById("AgeGenderPyramid");
+    var myChart2 = echarts.init(pyramidDom);
+
+    // 데이터
+    option2.title.text = '{term|' + 2023 + '}';
+    option2.series[0].data = [2860, 3434, 3628, 3889, 5600, 9280, 11221, 9388, 9324, 7801, 9429, 8398, 8158, 6530, 4029, 2974, 2298, 1585];
+    option2.series[1].data = [2745, 3302, 3406, 3868, 7018, 10595, 11202, 9114, 9067, 7947, 9789, 8484, 8412, 6958, 4753, 4068, 3374, 3178].map(function (k) { return -k; })
+
+    myChart2.setOption(option2);
+
+    // #TrendBarChart 인구추이
+    var trendBarChartDom = document.getElementById("TrendBarChart");
+    var myChart3 = echarts.init(trendBarChartDom);
+
+    // 데이터
+    //o1ption3.xAxis.data =  [ "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" ];
+    option3.xAxis.data = ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"];
+    option3.series[0].data = [251925, 249914, 247909, 245102, 244444, 245090, 245185, 244645, 237285, 233284, 227106];
+    option3.series[1].data = [109361, 108429, 107512, 106607, 107666, 108974, 110126, 113093, 111036, 109805, 107825];
+    option3.series[2].data = [2.20, 2.18, 2.17, 2.16, 2.13, 2.10, 2.08, 2.03, 2.01, 2.00, 1.98];
+
+    myChart3.setOption(option3);
+
+    // #OlderBarChart 65세 이상 고령자
+    var olderBarChartDom = document.getElementById('OlderBarChart');
+    var myChart4 = echarts.init(olderBarChartDom);
+
+    // 데이터
+    //option4.xAxis.data = ['2016', '2017', "2018", "2019", "2020"];
+    option4.xAxis.data = ['2019', '2020', "2021", "2022", "2023"];
+    option4.series[0].data = [38791, 40247, 39070, 39037, 39747]
+
+    myChart4.setOption(option4);
+
+    // #ForeignersBarChart 등록 외국인
+    var foreignersBarChartDom = document.getElementById('ForeignersBarChart');
+    var myChart5 = echarts.init(foreignersBarChartDom);
+
+    // 데이터
+    //option5.xAxis.data = ['2016', '2017', "2018", "2019", "2020"];
+    option5.xAxis.data = ['2019', '2020', "2021", "2022", "2023"];
+    option5.series[0].data = [16515, 14605, 14332, 14634, 13955]
+
+    myChart5.setOption(option5);
+
+    // #WorkerBarChart 사업체 및 종사자수
+    var workerBarChartDom = document.getElementById('WorkerBarChart');
+    var myChart6 = echarts.init(workerBarChartDom);
+
+    // 데이터
+    //option6.xAxis.data = ['2015','2016', '2017', '2018', '2019'];
+    option6.xAxis.data = ['2018', '2019', '2019', '2021', '2022'];
+    option6.series[0].data = [141216, 135240, 154288, 152605, 151851];
+    option6.series[1].data = [20813, 20254, 31507, 29680, 28047];
+
+    myChart6.setOption(option6);
+
+    // #DongBarChart 동별 사업체수
+    var dongBarChartDom = document.getElementById('DongBarChart');
+    var myChart7 = echarts.init(dongBarChartDom);
+
+    // 데이터
+    option7.series[0].data = [
+      1310, 789, 2055, 2231, 2425, 1540, 699, 886, 6171, 1419, 567, 1843, 1097,
+      3213, 743, 1059,
+    ];
+    option7.series[1].data = [
+      4578, 2100, 18037, 10066, 10190, 5985, 2350, 1962, 53485, 3885, 1212,
+      6863, 3159, 20440, 5396, 2143,
+    ];
+
+    myChart7.setOption(option7);
+
+    window.addEventListener('resize', function () {
+      myChart1.resize(); //등록인구
+      myChart2.resize(); //연령(5세 계급)별 및 성별 인구
+      myChart3.resize(); //인구추이
+      myChart4.resize(); //65세 이상 고령자
+      myChart5.resize(); //등록 외국인
+      myChart6.resize(); //사업체 및 종사자수
+      myChart7.resize(); //동별 사업체수
+    })
+
+  </script>
+
+
+  <script src="./static/js/common_swiper.js"></script>
+  <script src="./static/js/loader.js"></script>
+  <script>     document.addEventListener("DOMContentLoaded", () => { async function includeHTML(id, filePath) { const html = await fetch(filePath).then(res => res.text()); document.getElementById(id).innerHTML = html; } Promise.all([includeHTML("header", "./header.htm"), includeHTML("survey", "./survey.htm"), includeHTML("footer", "./footer.htm")]).then(() => { const script1 = document.createElement("script"); script1.src = "./static/js/header.js"; document.body.appendChild(script1); const script2 = document.createElement("script"); script2.src = "./static/js/footer.js"; document.body.appendChild(script2); }); });     </script>
+  <script src="./static/js/header.js"></script>
+
+<script src="./static/js/common.js"></script><script src="./static/js/cdn/swiper-bundle.min.js"></script></body>
+
+</html>

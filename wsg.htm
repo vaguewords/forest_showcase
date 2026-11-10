@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>용산 온마음숲 스타일가이드</title>
+    <link rel="stylesheet" href="./static/css/cdn/fontawesome.css"
+       />
+    <link rel="stylesheet" as="style" crossorigin href="./static/css/fonts.css"
+    />
+    <link rel="stylesheet" href="./static/css/cdn/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./static/css/scheme_root.css">
+    <link rel="stylesheet" href="./static/css/common.css"><link rel="stylesheet" href="./static/css/grid.css"><link rel="stylesheet" href="./static/css/spacing.css"><link rel="stylesheet" href="./static/css/contrast.css"><link rel="stylesheet" href="./static/css/scheme.css">
+    <link rel="stylesheet" href="./static/css/header.css">
+    <link rel="stylesheet" href="./static/css/footer.css">
+
+    <link rel="stylesheet" href="./static/css/sub.css"><link rel="stylesheet" href="./static/css/cdn/bootstrap-icons.min.css">
+
+    <script src="./static/js/cdn/jquery-3.4.1.min.js"></script>
+    <script src="./static/js/subTab.js"></script>
+
+
+
+
+</head>
+
+<body data-current-page="menu-"><div id="loading" class="loading-overlay"><div class="loader"></div></div>
+<div id="skipNavigation" title="스킵 내비게이션">
+	<a href="#contents">본문 내용 바로가기</a>
+	<a href="#header">상단메뉴 가기</a>
+</div>
+
+
+
+    <header class="header-top" id="header">
+          </header>
+
+    <noscript>자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
+    <!-- wrap -->
+    <main class="container" id="contents">
+
+
+
+
+
+
+        <!-- content-area -->
+        <section class="content-area" id="content-area">
+            <!-- subTitle-wrapper -->
+            <div class="subTitle-wrapper new-style01">
+                <div class="subTitle-wrap">
+                    <div class="local-navigation">
+                        <ul class="navigation-list">
+                            <li class="home">
+                                <img src="./static/images/sub/snb_home.png" alt="홈">
+                            </li>
+                            <li>
+                                <a href="#">용산 On마음숲</a>
+                            </li>
+                            <li>
+                                <a href="#">스타일가이드</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="share">
+                                <script>
+                                    function menuShare() {
+                                        if (typeof navigator == 'object' && navigator.share) {
+                                            navigator.share({ title: '', text: '', url: window.location.href });
+                                        } else {
+                                            alert("해당 브라우저에서 지원하지 않는 기능입니다.");
+                                        }
+                                    }
+                                </script>
+                                <a href="#"
+                                    >
+                                    <img src="./static/images/common/ico_like.png" alt="좋아요">
+                                </a>
+                            </li>
+                            <li class="scrap">
+                                <a href="#"><img src="./static/images/common/ico_scrap.png" alt="스크랩하기">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- //subTitle-wrapper -->
+
+
+            <script>
+                $(document).ready(function () {
+                    const $tabs = $('.sub-tabl1 li');
+                    const $tabContents = $('.divTab');
+
+                    // 최초 로딩 시 첫 번째 탭 영역을 포커스할 수 있게 설정
+                    $tabContents.each(function () {
+                        // $(this).attr('tabindex', '-1'); // 초기에는 모든 divTab는 포커스를 받을 수 없게 설정
+                        $(this).hide(); // 모든 탭 영역은 숨김 처리
+                    });
+
+                    const $firstTab = $tabs.first();
+                    const $firstTabContent = $($firstTab.find('a').attr('href'));
+
+                    // 첫 번째 탭 활성화 처리
+                    $firstTab.addClass('on');
+                    $firstTabContent.show(); // 첫 번째 탭 영역만 보이도록 설정
+                    // $firstTabContent.attr('tabindex', '0'); // 첫 번째 탭 영역은 포커스를 받을 수 있도록 설정
+
+                    // 탭 클릭 시 활성화된 탭을 표시
+                    $tabs.on('click', function (e) {
+                        e.preventDefault();
+
+                        // 모든 탭에서 'on' 클래스 제거 및 divTab 포커스 불가 처리
+                        $tabs.removeClass('on');
+                        $tabContents.each(function () {
+                            // $(this).attr('tabindex', '-1'); // 모든 divTab는 포커스를 받을 수 없게 설정
+                            $(this).hide(); // 모든 탭 영역을 숨김 처리
+                        });
+
+                        // 클릭된 탭에 'on' 클래스 추가
+                        $(this).addClass('on');
+
+                        // 해당 탭에 연결된 divTab 표시
+                        const targetTab = $($(this).find('a').attr('href'));
+                        targetTab.show(); // 해당 divTab만 보이도록 설정
+                        targetTab.attr('tabindex', '0'); // 해당 divTab에 포커스 가능
+                    });
+
+                    // // 탭 탐색 시 해당 영역에 포커스를 설정할 수 있도록
+                    // $tabContents.on('focus', function () {
+                    //     $(this).attr('tabindex', '0'); // 포커스를 받을 수 있도록 변경
+                    // });
+
+                    // // 최초 로딩 시 자동으로 첫 번째 탭 영역에 포커스
+                    // const $firstTabButton = $tabs.first().find('a');
+                    // $firstTabButton.attr('tabindex', '0'); // 첫 번째 탭 버튼은 기본적으로 포커스를 받을 수 있도록 설정
+                });
+
+            </script>
+
+            <article class="sub_wrap">
+                <!-- tab -->
+                <div class="select_tab">
+                    <ul class="sub-tabl1">
+                        <li class="on">
+                            <a href="#divTab1" title="선택됨">
+                                박스, 리스트, 탭, 버튼
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#divTab2">
+                                스키마
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#divTab3">
+                                게시판, 테이블
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- content start -->
+                <div class="divTab" id="divTab1">
+                        <h2 class="sub-tit2">박스스타일</h2>
+                        <h3 class="list-title-arrow">박스스타일 1</h3>
+                    <div class="info-wrap">
+                        <div class="info-box bg-qna">
+                            <h4 class="text-md">영양플러스 사업</h4>
+                            <p class="text-grey-33">영양상 위험이 큰 임신 · 출산부, 수유부 및 영유아의 건강증진에 필요한 체계적인 영양교육을 실시하고 필수 영양소를 식품 형태로 지원하여 식생활 관리 능력을 향상시키기
+                                위한 사업으로 태아의 단계부터 관리하는 평생 건강 관리형 국가 영양지원제도 입니다.</p>
+                        </div>
+                    </div>
+                    <h6 class="list-title-arrow">박스스타일 2</h6>
+
+                            <div class="box-paragraph box-grey">
+                                    <p>입법예고 의견을 열람하실 수 있는 공간입니다.
+                                        <br> 입법예고 의견이 있으신 분은 입법예고로 이동하시어 해당 입법예고에 "의견달기"를 이용하여 게시하여 주시기 바랍니다.
+                                    </p>
+                            </div>
+
+                    <!-- <h5 class="sub-tit2">불릿 스타일(Ping)</h5>
+                                          <ul class="sub-list1">
+                                              <li>1</li>
+                                          </ul> -->
+
+                    <h2 class="sub-tit2">리스트스타일</h2>
+                    <h3 class="list-title-arrow">리스트 1
+                        <a class="btn btn-light btn-xs btn-icon btn-shortcut" title="새창 열기" target="_blank">
+                            <span>바로가기</span>
+                        </a>
+                    </h3>
+                    <ul class="sub-list3 mt-10">
+                        <li>문의처: 세무관리과 세입총괄팀</li>
+                        <li>전 화: 02-3425-5500</li>
+                        <li>팩 스: 02-3425-7231</li>
+                        <ul class="sub-list2 mt-10 ml-20">
+                            <li>문의처: 세무관리과 세입총괄팀</li>
+                            <li>전 화: 02-3425-5500</li>
+                            <li>팩 스: 02-3425-7231</li>
+                        </ul>
+                    </ul>
+
+
+                    <h2 class="sub-tit2">탭스타일</h2>
+                    <h3 class="list-title-arrow">탭스타일 1</h3>
+
+                    <div class="select_tab">
+                        <ul class="sub-tabl1">
+                            <li class="on">
+                                <a href="#" title="선택됨">
+                                    불소겔도포및구강보건교육
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    치아홈메우기
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#d">
+                                    아동치과주치의사업
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <h3 class="list-title-arrow">탭스타일 2</h3>
+
+                    <div class="select_tab sub-tab2">
+                        <ul class="sub-tabl2">
+                            <li class="on">
+                                <a href="#" title="선택됨">
+                                    TAB01
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    TAB02
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#d">
+                                    TAB03
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#d">
+                                    TAB04
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <h2 class="sub-tit2">이용방법</h2>
+                    <h3 class="list-title-arrow">Step 5</h3>
+                    <ul class="step-shape step5 clfix">
+                        <li>
+                            <div>
+                                <p class="step-name01">01. 1차 진료실</p>
+                                <p class="sub-cont01">접수, 의사진료 및 상담</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">02. 민원실</p>
+                                <p class="sub-cont01">처방전발급 및 수납</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">03. 물리치료실</p>
+                                <p class="sub-cont01">해당자</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">04.채혈실</span>
+                                </p>
+                                <p class="sub-cont01">해당자</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">05.채혈실</span>
+                                </p>
+                                <p class="sub-cont01">해당자</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3 class="list-title-arrow">Step 4</h3>
+                    <ul class="step-shape step4 clfix">
+                        <li>
+                            <div>
+                                <p class="step-name01">01. 1차 진료실</p>
+                                <p class="sub-cont01">접수, 의사진료 및 상담</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">02. 민원실</p>
+                                <p class="sub-cont01">처방전발급 및 수납</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">03. 물리치료실</p>
+                                <p class="sub-cont01">해당자</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">04.채혈실</span>
+                                </p>
+                                <p class="sub-cont01">해당자</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <h3 class="list-title-arrow">Step 3</h3>
+                    <ul class="step-shape step3 clfix">
+                        <li>
+                            <div>
+                                <p class="step-name01">01. 1차 진료실</p>
+                                <p class="sub-cont01">접수, 의사진료 및 상담</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">02. 민원실</p>
+                                <p class="sub-cont01">처방전발급 및 수납</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p class="step-name01">03. 물리치료실</p>
+                                <p class="sub-cont01">해당자</p>
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+
+                    <h2 class="sub-tit2">버튼스타일</h2>
+                    <h3 class="list-title-arrow">버튼스타일 xsmall</h3>
+                    <ul>
+                        <li class="mt-10">
+                            <ul>
+
+                                <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                    <button class="btn btn-light btn-xs btn-icon btn-shortcut" type="button">
+                                        <span>바로가기</span>
+                                    </button>
+                                    <button class="btn btn-glow btn-xs btn-icon btn-search" type="button">
+                                        <span>바로보기</span>
+                                    </button>
+                                    <button class="btn btn-glow btn-xs btn-icon btn-download" type="button">
+                                        <span>서식 다운로드</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mt-20">
+                                <h6 class="list-title-arrow">버튼스타일 small</h6>
+                            <ul>
+
+                                <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                    <button class="btn btn-light btn-sm btn-icon btn-shortcut" type="button">
+                                        <span>바로가기</span>
+                                    </button>
+                                    <button class="btn btn-dark btn-sm btn-icon mr-15" type="button">의견등록</button>
+                                    <button class="btn btn-glow btn-sm btn-icon btn-download mr-15" type="button">
+                                        <span>서식 다운로드</span>
+                                    </button>
+                                    <button class="btn btn-dark btn-sm rounded-sm" type="button">주소 검색</button>
+                                    <button class="btn btn-glow btn-sm rounded-sm" type="button">인증번호 발송</button>
+                                    <button class="btn btn-glow btn-sm rounded-sm mr-15" type="button">비밀번호 변경</button>
+                                    <button class="btn btn-dark btn-sm rounded-sm rounded" type="button">안내</button>
+                                    <button class="btn btn-white btn-sm rounded-sm rounded" type="button">신청하기</button>
+                                    <button class="btn btn-dark btn-sm rounded-sm rounded" type="button">이동</button>
+                                </li>
+                                <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                        <button class="btn btn-naver btn-sm">네이버 로그인<img src="./static/images/common/ico_naver.png" class="ml-10" alt=""></button>
+                                        <button class="btn btn-kakao btn-sm">카카오톡 로그인<img src="./static/images/common/ico_kakao.png" class="ml-10" alt=""></button>
+                                        <button class="btn btn-google btn-sm">구글 로그인<img src="./static/images/common/ico_google.png" class="ml-10" alt=""></button>
+                                        <button class="btn btn-social-notext btn-naver btn-sm"></button>
+                                        <button class="btn btn-social-notext btn-kakao btn-sm"></button>
+                                        <button class="btn btn-social-notext btn-google btn-sm"></button>
+                                        <button class="btn btn-social-notext btn-naver btn-xs"></button>
+                                        <button class="btn btn-social-notext btn-kakao btn-xs"></button>
+                                        <button class="btn btn-social-notext btn-google btn-xs"></button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mt-20">
+                                <h3 class="list-title-arrow">버튼스타일 medium</h3>
+                            <ul>
+
+                                <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                    <button class="btn btn-icon btn-white btn-md btn-write" type="button">
+                                        <span>글쓰기</span>
+                                    </button>
+                                    <button class="btn btn-icon btn-mint btn-md btn-write-w" type="button">
+                                        <span>글쓰기</span>
+                                    </button>
+
+
+                                </li>
+                                <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                    <button class="btn btn-md btn-dark" type="button">목록</button>
+                                    <button class="btn btn-md btn-mint" type="button">등록</button>
+                                    <button class="btn btn-md btn-white" type="button">취소</button>
+                                    <button class="btn btn-md btn-white" type="button">수정</button>
+                                    <button class="btn btn-md btn-grey" type="button">삭제</button>
+                                    <button class="btn btn-md btn-mint" type="button">확인</button>
+                                </li>
+                                <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                    <button class="btn btn-md btn-dark" type="button">검색</button>
+                                    <button class="btn btn-icon btn-no-text btn-refresh btn-md btn-pale" type="button">새로고침</button>
+                                    <button class="btn btn-icon btn-no-text btn-search btn-md btn-pale" type="button">검색</button>
+                                </li>
+                                <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                    <button class="btn btn-md btn-white" type="button">중복확인</button>
+                                    <button class="btn btn-md btn-dark" type="button">주소검색</button>
+                                    <button class="btn btn-md btn-white" type="button">인증하기</button>
+                                    <button class="btn btn-md btn-white" type="button">인증하기</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mt-20">
+                                <h3 class="list-title-arrow">버튼스타일 large</h3>
+                            <ul>
+
+                                <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                    <button class="btn btn-mint btn-lg" type="button">프로그램 신청하기</button>
+                                    <button class="btn btn-white btn-lg" type="button">프로그램 신청확인</button>
+                                    <button class="btn btn-mint btn-lg btn-wide" type="button">로그인</button>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="mt-20">
+                                <h3 class="list-title-arrow">버튼스타일 large 2</h3>
+                                <ul>
+
+                                    <li class="ml-30 mt-10 d-flex flex-wrap gap-10">
+                                        <button class="btn btn-mint btn-lg rounded px-70" type="button">이전으로</button>
+                                        <button class="btn btn-white btn-lg rounded px-70" type="button">다음으로</button>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        <li class="mt-20">
+                                <h3 class="list-title-arrow">라디오 버튼</h3>
+                            <ul>
+
+                                <li class="ml-30 mt-10">
+                                    <span class="radio-area">
+                                        <input type="radio" id="radio5" name="inputRadio" value="5" checked="checked">
+                                        <label for="radio5">매우만족</label>
+                                    </span>
+                                    <span class="radio-area">
+                                        <input type="radio" id="radio4" name="inputRadio" value="4">
+                                        <label for="radio4">만족</label>
+                                    </span>
+                                    <span class="radio-area">
+                                        <input type="radio" id="radio3" name="inputRadio" value="3">
+                                        <label for="radio3">보통</label>
+                                    </span>
+                                    <span class="radio-area">
+                                        <input type="radio" id="radio2" name="inputRadio" value="2">
+                                        <label for="radio2">불만</label>
+                                    </span>
+                                    <span class="radio-area">
+                                        <input type="radio" id="radio1" name="inputRadio" value="1">
+                                        <label for="radio1">매우 불만족
+                                        </label>
+                                    </span>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="mt-20">
+                                <h3 class="list-title-arrow">체크박스</h3>
+                            <ul>
+
+                                <li class="ml-30 mt-10">
+                                    <div class="checkbox-area">
+                                        <input type="checkbox" id="checkbox5" name="inputCheckbox" value="5" checked="checked">
+                                        <label for="checkbox5">인터넷 검색</label>
+                                    </div>
+                                    <div class="checkbox-area mt-5">
+                                        <input type="checkbox" id="checkbox4" name="inputCheckbox" value="4">
+                                        <label for="checkbox4">SNS 채널</label>
+                                    </div>
+                                    <div class="checkbox-area mt-5">
+                                        <input type="checkbox" id="checkbox3" name="inputCheckbox" value="3">
+                                        <label for="checkbox3">이벤트 및 배너</label>
+                                    </div>
+                                    <div class="checkbox-area mt-5">
+                                        <input type="checkbox" id="checkbox2" name="inputCheckbox" value="2">
+                                        <label for="checkbox2">지인소개</label>
+                                    </div>
+                                    <div class="checkbox-area mt-5">
+                                        <input type="checkbox" id="checkbox1" name="inputCheckbox" value="1">
+                                        <label for="checkbox1">기타
+                                        </label>
+                                        <input type="text" class="input-xs rounded-4 mt-xxs-0 mt-10" placeholder="직접입력">
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="mt-20">
+                                <h3 class="list-title-arrow">라벨 스타일</h3>
+                            <ul>
+
+                                <li class="ml-30 mt-10 flexbox-ac-js flex-wrap gap-10">
+                                        <span class="item-label label-mint-outline">작성중</span><span class="item-label label-mint-outline">상담중</span><span class="item-label label-blue-outline">상담완료</span><span class="item-label label-grey-outline">취소</span>
+                                </li>
+                                <li class="ml-30 mt-10 flexbox-ac-js flex-wrap gap-10">
+                                        <span class="item-label text-mint-60 border-0">상담중</span><span class="item-label text-blue-60 border-0">상담대기</span><span class="item-label border-0 text-grey-66">예정</span><span class="item-label border-0 text-grey-88 font-w-400">취소</span><span class="item-label border-0 text-grey-88 font-w-400">완료/종료</span>
+                                </li>
+                                <li class="ml-30 mt-10 flexbox-ac-js flex-wrap gap-10">
+                                    <span class="item-label label-green">초급</span><span class="item-label label-orange">중급</span><span class="item-label label-pink">고급</span><span class="item-label label-violet">동영상</span><span class="item-label label-sky">텍스트</span><span class="item-label label-peach">음성</span><span class="item-label label-violet-deep">분노</span><span class="item-label label-lime">평범</span>
+                                </li>
+                                <li class="ml-30 mt-10 flexbox-ac-js flex-wrap gap-10">
+                                    <span class="item-label bg-grey-e5">전체</span><span class="item-label label-orange">전연령</span><span class="item-label label-green">아동/가족</span><span class="item-label label-violet">청년</span><span class="item-label label-peach">중장년</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+
+
+                </div>
+                <div class="divTab" id="divTab2">
+                    <h2 class="sub-tit2">스키마</h2>
+                    <ul>
+                        <li class="d-flex flex-wrap gap-10">
+                            <button class="btn btn-md bg-mint-100 text-white">mint-100</button>
+                            <button class="btn btn-md bg-mint-90 text-white">mint-90</button>
+                            <button class="btn btn-md bg-mint-80 text-white">mint-80</button>
+                            <button class="btn btn-md bg-mint-70 text-white">mint-70</button>
+                            <button class="btn btn-md bg-mint-60 text-white">mint-60</button>
+                            <button class="btn btn-md bg-mint-50 text-white">mint-50</button>
+                            <button class="btn btn-md bg-mint-40">mint-40</button>
+                            <button class="btn btn-md bg-mint-30">mint-30</button>
+                            <button class="btn btn-md bg-mint-20">mint-20</button>
+                            <button class="btn btn-md bg-mint-10">mint-10</button>
+                        </li>
+                    </ul>
+                    <ul class="mt-10">
+                        <li class="d-flex flex-wrap gap-10">
+                            <button class="btn btn-md bg-blue-100 text-white">blue-100</button>
+                            <button class="btn btn-md bg-blue-90 text-white">blue-90</button>
+                            <button class="btn btn-md bg-blue-80 text-white">blue-80</button>
+                            <button class="btn btn-md bg-blue-70 text-white">blue-70</button>
+                            <button class="btn btn-md bg-blue-60 text-white">blue-60</button>
+                            <button class="btn btn-md bg-blue-50 text-white">blue-50</button>
+                            <button class="btn btn-md bg-blue-40">blue-40</button>
+                            <button class="btn btn-md bg-blue-30">blue-30</button>
+                            <button class="btn btn-md bg-blue-20">blue-20</button>
+                            <button class="btn btn-md bg-blue-10">blue-10</button>
+                        </li>
+                    </ul>
+                    <ul class="mt-10">
+                        <li class="d-flex flex-wrap gap-10">
+                            <button class="btn btn-md bg-black text-white">black</button>
+                            <button class="btn btn-md bg-grey-11 text-white">grey-11</button>
+                            <button class="btn btn-md bg-grey-22 text-white">grey-22</button>
+                            <button class="btn btn-md bg-grey-33 text-white">grey-33</button>
+                            <button class="btn btn-md bg-grey-44 text-white">grey-44</button>
+                            <button class="btn btn-md bg-grey-55 text-white">grey-55</button>
+                            <button class="btn btn-md bg-grey-66 text-white">grey-66</button>
+                            <button class="btn btn-md bg-grey-77">grey-77</button>
+                            <button class="btn btn-md bg-grey-88">grey-88</button>
+                            <button class="btn btn-md bg-grey-99">grey-99</button>
+
+                        </li>
+                    </ul>
+                    <ul class="mt-10">
+                        <li class="d-flex flex-wrap gap-10">
+                            <button class="btn btn-md bg-grey-bb">grey-bb</button>
+                            <button class="btn btn-md bg-grey-cc">grey-cc</button>
+                            <button class="btn btn-md bg-grey-dd">grey-dd</button>
+                            <button class="btn btn-md bg-grey-d1">grey-d1</button>
+                            <button class="btn btn-md bg-grey-e1">grey-e1</button>
+                            <button class="btn btn-md bg-grey-f1">grey-f1</button>
+                            <button class="btn btn-md bg-grey-f5">grey-f5</button>
+                            <button class="btn btn-md bg-grey-f7">grey-f7</button>
+                            <button class="btn btn-md bg-grey-fb">grey-fb</button>
+                            <button class="btn btn-md bg-grey-fb">white</button>
+
+
+
+                        </li>
+                    </ul>
+                    <h2 class="sub-tit2">모달</h2>
+                    <button class="ml-30 modal-show btn btn-mint" data-modal="modal-normal">모달 보기</button>
+                    <!-- <h5 class="sub-tit2">레이어 팝업</h5>
+                    <button class="ml-30 modal-show btn btn-mint" data-modal="modal-pop">모달 보기</button> -->
+                </div>
+                <div class="divTab" id="divTab3">
+
+
+                    <h2 class="sub-tit2">목록형 게시판</h2>
+
+                    <h3 class="list-title-arrow">검색박스 1</h3>
+
+
+                        <div class="page-tit-area clearfix">
+                            <div class="txt-area pr-10">
+                                <p>총
+                                    <span class="No">1901 </span>건</p>
+                                <p>|</p>
+                                <p>
+                                    <span class="No">1</span>/
+                                    <span class="No">191</span> 페이지</p>
+                            </div>
+                        </div>
+                        <div class="list-search-area default">
+                            <div class="max-w-960px d-flex flex-sm-row flex-column gap-10 gap-sm-20">
+                                <div class="d-flex flex-wrap flex-xxs-nowrap gap-10 flexbox-ac-js">
+
+                                        <input type="date" class="select-md calendar"/><span>~</span><input type="date" class="select-md calendar"/>
+
+                                </div>
+                                    <div class="search d-flex flex-xxs-row flex-column justify-content-md-end gap-10 w-100">
+                                        <label for="sort" class="blind">검색어 구분</label>
+                                        <select id="sort" name="sort" title="검색어 구분을 선택하세요" class="select select-md min-w-0 w-100 w-sm-50 w-md-25">
+                                            <option value="sort-title">제목</option>
+                                            <option value="sort-content">내용</option>
+                                        </select>
+                                        <label for="sort" class="blind">검색어 입력</label>
+                                        <input id="keyword" name="keyword" title="검색어를 입력하세요" type="text" value="" class="input-md min-w-0 w-100">
+                                        <button class="btn btn-md btn-dark" href="javascript:void(0);">검색</button>
+                                    </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <h3 class="list-title-arrow mt-30">검색박스 2</h3>
+                        <div class="page-tit-area clearfix">
+                                <div class="txt-area pr-10">
+                                    <p>총
+                                        <span class="No">1901 </span>건</p>
+                                    <p>|</p>
+                                    <p>
+                                        <span class="No">1</span>/
+                                        <span class="No">191</span> 페이지</p>
+                                </div>
+                        </div>
+                        <div class="list-search-area date flex-column flex-md-row pb-20 w-100">
+                        <div class="flexbox-ac-js w-100 gap-10 flex-wrap flex-xxs-nowrap">
+                            <input type="date" class="select-md calendar"/><span>~</span><input type="date" class="select-md calendar"/>
+                        </div>
+                        <div class="flexbox-as-js flexbox-md-ae-je w-100 gap-10 flex-wrap flex-xxs-nowrap">
+                            <select id="sc" name="sc" title="검색어 구분을 선택하세요" class="select select-md">
+                                <option value="ciTitle">제목</option>
+                                <option value="ciContent">내용</option>
+                            </select>
+                            <input id="sv" name="sv" title="검색어를 입력하세요" type="text" value="" class="input-md">
+                            <a class="btn btn-md btn-dark" href="javascript:void(0);">검색</a>
+                            <button class="btn btn-md btn-icon btn-no-text btn-refresh-g btn-pale" type="button">새로고침</button>
+                        </div>
+                    </div>
+                    <h3 class="list-title-arrow mt-30">검색박스 3</h3>
+                    <div class="page-tit-area clearfix">
+                        <div class="txt-area pr-10">
+                            <p>총
+                                <span class="No">1901 </span>건</p>
+                            <p>|</p>
+                            <p>
+                                <span class="No">1</span>/
+                                <span class="No">191</span> 페이지</p>
+                        </div>
+                </div>
+                    <div class="list-search-area default">
+
+                        <div class="flexbox-as-js gap-10 max-w-960px flex-no-wrap flex-column flex-sm-row">
+                                <select id="sc" name="sc" title="검색어 구분을 선택하세요" class="select select-md ">
+                                        <option value="year">연도 선택</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                    </select>
+                                    <div class="d-flex gap-10 w-100">
+                                        <input id="sv" name="sv" title="검색어를 입력하세요" type="text" value="" class="input-md w-100">
+                                        <a class="btn btn-md btn-dark " href="javascript:void(0);">검색</a>
+                                        <button class="btn btn-md btn-icon btn-no-text btn-refresh-g btn-pale ml-0" type="button" style="min-width:2.5rem">새로고침</button>
+                                    </div>
+                        </div>
+                </div>
+
+
+                        <!-- board list -->
+                        <div class="table for-compressed-list">
+                            <table>
+                                <caption>
+                                    공지사항 게시글 순번, 제목, 작성자, 작성일, 조회수
+                                </caption>
+                                <colgroup>
+                                    <col><col><col><col><col>
+                                </colgroup>
+                                <thead>
+                                    <tr class="">
+                                        <th scope="col">순번</th>
+                                        <th scope="col">제목</th>
+                                        <th scope="col">작성자</th>
+                                        <th scope="col">작성일</th>
+                                        <th scope="col">조회수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr class="captioned">
+                                            <td scope="row" class="count" aria-label="순번">641</td>
+                                            <td class="text-left list-title-area no-label" aria-label="제목">
+                                               <div class="d-flex gap-10"><i class="bi bi-pin-angle-fill text-white bg-mint-40"></i><a href="#" class="list-title">2025년 심리지원 프로그램 『마음공방-내 마음을 다듬는 시간』 10월 참여 대상자 모집 안내</a></div>
+                                             </td>
+                                            <td class="caption" aria-label="작성자">관리자</td>
+                                            <td class="caption white-space-nowrap" aria-label="작성일">2025-07-17</td>
+                                            <td class="caption" aria-label="조회수"><i class="fas fa-regular fa-eye"></i>27</td>
+                                        </tr>
+                                        <tr class="captioned">
+                                            <td scope="row" class="count" aria-label="순번">641</td>
+                                            <td class="text-left list-title-area no-label" aria-label="제목">
+                                               <div class="d-flex gap-10"><i class="text-white bg-mint-30 text-xxs text-white">new</i><a href="#" class="list-title">2025년 심리지원 프로그램 『마음공방-내 마음을 다듬는 시간』 10월 참여 대상자 모집 안내</a></div>
+                                             </td>
+                                            <td class="caption" aria-label="작성자">관리자</td>
+                                            <td class="caption white-space-nowrap" aria-label="작성일">2025-07-17</td>
+                                            <td class="caption" aria-label="조회수"><i class="fas fa-regular fa-eye"></i>27</td>
+                                        </tr>
+                                        <tr class="captioned">
+                                            <td scope="row" class="count" aria-label="순번">641</td>
+                                            <td class="text-left list-title-area no-label" aria-label="제목">
+                                               <div class="d-flex gap-10"><i class="text-white bg-mint-30 text-xxs text-white">new</i><a href="#" class="list-title">2025년 심리지원 프로그램 『마음공방-내 마음을 다듬는 시간』 10월 참여 대상자 모집 안내</a></div>
+                                             </td>
+                                            <td class="caption" aria-label="작성자">관리자</td>
+                                            <td class="caption white-space-nowrap" aria-label="작성일">2025-07-17</td>
+                                            <td class="caption" aria-label="조회수"><i class="fas fa-regular fa-eye"></i>27</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- button -->
+                        <div class="text-right mt-20">
+                            <a href="#" id="btnEdit" class="btn btn-md btn-icon btn-white btn-write">
+                                <span>글쓰기</span>
+                            </a>
+                            <a href="#" id="btnEdit" class="btn btn-md btn-icon btn-mint btn-write-w">
+                                <span>글쓰기</span>
+                            </a>
+                        </div>
+
+                        <!-- paging -->
+
+
+
+
+
+                    <h2 class="sub-tit2">갤러리형 게시판</h2>
+                    <div class="gallery-area row g-10 g-lg-20">
+                        <div class="col-md-6 col-lg-4">
+                            <a href="#" class="gallery-item cursor-pointer modal-show" data-modal="modal1">
+                                <div class="gallery-item-img">
+                                    <img src="./static/images/sub/pic_meditation_1.png" alt="">
+                                </div>
+                                <div class="gallery-item-caption">
+                                    <h3 class="text-md text-lg-lg">5분 호흡 명상</h3>
+                                    <p class="text-sm text-lg-default">호흡에 집중하며 스트레스를 완화하는 영상</p>
+                                </div>
+                                <div class="item-label-area mt-10 px-20 px-lg-30">
+                                    <span class="text-sm text-grey-99">2024.02.21</span>
+                                    <div class="d-flex gap-10">
+                                        <span class="item-label label-green">초급</span>
+                                        <span class="item-label label-violet">동영상</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <a href="#" class="gallery-item cursor-pointer modal-show" data-modal="modal2">
+                                <div class="gallery-item-img">
+                                    <img src="./static/images/sub/pic_meditation_2.png" alt="">
+                                </div>
+                                <div class="gallery-item-caption">
+                                    <h3 class="text-md text-lg-lg">마음 안정 ASMR</h3>
+                                    <p class="text-sm text-lg-default">자연의 소리로 마음을 진정시키는 ASMR</p>
+                                </div>
+                                <div class="item-label-area mt-10 px-20 px-lg-30">
+                                    <span class="text-sm text-grey-99">2024.02.21</span>
+                                    <div class="d-flex gap-10">
+                                        <span class="item-label label-green">초급</span>
+                                        <span class="item-label label-peach">음성</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <a href="#" class="gallery-item">
+                                <div class="gallery-item-img">
+                                    <img src="./static/images/sub/pic_meditation_3.png" alt="">
+                                </div>
+                                <div class="gallery-item-caption">
+                                    <h3 class="text-md text-lg-lg">10분 집중 명상</h3>
+                                    <p class="text-sm text-lg-default">마음의 평화를 찾는 집중 명상</p>
+                                </div>
+                                <div class="item-label-area mt-10 px-20 px-lg-30">
+                                    <span class="text-sm text-grey-99">2024.02.21</span>
+                                    <div class="d-flex gap-10">
+                                        <span class="item-label label-green">초급</span>
+                                        <span class="item-label label-sky">텍스트</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item cursor-pointer">
+                            <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                            </div>
+                            <div class="gallery-item-caption">
+                                <h1 class="text-lg">회복심리상담</h1>
+                                <div class="gallery-item-detail">
+                                    <dl>
+                                        <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                        <div><dt>정원</dt><dd>120명</dd></div>
+                                        <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="item-label-area flexbox-ac-je lign-self-end">
+                                    <span class="item-label label-orange">전연령</span>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item cursor-pointer">
+                            <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                            </div>
+                            <div class="gallery-item-caption">
+                                <h1 class="text-lg">가족 치유캠프</h1>
+                                <div class="gallery-item-detail">
+                                    <dl>
+                                        <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                        <div><dt>정원</dt><dd>120명</dd></div>
+                                        <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="item-label-area flexbox-ac-je lign-self-end">
+                                    <span class="item-label label-green">아동/가족</span>
+                            </div>
+                        </a></div>
+                    <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item cursor-pointer">
+                                <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                    <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                </div>
+                                <div class="gallery-item-caption">
+                                    <h1 class="text-lg">자아성취감 증진</h1>
+                                    <div class="gallery-item-detail">
+                                        <dl>
+                                            <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                            <div><dt>정원</dt><dd>120명</dd></div>
+                                            <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="item-label-area flexbox-ac-je lign-self-end">
+                                        <span class="item-label label-peach">중장년</span>
+                                </div>
+                        </a></div>
+
+                </div>
+
+                        <!-- paging -->
+
+                        <div class="paging-area">
+                                <div class="paging">
+                                    <a href="#" class="" title="처음 페이지로 이동">
+                                        <i class="fas fa-solid fa-angles-left text-grey-e1"></i>
+                                        <span class="blind">처음 페이지로 이동</span>
+                                    </a><a href="#" class="" title="이전 페이지로 이동">
+                                        <i class="fas fa-solid fa-angle-left"></i><span class="blind">이전 페이지로 이동</span>
+                                    </a><a href="#" class="on" title="1 페이지, 현재 페이지">
+                                        1<span class="blind">1 페이지, 현재 페이지</span>
+                                    </a><a href="#" class="" title="2 페이지">
+                                        2<span class="blind">2 페이지</span>
+                                    </a><a href="#" class="paging-pc-hide" title="모바일 페이지 축약">
+                                        ...<span class="blind">모바일 페이지 축약</span>
+                                    </a><a href="#" class="paging-m-hide" title="3 페이지">
+                                        3<span class="blind">3 페이지</span>
+                                    </a><a href="#" class="paging-m-hide" title="4 페이지">
+                                        4<span class="blind">4 페이지</span>
+                                    </a><a href="#" class="" title="5 페이지">
+                                        5<span class="blind">5 페이지</span>
+                                    </a><a href="#" class="" title="다음 페이지로 이동">
+                                        <i class="fas fa-solid fa-angle-right"></i><span class="blind">다음 페이지로 이동</span>
+                                    </a><a href="#" class="" title="마지막 페이지로 이동">
+                                        <i class="fas fa-solid fa-angles-right text-grey-e1"></i>
+                                        <span class="blind">마지막 페이지로 이동</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                    <h5 class="sub-tit2">게시글 조회</h5>
+
+
+
+
+                    <div class="table  for-col-list mb-20">
+                            <table>
+                                <caption>마음회복 사례 게시글 조회 : 제목, 글쓴이, 등록일, 조회수</caption>
+                                <col style="width:10%"><col><col style="width:10%"><col><col style="width:10%"><col>
+                                <thead class="title">
+                                    <th colspan="6" class="title">
+                                        <div class="flexbox-ac-jc flex-column flex-sm-row gap-10">
+                                                <span class="mr-5">학업과 불안감 극복</span>
+                                                <div><span class="item-label label-sky">학업/진로</span>
+                                                    <span class="item-label label-green">아동/가족</span></div>
+                                        </div>
+
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>글쓴이</th>
+                                        <td class="" aria-label="글쓴이">
+
+
+                                                    익명123
+
+
+                                            </td>
+                                            <th>등록일</th>
+                                            <td class="text-left " aria-label="등록일">2025-10-11</td>
+                                                <th>조회수</th>
+                                                <td class="text-left " aria-label="조회수">30</td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="6" class="text-left" aria-label="본문">
+                                                몇 달간 학업 부담과 친구들과의 갈등으로 무기력함을 느꼈습니다.<br>
+                                                등교가 힘들고, 하교 후에도 마음이 편치 않았습니다.<br>
+                                                    심리상담센터에서 상담을 받고, 매일 10분 명상, 하교 후 산책, 일과 기록 등 작은 습관을 실천했습니다. 처음에는 어렵지만 점차 감정 조절이 가능해지고 집중력도 회복되었습니다.<br>
+                                                    완전히 달라진 것은 아니지만, 마음이 한결 가벼워졌습니다.<br>
+                                                    ‘나만 힘든 게 아니다’라는 사실을 인정하고 도움을 받으니 다시 가벼운 마음으로 등교할 수 있게 되었습니다.<br>
+                                                    학교 생활에서 우울감을 느낀다면, 전문가 상담과 작은 실천부터 시작해보세요.
+                                                    <div class="flexbox-ac-js w-100 gap-20 pt-20">
+                                                            <div class="flexbox-ac-js gap-10" aria-label="좋아요 수">
+                                                                <img src="./static/images/sub/ico_gallery_heart.png" alt="좋아요">34</div>
+                                                            <div class="flexbox-ac-js gap-10" aria-label="댓글 수">
+                                                                <img src="./static/images/sub/ico_gallery_reply.png" alt="댓글">12</div>
+                                                        </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+
+                        </div>
+
+
+                      <div class="d-flex flex-column">
+
+
+                            <div class="flexbox-ac-js w-100 bg-grey-f7 rounded-10 px-20 px-md-40 py-20">
+                                <div class="flexbox-ac-js w-100 gap-10">
+                                    <label for="reply" class="blind">댓글 남기기</label>
+                                    <input id="reply" type="text" class="input-md w-100" placeholder="댓글을 남겨 주세요.">
+                                    <button class="btn btn-md btn-white">등록</button>
+                                </div>
+                            </div>
+
+                            <div class="table-reply-list flex-column w-100 mt-20 px-20 px-lg-30">
+                                <div class="table-reply-content px-0 px-lg-30">
+                                    <h1 class="ellipsis">익명123</h1>
+                                    <p>익명234님, 익명235님 고맙습니다. 우리 함께 힘내요!</p>
+                                    <span>2025. 12. 29</span>
+                                </div>
+                                <div class="table-reply-content px-0 px-lg-30">
+                                        <h1 class="ellipsis">익명123</h1>
+                                        <p>저도 그랬어요 글 보고 힘내고 가요!!</p>
+                                        <span>2025. 12. 29</span>
+                                    </div>
+                                    <div class="table-reply-content px-0 px-lg-30">
+                                            <h1 class="ellipsis">익명123</h1>
+                                            <p>우리 같이 이겨내 보아요!</p>
+                                            <span>2025. 12. 29</span>
+                                            <i class="fas fa-solid fa-times ml-20 table-reply-delete"></i>
+                                    </div>
+
+                            </div>
+
+
+                        </div>
+                        <hr class="mt-20">
+                        <div class="d-flex justify-content-end flex-wrap gap-10 pt-20">
+                                <button class="btn btn-md btn-white px-25">수정</button>
+                                <button class="btn btn-md btn-grey px-25">삭제</button>
+                                <a href="./ON-US-M2-S5-01.htm" class="btn btn-md btn-dark px-25">목록</a>
+                            </div>
+
+                            <div class="table related-list for-row-list mt-20">
+                                    <table>
+                                        <caption>이전글, 다음글 테이블</caption>
+                                        <colgroup>
+                                            <col style="width:15%">
+                                            <col style="width:auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" class="word-keep-all">이전글</th>
+                                                <td class="text-left">
+
+
+                                                    <a href="#">직장에서 겪었던 불안감 극복
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="word-keep-all">다음글</th>
+                                                <td class="text-left">
+                                                        <a href="#">사회에서 겪었던 불안감 극복</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                      <div class="box-paragraph box-opensource mt-20">
+                                        <img src="./static/images/common/logo-opensource.png" alt="OPEN: 출처표시 - 공공누리 공공저작물 자유이용허락" class="mr-20">본 저작물은 공공누리 「제 1유형:출처표시」조건에 따라 이용할 수 있습니다.
+                                          </div>
+
+
+                                          <h2 class="sub-tit2">테이블스타일</h2>
+
+                                          <h3 class="list-title-arrow">테이블스타일 1</h3>
+                                          <div class="table for-row-list text-left">
+                                              <table class="text-left">
+                                                  <caption>선천성 질환아 진료비 지원대상, 요건, 범위, 신청방법, 지원한도</caption>
+                                                  <colgroup>
+                                                      <col>
+                                                      <col>
+                                                  </colgroup>
+                                                  <tbody>
+                                                      <tr>
+                                                          <th scope="row" class=" ">지원대상</th>
+                                                          <td>
+
+                                                              <strong class="text-blue">지원신청일 기준 영아 주민등록지 용산구민</strong>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <th scope="row" class="">지원요건</th>
+                                                          <td class="">
+
+                                                              <ul>
+                                                                  <li>
+                                                                      <strong class="text-blue">출생 후 2년 이내에
+                                                                          <span class="text-red">선천성 이상아</span>(Q코드)으로 진단</strong>받고, 선천성 이상아 질환을 치료하기 위하여
+                                                                      <br>
+                                                                      <strong class="text-blue">출생 후 2년 이내에
+                                                                          <span class="text-red">입원</span>하여
+                                                                          <span class="text-red">수술</span>한 의료비</strong>
+                                                                  </li>
+                                                                  <li>(출생 후 2년 이내에 진단을 받았으나 2년 이내에 입원·수술을 할 수 없다는 의사소견이 있을 시, 2년을 경과하더라도 예외적으로 인정 가능
+                                                                      <br>2회 이상 입·퇴원하며 수술한 경우도 지원 가능하며, 의료비는 최종 수술이 끝난 후 일괄 신청)</li>
+
+                                                              </ul>
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <th scope="row" class="">지원대상</th>
+                                                          <td><strong class="text-blue">지원신청일 기준 영아 주민등록지 용산구민</strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <th scope="row" class="">지원범위</th>
+                                                          <td>요양기관(병원)에서 발급한 진료비 영수증에 기재된 급여 중
+                                                              <strong class="text-blue">전액 본인 부담금 및 비급여</strong> 진료비
+                                                          </td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table>
+                                          </div>
+
+                                          <h3 class="list-title-arrow">테이블스타일 2</h3>
+                                          <div class="table table-wrap mt-10">
+                                              <table>
+                                                  <caption>가구원 수, 소득기준, 직장가입자보험료, 지역가입자보험료, 혼합가입자보험료</caption>
+                                                  <colgroup>
+                                                      <col style="width:20%">
+                                                      <col style="width:20%">
+                                                      <col style="width:20%">
+                                                      <col style="width:20%">
+                                                      <col style="width:20%">
+                                                  </colgroup>
+                                                  <thead>
+                                                      <tr>
+                                                          <th scope="col">가구원수</th>
+                                                          <th scope="col">소득기준</th>
+                                                          <th scope="col">직장가입자보험료</th>
+                                                          <th scope="col">지역가입자보험료</th>
+                                                          <th scope="col">혼합가입자보험료</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                      <tr>
+                                                          <td>2인</td>
+                                                          <td>7,079,000
+
+                                                          </td>
+                                                          <td>252,203
+
+
+
+
+                                                          </td>
+                                                          <td>
+                                                              196,416
+
+                                                          </td>
+                                                          <td>256,716
+
+
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>3인</td>
+                                                          <td>
+                                                              9,046,000
+
+                                                          </td>
+                                                          <td>
+                                                              330,765
+
+
+
+
+                                                          </td>
+                                                          <td>
+
+                                                              292,298
+
+                                                          </td>
+                                                          <td>
+                                                              342,861
+
+
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>4인</td>
+                                                          <td>
+                                                              10,976,000
+
+                                                          </td>
+                                                          <td>
+                                                              407,092
+
+
+
+
+                                                          </td>
+                                                          <td>
+
+                                                              382,076
+
+                                                          </td>
+                                                          <td>
+                                                              431,294
+
+
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>5인</td>
+                                                          <td>
+                                                              12,795,000
+
+                                                          </td>
+                                                          <td>
+                                                              461,699
+
+
+
+
+                                                          </td>
+                                                          <td>
+
+                                                              447,279
+
+                                                          </td>
+                                                          <td>
+                                                              506,004
+
+
+                                                          </td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td>6인</td>
+                                                          <td>
+
+                                                              14,517,000
+                                                          </td>
+                                                          <td>
+
+                                                              552,230
+
+
+
+                                                          </td>
+                                                          <td>
+
+
+                                                              545,970
+                                                          </td>
+                                                          <td>
+
+                                                              599,810
+
+                                                          </td>
+                                                      </tr>
+                                                  </tbody>
+                                              </table>
+                                          </div>
+
+                </div>
+                <!-- content end -->
+
+
+                <!-- satisfaction -->
+                <script>
+                    jQuery(function ($) {
+                        $('.satisfactionBtn').on('click', function (e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            var menuId = $('#satisfactionForm [name=menuId]').val();
+                            if (!menuId || (menuId != GLOBAL.menuId)) {
+                                alert('페이지정보가 없어 평가를 처리할 수 없습니다.');
+                                return;
+                            }
+                            if ($('#satisfactionForm [name=satisScore]:checked').length < 1) {
+                                alert('평가점수를 선택해 주세요.');
+                                return;
+                            }
+                            var params = $('#satisfactionForm').serialize();
+                            $.ajax({
+                                url: $('#satisfactionForm').attr('action')
+                                , type: 'post'
+                                , data: params
+                                , context: this
+                            }).done(function (data) {
+                                if (data.success) {
+                                    alert('평가해주셔서 감사합니다.');
+                                    location.reload();
+                                } else {
+                                    alert(data.text);
+                                }
+                            }).fail(function () {
+                                alert('서버오류로 평가를 처리하지 못하였습니다.[failure]');
+                            });
+                        });
+                    });
+                </script>
+                <!-- satisfaction form -->
+                <div class="survey_box_wrap" id="survey">
+                    <div class="satisfaction">
+                        <!-- 담당부서 -->
+                        <!-- page manager info -->
+                        <div class="info-supply">
+                            <div class="ask">
+                                <p class="p1">
+                                    <span class="tag">담당부서</span>
+                                    <span>민원행정과 민원행정팀</span>
+                                </p>
+                                <p class="p2">
+                                    <span class="tag">문의</span>
+                                    <span>02-3425-5340</span>
+                                </p>
+                            </div>
+                            <div class="date">
+                                <p class="p3">
+                                    <span class="tag">최종수정일</span>
+                                    <span>
+                                        2023-11-15
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 만족도조사 -->
+                        <div class="satisfaction-check">
+                            <p class="p1">오늘의 기분 상태는 어떠십니까?</p>
+                            <form id="satisfactionForm" action="/web/newportal/satisfaction/api/evaluate" method="post">
+                                <input type="hidden" name="menuId" value="gdp_001_001_001_001" />
+                                <span>
+                                    <input type="radio" id="sat5" name="satisScore" value="5" checked="checked">
+                                    <label for="sat5">매우만족</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="sat4" name="satisScore" value="4">
+                                    <label for="sat4">만족</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="sat3" name="satisScore" value="3">
+                                    <label for="sat3">보통</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="sat2" name="satisScore" value="2">
+                                    <label for="sat2">불만</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="sat1" name="satisScore" value="1">
+                                    <label for="sat1">매우 불만족
+                                    </label>
+                                </span>
+                                <div class="btn-evaluate">
+                                    <a href="#" class="satisfactionBtn satisfaction-button">평가하기</a>
+                                </div>
+                                <div class="satisfaction-text clearfix mt-20">
+                                    <div class="opi2">
+                                        <input type="text" id="myopinion" name="myopinion" class="satisfaction-ipt-text" title="평가 입력" placeholder="여러분의 소중한 한마디를 부탁드립니다.">
+                                    </div>
+                                    <div class="opi3">
+                                        <a href="#" class="satisfaction-button">확인</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- <script>
+                                  function fn_FooterUri(uri) {
+                                      if (uri != "") {
+                                          window.open(uri, '', );
+                                      }
+                                  }
+                                  function selLazyTab() {
+                                      var sSelLazyTab = "";
+                                      if (sSelLazyTab != "") {
+                                          $("[data-target=" + sSelLazyTab + "]").trigger("click");
+                                      } else {
+                                          $("[data-target=divTab1]").trigger('click');
+                                      }
+                                  }
+                              </script> -->
+        </section>
+
+
+        <a href="#" class="btn-scroll">
+            <img src="./static/images/common/btn_scroll.png" alt="페이지 최상단으로 가기">
+        </a>
+    </main>
+
+    <div class="modal" id="modal-normal" tabindex="-1" role="dialog" aria-labelled-by="modaltitle">
+        <div class="modal-content modal-xs rounded-xs text-center shadow">
+            <h5 id="modal_title" class="text-md" tabindex="-1">신청이 완료되었습니다.</h5>
+            <p class="mt-10">승인여부는 마이페이지에서
+                <br>확인할 수 있습니다.</p>
+            <button class="btn btn-mint btn-md mt-20 px-30 modal-confirm">확인</button>
+
+            <button class="modal-close border-0 bg-transparent absolute mr-20 mt-20 top-0 right-0">
+                <!--<span class="blind">닫기</span><i class="fas fa-solid fa-times"></i>-->
+                <img src="./static/images/common/ico_close.png" alt="닫기">
+            </button>
+        </div>
+    </div>
+    <!-- <div class="modal" id="modal-pop" data-popup-key="event_today" tabindex="-1" role="dialog" aria-labelled-by="modaltitle">
+            <div class="modal-content modal-xs rounded-xs text-center shadow">
+                    <h5 id="modal_title" class="text-md" tabindex="-1">레이어팝업 예제</h5>
+                    <p class="mt-10">텍스트</p>
+
+
+                    <span class="checkbox-area"> <label><input type="checkbox" id="dont-show-again"> 오늘 하루 보지 않기</label></span>
+                    <button class="btn btn-mint btn-md mt-20 px-30 modal-confirm">닫기</button>
+
+                    <button class="modal-close border-0 bg-transparent absolute mr-20 mt-20 top-0 right-0">
+
+                        <img src="./static/images/common/ico_close.png" alt="닫기">
+                    </button>
+                </div>
+
+      </div> -->
+
+    <!-- .modal -->
+
+    <!-- footer-wrap -->
+    <footer class="footer" id="footer">
+
+    </footer>
+
+
+
+<script src="./static/js/common_swiper.js"></script><script src="./static/js/loader.js"></script><script>     document.addEventListener("DOMContentLoaded", () => {          async function includeHTML(id, filePath) {             const html = await fetch(filePath).then(res => res.text());             document.getElementById(id).innerHTML = html;         }          Promise.all([             includeHTML("header", "./header.htm"),includeHTML("survey", "./survey.htm"),             includeHTML("footer", "./footer.htm")         ]).then(() => {             const script1 = document.createElement("script");             script1.src = "./static/js/header.js";             document.body.appendChild(script1);              const script2 = document.createElement("script");             script2.src = "./static/js/footer.js";             document.body.appendChild(script2);         });     });     </script><script src="./static/js/header.js"></script><script src="./static/js/common.js"></script><script src="./static/js/cdn/swiper-bundle.min.js"></script></body>
+
+</html>
