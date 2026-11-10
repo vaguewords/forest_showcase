@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>용산 온마음숲</title><link rel=" shortcut icon " href="./static/images/common/favicon.ico"><link rel="icon" href="./static/images/common/favicon.ico">
+    <link rel="stylesheet" href="./static/css/cdn/fontawesome.css" />
+    <link rel="stylesheet" as="style" crossorigin href="./static/css/fonts.css"/>
+    <link rel="stylesheet" href="./static/css/cdn/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./static/css/scheme_root.css">
+    <link rel="stylesheet" href="./static/css/common.css"><link rel="stylesheet" href="./static/css/grid.css"><link rel="stylesheet" href="./static/css/spacing.css"><link rel="stylesheet" href="./static/css/contrast.css"><link rel="stylesheet" href="./static/css/scheme.css">
+    <link rel="stylesheet" href="./static/css/header.css"> <link rel="stylesheet" href="./static/css/footer.css">
+    <link rel="stylesheet" href="./static/css/sub.css"><link rel="stylesheet" href="./static/css/cdn/bootstrap-icons.min.css">
+
+    <script src="./static/js/cdn/jquery-3.4.1.min.js"></script>
+    <script src="./static/js/subTab.js"></script>
+
+
+
+
+
+    <!--캘린더-->
+    <link rel="stylesheet" href="./static/css/fullCalendar.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js'></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    locale: 'ko',  // 한글 로케일
+
+                    dayHeaderFormat: { weekday: 'short' }, // 요일 형식 간략히 표시 (예: 월, 화, 수, ...)
+                    dayCellContent: function (info) {
+                        // 날짜 셀에서 '일'을 제거하고 숫자만 표시
+                        info.dayNumberText = info.dayNumberText.replace('일', '');
+                        return info.dayNumberText;
+                    },
+
+                    timezone: 'local',
+                    initialView: 'dayGridMonth',
+                    fixedWeekCount: false,
+                    events: [
+                    { title: 'ordinary', start: '2025-11-10', eventType: 'reservation' },
+                        { title: 'ordinary', start: '2025-11-18', eventType: 'reservation' },
+                        { title: 'ordinary', start: '2025-11-20', eventType: 'reservation' },
+                    ],
+
+                    headerToolbar: {
+                        left: 'prev',       // 왼쪽에 이전/다음 버튼
+                        center: 'title',    // 중앙에 제목
+                        right: 'next',      // 오른쪽에 다음 버튼
+                    },
+
+                    contentHeight: 'auto', // 높이를 자동으로 설정
+                    eventDidMount: function (info) {
+                        // 이벤트 날짜 정보
+                        var eventDate = info.event.startStr.split('T')[0];  // 'YYYY-MM-DD' 형식
+
+                        // 해당 날짜 셀 찾기
+                        var dateCell = document.querySelector(`td[data-date="${eventDate}"]`);
+                        if (dateCell) {
+                            dateCell.classList.add('has-event');
+                        }
+                    },
+
+                    // 날짜 셀 갱신 및 커스텀 타이틀 갱신
+                    datesSet: function() {
+                        // 이벤트 표시 갱신
+                        var allEvents = calendar.getEvents();
+                        allEvents.forEach(function(event) {
+                            var eventDate = event.startStr.split('T')[0];
+                            var dateCell = document.querySelector(`td[data-date="${eventDate}"]`);
+                            if (dateCell) {
+                                dateCell.classList.add('has-event');
+                            }
+                        });
+
+                        // 커스텀 타이틀 업데이트 (calendar 인스턴스 전달)
+                        updateCalendarTitle(calendarEl, calendar);
+                    }
+                });
+
+                // 캘린더 렌더링
+                calendar.render();
+
+                // 커스텀 타이틀 갱신 함수
+                function updateCalendarTitle(calendarEl, calendar) {
+                    const titleEl = calendarEl.querySelector('.fc-toolbar-title');
+                    if (!titleEl) return;
+
+                    // FullCalendar의 현재 뷰 타이틀을 직접 가져옴 (예: "2025년 11월")
+                    const text = calendar.view.title;
+                    const match = text.match(/(\d{4})년\s*(\d{1,2})월/);
+                    if (!match) return;
+
+                    const [, year, month] = match;
+
+                    // 기존 자식 제거
+                    while (titleEl.firstChild) titleEl.removeChild(titleEl.firstChild);
+
+                    // 연도 부분
+                    const yearWrapper = document.createElement('span');
+                    yearWrapper.className = 'fc-title-year';
+                    const yearNum = document.createElement('span');
+                    yearNum.className = 'fc-title-year-num';
+                    yearNum.textContent = year;
+                    const yearSuffix = document.createElement('span');
+                    yearSuffix.className = 'fc-title-year-suffix';
+                    yearSuffix.textContent = '년';
+                    yearWrapper.appendChild(yearNum);
+                    yearWrapper.appendChild(yearSuffix);
+
+                    // 월 부분
+                    const monthWrapper = document.createElement('span');
+                    monthWrapper.className = 'fc-title-month';
+                    const monthNum = document.createElement('span');
+                    monthNum.className = 'fc-title-month-num';
+                    monthNum.textContent = month;
+                    const monthSuffix = document.createElement('span');
+                    monthSuffix.className = 'fc-title-month-suffix';
+                    monthSuffix.textContent = '월';
+                    monthWrapper.appendChild(monthNum);
+                    monthWrapper.appendChild(monthSuffix);
+
+                    // 추가 (연도 + 월)
+                    titleEl.appendChild(yearWrapper);
+                    titleEl.appendChild(document.createTextNode(' ')); // 연도와 월 사이 공백
+                    titleEl.appendChild(monthWrapper);
+                }
+            });
+            </script>
+
+
+
+</head>
+<body data-current-page="menu-3-6"><div id="loading" class="loading-overlay"><div class="loader"></div></div>
+<div id="skipNavigation" title="스킵 내비게이션">
+	<a href="#contents">본문 내용 바로가기</a>
+	<a href="#header">상단메뉴 가기</a>
+</div>
+
+<header class="header-top" id="header"></header>
+
+              <noscript>자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
+              <!-- wrap -->
+              <main class="container" id="contents">
+
+
+
+
+
+
+                          <!-- content-area -->
+                          <section class="content-area" id="content-area">
+                              <!-- subTitle-wrapper -->
+                              <div class="subTitle-wrapper new-style01">
+                                  <div class="subTitle-wrap">
+                                      <div class="local-navigation">
+                                          <ul class="navigation-list">
+                                              <li class="home">
+                                                  <img src="./static/images/sub/snb_home.png"
+                                                      alt="홈">
+                                              </li>
+                                              <li>
+                                                  <a href="#">내 마음 돌보기</a>
+                                              </li>
+                                              <li>
+                                                    <a href="#">일대일 심리상담 예약</a>
+                                                </li>
+                                          </ul>
+                                      </div>
+                                      <div class="title-box">
+                                            <div class="title-box-con">
+                                                <h2 class="title">
+                                                        일대일 심리상담 예약
+                                          </h2>
+
+                                          <div class="title-btn">
+                                              <ul>
+                                                  <li class="scrap">
+                                                      <a href="#"
+                                                          >
+                                                          <img src="./static/images/common/ico_scrap.png" alt="스크랩하기">
+                                                      </a>
+                                                  </li>
+                                              </ul>
+
+                                          </div>
+                                        </div>
+                                          <p>전문 상담사와 마주 앉아 오직 당신만의 이야기에 집중해요.
+
+
+                                            </p>
+
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <!-- //subTitle-wrapper -->
+
+
+
+
+                              <article class="sub_wrap">
+
+
+                                <p class="mb-20">On마음숲은 따뜻할 온(On), 편안한 마음을 나누는 숲으로, 한 명의 마음이라도 더 건강해지도록 다양한 심리적 문제를 겪고 계신 분들에게 심리 상담을 제공합니다.
+                                </p>
+                                <div class="select_tab">
+                                        <ul class="sub-tabl1">
+                                                <li>
+                                                    <a href="./ON-US-M4-S3-01.htm">
+                                                        빠른 상담예약
+                                                    </a>
+                                                </li>
+                                                <li class="on">
+                                                        <a href="./ON-US-M4-S3-02.htm" title="선택됨">
+                                                            일대일 심리상담 예약
+                                                        </a>
+                                                    </li>
+                                                        <li>
+                                                            <a href="./ON-US-M4-S3-03.htm">
+                                                                마음돌봄 프로그램 신청
+                                                            </a>
+                                                        </li>
+                                            </ul>
+                                </div>
+
+                                <div class="divTab text-center flexbox-center flex-column gap-10 py-40">
+                                    <img src="./static/images/common/logo.png" alt="on마음숲">
+                                        <h2 class="text-md mb-40">On마음숲 홈페이지 회원만 이용 가능합니다.</h2>
+                                    <a href="./ON-US-M5-S1-01.htm" class="btn btn-lg btn-mint px-70 rounded">회원가입(분기1)</a>
+                                    <button class="btn btn-lg btn-mint px-70 rounded modal-show" data-modal="join">회원가입(분기2)</button>
+                                </div>
+
+                                      <!-- content end -->
+
+
+                                  <!-- satisfaction -->
+                                  <script>
+                                      jQuery(function ($) {
+                                          $('.satisfactionBtn').on('click', function (e) {
+                                              e.preventDefault();
+                                              e.stopPropagation();
+                                              var menuId = $('#satisfactionForm [name=menuId]').val();
+                                              if (!menuId || (menuId != GLOBAL.menuId)) {
+                                                  alert('페이지정보가 없어 평가를 처리할 수 없습니다.');
+                                                  return;
+                                              }
+                                              if ($('#satisfactionForm [name=satisScore]:checked').length < 1) {
+                                                  alert('평가점수를 선택해 주세요.');
+                                                  return;
+                                              }
+                                              var params = $('#satisfactionForm').serialize();
+                                              $.ajax({
+                                                  url: $('#satisfactionForm').attr('action')
+                                                  , type: 'post'
+                                                  , data: params
+                                                  , context: this
+                                              }).done(function (data) {
+                                                  if (data.success) {
+                                                      alert('평가해주셔서 감사합니다.');
+                                                      location.reload();
+                                                  } else {
+                                                      alert(data.text);
+                                                  }
+                                              }).fail(function () {
+                                                  alert('서버오류로 평가를 처리하지 못하였습니다.[failure]');
+                                              });
+                                          });
+                                      });
+                                  </script>
+                                  <!-- satisfaction form -->
+                                  <div class="survey_box_wrap" id="survey">
+
+                                  </div>
+                              </article>
+                              <!-- <script>
+                                  function fn_FooterUri(uri) {
+                                      if (uri != "") {
+                                          window.open(uri, '', );
+                                      }
+                                  }
+                                  function selLazyTab() {
+                                      var sSelLazyTab = "";
+                                      if (sSelLazyTab != "") {
+                                          $("[data-target=" + sSelLazyTab + "]").trigger("click");
+                                      } else {
+                                          $("[data-target=divTab1]").trigger('click');
+                                      }
+                                  }
+                              </script> -->
+                          </section>
+
+
+                  <a href="#" class="btn-scroll">
+                      <img src="./static/images/common/btn_scroll.png" alt="페이지 최상단으로 가기">
+                  </a>
+                </main>
+                <div class="modal" id="join" tabindex="-1" role="dialog" aria-labelled-by="modaltitle">
+                        <div class="modal-content modal-sm rounded-xs text-center align-items-center shadow">
+
+                            <p>
+                                    비회원 상태로 로그인되어 있습니다.<br>
+                                    로그아웃 후 회원가입 페이지로
+                                    이동하시겠습니까?
+
+                            </p>
+                            <div class="w-100 flexbox-center flex-row gap-10 mt-15">
+                                    <a href="./ON-US-M5-S1-01.htm" class="btn btn-mint btn-md">확인</a>
+                                    <button class="btn btn-grey btn-md modal-close">취소</button>
+                            </div>
+
+
+
+                          <button class="modal-close border-0 bg-transparent absolute mr-20 mt-20 top-0 right-0">
+                            <!--<span class="blind">닫기</span><i class="fas fa-solid fa-times"></i>-->
+                            <img src="./static/images/common/ico_close.png" alt="닫기">
+                          </button> <!-- .modal-close -->
+                        </div> <!-- .modal-content -->
+                      </div> <!-- .modal -->
+        <!-- footer-wrap -->
+        <footer class="footer" id="footer"></footer><script src="./static/js/modal.js"></script>
+
+        <script src="./static/js/common_swiper.js"></script><script src="./static/js/loader.js"></script><script>     document.addEventListener("DOMContentLoaded", () => {          async function includeHTML(id, filePath) {             const html = await fetch(filePath).then(res => res.text());             document.getElementById(id).innerHTML = html;         }          Promise.all([             includeHTML("header", "./header.htm"),includeHTML("survey", "./survey.htm"),             includeHTML("footer", "./footer.htm")         ]).then(() => {             const script1 = document.createElement("script");             script1.src = "./static/js/header.js";             document.body.appendChild(script1);              const script2 = document.createElement("script");             script2.src = "./static/js/footer.js";             document.body.appendChild(script2);         });     });     </script><script src="./static/js/header.js"></script><script src="./static/js/common.js"></script><script src="./static/js/cdn/swiper-bundle.min.js"></script></body>
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>용산 온마음숲</title><link rel=" shortcut icon " href="./static/images/common/favicon.ico"><link rel="icon" href="./static/images/common/favicon.ico">
+    <link rel="stylesheet" href="./static/css/cdn/fontawesome.css"/>
+    <link rel="stylesheet" as="style" crossorigi
+        href="./static/css/fonts.css" />
+    <link rel="stylesheet" href="./static/css/cdn/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./static/css/scheme_root.css">
+    <link rel="stylesheet" href="./static/css/common.css"><link rel="stylesheet" href="./static/css/grid.css"><link rel="stylesheet" href="./static/css/spacing.css"><link rel="stylesheet" href="./static/css/contrast.css"><link rel="stylesheet" href="./static/css/scheme.css">
+    <link rel="stylesheet" href="./static/css/header.css">
+    <link rel="stylesheet" href="./static/css/footer.css">
+    <link rel="stylesheet" href="./static/css/sub.css"><link rel="stylesheet" href="./static/css/cdn/bootstrap-icons.min.css">
+
+
+    <script src="./static/js/cdn/jquery-3.4.1.min.js"></script>
+    <script src="./static/js/subTab.js"></script>
+
+
+
+
+
+    <!--캘린더-->
+    <link rel="stylesheet" href="./static/css/fullCalendar.css">
+    <script src='./static/js/cdn/fullCalendar.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: 'ko',  // 한글 로케일
+        dayHeaderFormat: { weekday: 'short' }, // 요일 형식 간략히 표시 (예: 월, 화, 수, ...)
+        dayCellContent: function (info) {
+            // 날짜 셀에서 '일'을 제거하고 숫자만 표시
+            info.dayNumberText = info.dayNumberText.replace('일', '');
+            return info.dayNumberText;
+        },
+
+        timezone: 'local',
+        initialView: 'dayGridMonth',
+        fixedWeekCount: false,
+        events: [
+            { title: 'ordinary', start: '2026-13-01', eventType: 'ordinary' },
+            { title: 'ordinary', start: '2026-03-02', eventType: 'ordinary' },
+            { title: 'Good', start: '2026-03-03', eventType: 'good' },
+            { title: 'Very Good', start: '2026-03-04', eventType: 'verygood' },
+            { title: 'Bad', start: '2026-03-08', eventType: 'bad' },
+            { title: 'Good', start: '2026-03-15', eventType: 'good' },
+            { title: 'Ordinary', start: '2026-03-20', eventType: 'ordinary' },
+            { title: 'Bad', start: '2026-03-26', eventType: 'bad' },
+            { title: 'Very Good', start: '2026-04-01', eventType: 'verygood' },
+            { title: 'Bad', start: '2026-04-02', eventType: 'bad' },
+            { title: 'Good', start: '2026-04-04', eventType: 'good' }
+        ],
+
+        headerToolbar: {
+            left: 'prev',       // 왼쪽에 이전/다음 버튼
+            center: 'title',    // 중앙에 제목
+            right: 'next',       // 오른쪽에 오늘 버튼
+        },
+
+        contentHeight: 'auto', // 기본적으로 높이를 자동으로 설정
+        eventDidMount: function (info) {
+            // 이벤트 날짜 정보
+            var eventDate = info.event.startStr.split('T')[0];  // 날짜 형식 'YYYY-MM-DD'
+
+            // 해당 날짜 셀 찾기
+            var dateCell = document.querySelector(`td[data-date="${eventDate}"]`);
+            if (dateCell) {
+                // has-event 클래스 추가
+                dateCell.classList.add('has-event');
+
+                // 이벤트 타입에 따라 적절한 feel 클래스를 추가
+                var eventType = info.event.extendedProps.eventType;
+                if (eventType === 'verygood') {
+                    dateCell.classList.add('feel_5');
+                } else if (eventType === 'good') {
+                    dateCell.classList.add('feel_4');
+                } else if (eventType === 'ordinary') {
+                    dateCell.classList.add('feel_3');
+                } else if (eventType === 'bad') {
+                    dateCell.classList.add('feel_2');
+                } else if (eventType === 'verybad') {
+                    dateCell.classList.add('feel_1');
+                }
+
+                // 'blind' 클래스를 추가하여 텍스트 숨기기
+                var eventText = dateCell.querySelector('.fc-event-title'); // 텍스트가 들어있는 부분
+                if (eventText) {
+                    var eventDate = dateCell.querySelector('.fc-daygrid-day-number');
+                    eventDate.classList.add('blind');
+                    eventText.classList.add('blind');
+                }
+            }
+        },
+
+        // 날짜 셀 갱신 시 feel_* 클래스와 has-event 클래스 재적용 (datesSet 이벤트 활용)
+        datesSet: function() {
+            // 날짜 셀에 대한 feel_* 클래스와 has-event 클래스 다시 적용
+            var allEvents = calendar.getEvents();  // 모든 이벤트 정보를 가져옴
+            allEvents.forEach(function(event) {
+                var eventDate = event.startStr.split('T')[0];  // 'YYYY-MM-DD' 형식
+                var dateCell = document.querySelector(`td[data-date="${eventDate}"]`);
+
+                if (dateCell) {
+                    // has-event 클래스 추가
+                    dateCell.classList.add('has-event');
+
+                    // 이벤트 타입에 맞는 feel 클래스를 추가
+                    var eventType = event.extendedProps.eventType;
+                    dateCell.classList.remove('feel_5', 'feel_4', 'feel_3', 'feel_2', 'feel_1'); // 기존 feel_* 클래스 제거
+                    if (eventType === 'verygood') {
+                        dateCell.classList.add('feel_5');
+                    } else if (eventType === 'good') {
+                        dateCell.classList.add('feel_4');
+                    } else if (eventType === 'ordinary') {
+                        dateCell.classList.add('feel_3');
+                    } else if (eventType === 'bad') {
+                        dateCell.classList.add('feel_2');
+                    } else if (eventType === 'verybad') {
+                        dateCell.classList.add('feel_1');
+                    }
+                }
+            });
+        }
+    });
+
+    // 캘린더 렌더링
+    calendar.render();
+});
+
+    </script>
+
+    <!-- 차트 -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+</head>
+
+<body data-current-page="menu-5-1"><div id="loading" class="loading-overlay"><div class="loader"></div></div>
+<div id="skipNavigation" title="스킵 내비게이션">
+	<a href="#contents">본문 내용 바로가기</a>
+	<a href="#header">상단메뉴 가기</a>
+</div>
+
+
+
+<header class="header-top" id="header"></header>
+
+    <noscript>자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
+    <!-- wrap -->
+    <main class="container" id="contents">
+
+
+
+
+
+
+        <!-- content-area -->
+        <section class="content-area" id="content-area">
+            <!-- subTitle-wrapper -->
+            <div class="subTitle-wrapper new-style01">
+                <div class="subTitle-wrap">
+                    <div class="local-navigation">
+                        <ul class="navigation-list">
+                            <li class="home">
+                                <img src="./static/images/sub/snb_home.png"
+                                    alt="홈">
+                            </li>
+                            <li>
+                                <a href="#">마이페이지</a>
+                            </li>
+                            <li>
+                                <a href="#">대시보드</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="title-box">
+                            <div class="title-box-con">
+                                <h2 class="title">
+                                        대시보드
+                          </h2>
+
+                          <!-- <div class="title-btn">
+                              <ul>
+                                  <li class="scrap">
+                                      <a href="#"
+                                          >
+                                          <img src="./static/images/common/ico_scrap.png" alt="스크랩하기">
+                                      </a>
+                                  </li>
+                              </ul>
+
+                          </div> -->
+                        </div>
+                          <p>내가 걸어온 마음 치유의 여정을 따뜻한 그래프로 살펴봅니다.
+                            </p>
+
+                      </div>
+                </div>
+
+            </div>
+            <!-- //subTitle-wrapper -->
+
+
+
+
+            <article class="sub_wrap">
+
+                <div class="my-page d-flex flex-md-row flex-column w-100 gap-10 gap-lg-30">
+                    <div class="my-page-feeling d-flex flex-column bg-mint-5 gap-20 px-20 py-40 px-md-40 rounded-20">
+                        <h2 class="text-lg ml-10">오늘의 기분</h2>
+                        <div class="w-100 rounded-10 shadow bg-white py-20 text-center">
+                            <h3 class="text-md mb-20">오늘의 기분을 체크해주세요!</h3>
+                            <ul class="my-page-feeling-icon-area gap-5 gap-xs-10">
+
+                                <label for="feel5-great" class="blind">매우좋음</label>
+                                <input type="checkbox" id="feel5-great" class="my-page-feeling-icon feel5" checked>
+                                <label for="feel4-good" class="blind">좋음</label>
+                                <input type="checkbox" id="feel4-good" class="my-page-feeling-icon feel4" checked>
+                                <label for="feel3-ordinary" class="blind">보통</label>
+                                <input type="checkbox" id="feel3-ordinary" class="my-page-feeling-icon feel3" checked>
+                                <label for="feel2-bad" class="blind">나쁨</label>
+                                <input type="checkbox" id="feel2-bad" class="my-page-feeling-icon feel2">
+                                <label for="feel1-worse" class="blind">매우나쁨</label>
+                                <input type="checkbox" id="feel1-worse" class="my-page-feeling-icon feel1">
+                            </ul>
+                        </div>
+                        <div class="my-page-calendar w-100 rounded-10 shadow bg-white px-20 px-lg-40 py-20">
+                            <div id='calendar'></div>
+                        </div>
+                        <div
+                            class="w-100 d-flex flex-column align-items-center justify-content-center my-page-chart w-100 rounded-10 shadow bg-white px-20 py-20 text-center">
+                            <h3 class="text-md mb-20">이 달 기분 흐름</h3>
+                            <h4 class="blind">차트의 '5', '4', '3', '2', '1'은 순서대로 '매우좋음', '좋음', '보통', '나쁨', '매우나쁨'의 기분을 의미합니다.
+                            </h4>
+                            <div class="relative w-100">
+                                <ul class="absolute top-0 left-0 d-flex flex-column w-100" aria-hidden="true">
+                                    <li class="border-bottom border-grey-f6 w-100 d-flex align-items-center justify-content-start"
+                                        style="height:38px"><img src="./static/images/sub/ico_mypage_feel_5.png" alt=""
+                                            style="width:30px"></li>
+                                    <li class="border-bottom border-grey-f6 w-100 d-flex align-items-center justify-content-start"
+                                        style="height:38px"><img src="./static/images/sub/ico_mypage_feel_4.png" alt=""
+                                            style="width:30px"></li>
+                                    <li class="border-bottom border-grey-f6 w-100 d-flex align-items-center justify-content-start"
+                                        style="height:38px"><img src="./static/images/sub/ico_mypage_feel_3.png" alt=""
+                                            style="width:30px"></li>
+                                    <li class="border-bottom border-grey-f6 w-100 d-flex align-items-center justify-content-start"
+                                        style="height:38px"><img src="./static/images/sub/ico_mypage_feel_2.png" alt=""
+                                            style="width:30px"></li>
+                                    <li class="border-bottom border-grey-f6 w-100 d-flex align-items-center justify-content-start"
+                                        style="height:38px"><img src="./static/images/sub/ico_mypage_feel_1.png" alt=""
+                                            style="width:30px"></li>
+                                </ul>
+                                <div id="my_data_monthly" class="relative" style="z-index:1"></div>
+                                <script>
+                                        // -----------------------------
+                                        // 기본 margin 설정
+                                        // -----------------------------
+                                        var margin = { top: 19, right: 30, bottom: 40, left: 60 };
+
+                                        // 부모 div 선택
+                                        var parentDiv = d3.select("#my_data_monthly");
+
+                                        // 기본 width, height 계산
+                                        var width = parentDiv.node().clientWidth - margin.left - margin.right;
+                                        var height = 150;
+
+                                        // svg 생성
+                                        var svg = parentDiv.append("svg")
+                                            .attr("width", "100%")
+                                            .attr("height", height + margin.top + margin.bottom)
+                                            .append("g")
+                                            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                                        // 예시 데이터
+                                        var data = [
+                                            { date: "2026-03-01", value: 1 },
+                                            { date: "2026-03-08", value: 5 },
+                                            { date: "2026-03-15", value: 2 },
+                                            { date: "2026-03-23", value: 4 },
+                                            { date: "2026-03-30", value: 3 },
+                                        ];
+
+                                        // 날짜 문자열을 Date 객체로 변환
+                                        data.forEach(function (d) {
+                                            d.date = d3.timeParse("%Y-%m-%d")(d.date);
+                                        });
+
+                                        // -----------------------------
+                                        // 반응형 차트 업데이트 함수
+                                        // -----------------------------
+                                        function updateChart() {
+
+                                            // ✅ 화면 크기에 따라 margin 값 변경
+                                            if (window.innerWidth <= 340) {
+                                                margin = { top: 19, right: 20, bottom: 40, left: 40 }; // 좁은 화면용
+                                            } else {
+                                                margin = { top: 19, right: 30, bottom: 40, left: 60 }; // 기본 여백
+                                            }
+
+                                            // 너비 재계산
+                                            width = parentDiv.node().clientWidth - margin.left - margin.right;
+
+                                            // svg 초기화
+                                            svg.selectAll("*").remove();
+
+                                            // X축 스케일 설정
+                                            var x = d3.scaleTime()
+                                                .domain(d3.extent(data, function (d) { return d.date; }))
+                                                .range([0, width]);
+
+                                            // X축 설정
+                                            var xAxis = d3.axisBottom(x)
+                                                .ticks(5)
+                                                .tickFormat(d3.timeFormat("%-m/%-d"))
+                                                .tickValues(data.map(function (d) { return d.date; }));
+
+                                            // X축 추가
+                                            var xAxisGroup = svg.append("g")
+                                                .attr("transform", "translate(0," + (height + 20) + ")")
+                                                .call(xAxis);
+
+                                            // X축 스타일 조정
+                                            xAxisGroup.select(".domain").style("stroke", "#ffffff");
+                                            xAxisGroup.selectAll(".tick line").style("stroke", "#ffffff");
+                                            xAxisGroup.selectAll(".tick text")
+                                                .style("font-size", "0.8rem")
+                                                .style("fill", "#333");
+
+                                            // Y축 스케일 설정
+                                            var y = d3.scaleLinear()
+                                                .domain([1, 5])
+                                                .range([height, 0]);
+
+                                            // Y축 추가
+                                            var yAxisGroup = svg.append("g")
+                                                .call(d3.axisLeft(y).ticks(5).tickSize(10).tickPadding(8));
+
+                                            // Y축 스타일 조정
+                                            yAxisGroup.select(".domain").style("stroke", "#ffffff");
+                                            yAxisGroup.selectAll(".tick line").style("stroke", "#ffffff");
+                                            yAxisGroup.selectAll("text").style("fill", "transparent");
+
+                                            // 선 추가
+                                            svg.append("path")
+                                                .datum(data)
+                                                .attr("fill", "none")
+                                                .attr("stroke", "#333333")
+                                                .attr("stroke-width", 1.5)
+                                                .attr("d", d3.line()
+                                                    .x(function (d) { return x(d.date); })
+                                                    .y(function (d) { return y(d.value); })
+                                                );
+
+                                            // 점 추가
+                                            svg.append("g")
+                                                .selectAll("dot")
+                                                .data(data)
+                                                .enter()
+                                                .append("circle")
+                                                .attr("cx", function (d) { return x(d.date); })
+                                                .attr("cy", function (d) { return y(d.value); })
+                                                .attr("r", 5)
+                                                .attr("fill", "#69b3a2");
+
+                                            // ✅ margin이 바뀌었으므로 transform도 다시 적용
+                                            svg.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                                        }
+
+                                        // 초기 렌더링
+                                        updateChart();
+
+                                        // 창 크기 변경 시 반응형 업데이트
+                                        window.onresize = updateChart;
+                                    </script>
+
+
+                            </div>
+
+                       </div>
+                    </div>
+                    <div class="my-page-activity d-flex flex-column w-100 gap-30">
+
+                        <div
+                            class="d-flex flex-column rounded-20 px-20 py-40 px-md-30 border-2px border-grey-f6">
+                            <h3 class="text-lg mb-10 ml-10 ml-lg-20">진행중인 챌린지</h3>
+                            <div class="common-swiper-area">
+                                    <h4 class="text-md mb-10 ml-10 ml-lg-20">나 혼자 챌린지 진행 상황</h4>
+
+                                    <div class="swiper common-swiper challenge-progress first-swiper">
+                                    <div class="common-swiper-info challenge">
+                                            <h5 class="common-swiper-title">챌린지 제목 2줄을 넘기지 않도록 말줄임표 처리 2줄을 넘기지 않도록</h5>
+                                            <div class="swiper-pagination text-sm"></div>
+                                            <div class="common-swiper-button-area">
+                                                    <button class="first-swiper-button prev"><span class="blind">이전</span></button >
+                                                    <button class="first-swiper-button play"><span class="blind">재생</span></button>
+                                                    <button class="first-swiper-button stop"><span class="blind">정지</span></button>
+                                                    <button class="first-swiper-button next"><span class="blind">다음</span></button>
+                                            </div></div>
+                                            <div class="swiper-wrapper">
+                                              <a href="./ON-US-M2-S3-03.htm" class="swiper-slide">
+
+                                                <div class="w-100 flexbox-ac-jc text-center gap-35">
+                                                        <div class="progress-bar bg-grey-f5">
+                                                            <div class="progress bg-gradient-mint" style="width:78%"></div>
+                                                        </div>
+                                                        <h6 class="text-xl font-w-700 ">78<small>%</small></h6>
+                                                    </div>
+                                            </a>
+                                            <a href="./ON-US-M2-S3-03.htm" class="swiper-slide">
+
+                                                <div class="w-100 flexbox-ac-jc text-center gap-35">
+                                                        <div class="progress-bar bg-grey-f5">
+                                                            <div class="progress bg-gradient-mint" style="width:38%;"></div>
+                                                        </div>
+                                                        <h6 class="text-xl font-w-700 ">38<small>%</small></h6>
+                                                    </div>
+                                            </a>
+                                            <a href="./ON-US-M2-S3-03.htm" class="swiper-slide">
+
+                                                <div class="w-100 flexbox-ac-jc text-center gap-35">
+                                                        <div class="progress-bar bg-grey-f5">
+                                                            <div class="progress bg-gradient-mint" style="width:20%;"></div>
+                                                        </div>
+                                                        <h6 class="text-xl font-w-700 ">20<small>%</small></h6>
+                                                    </div>
+                                            </a>
+
+                                            </div>
+
+
+                                          </div>
+                            </div>
+
+                            <div class="common-swiper-area mt-30">
+                                    <h4 class="text-md mb-10 ml-10 ml-lg-20">함께 도전 챌린지 진행 상황</h4>
+
+                                    <div class="swiper common-swiper challenge-progress second-swiper">
+                                    <div class="common-swiper-info challenge">
+                                            <h5 class="common-swiper-title">챌린지 제목</h5>
+                                            <div class="swiper-pagination text-sm"></div>
+                                            <div class="common-swiper-button-area">
+                                                    <button class="second-swiper-button prev"><span class="blind">이전</span></button >
+                                                    <button class="second-swiper-button play"><span class="blind">재생</span></button>
+                                                    <button class="second-swiper-button stop"><span class="blind">정지</span></button>
+                                                    <button class="second-swiper-button next"><span class="blind">다음</span></button>
+                                            </div></div>
+                                            <div class="swiper-wrapper">
+                                              <a href="./ON-US-M2-S3-03.htm" class="swiper-slide">
+
+                                                <div class="w-100 flexbox-ac-jc text-center gap-35">
+                                                        <div class="progress-bar bg-grey-f5">
+                                                            <div class="progress bg-gradient-sky" style="width:12%"></div>
+                                                        </div>
+                                                        <h6 class="text-xl font-w-700 ">12<small>%</small></h6>
+                                                    </div>
+                                            </a>
+                                            <a href="./ON-US-M2-S3-03.htm" class="swiper-slide">
+
+                                                <div class="w-100 flexbox-ac-jc text-center gap-35">
+                                                        <div class="progress-bar bg-grey-f5">
+                                                            <div class="progress bg-gradient-blue" style="width:38%;"></div>
+                                                        </div>
+                                                        <h6 class="text-xl font-w-700 ">38<small>%</small></h6>
+                                                    </div>
+                                            </a>
+                                            <a href="./ON-US-M2-S3-03.htm" class="swiper-slide">
+
+                                                <div class="w-100 flexbox-ac-jc text-center gap-35">
+                                                        <div class="progress-bar bg-grey-f5">
+                                                            <div class="progress bg-gradient-blue" style="width:20%;"></div>
+                                                        </div>
+                                                        <h6 class="text-xl font-w-700 ">20<small>%</small></h6>
+                                                    </div>
+                                            </a>
+
+                                            </div>
+
+
+                                          </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column rounded-20 bg-white px-20 py-40 px-md-40 border-2px border-grey-f6 h-100">
+                            <h3 class="text-lg mb-20 ml-10">최근 활동 이력</h3>
+                            <div class="d-flex flex-column gap-15 gap-lg-25">
+                                    <div class="activity-box d-flex flex-column flex-xs-row flex-md-column flex-lg-row gap-15 gap-lg-25">
+                                            <a href="./ON-US-M6-S4-01.htm" class="activity-card ">
+                                                <div class="activity-img"><img src="./static/images/sub/ico_mypage_activity_1.png" alt=""></div>
+                                                <div class="activity-text">
+                                                <h4 class=" text-md lh-1250 mb-10">내 마음 일기장</h4>
+                                                <div class="btn btn-mint-outline btn-xs px-20">1일 전</div>
+                                                </div>
+                                                </a>
+
+                                            <a href="./ON-US-M2-S3-01.htm" class="activity-card ">
+                                                <div class="activity-img"><img src="./static/images/sub/ico_mypage_activity_2.png" alt=""></div>
+                                                <div class="activity-text">
+                                                    <h4 class=" text-md lh-1250 mb-10">나 혼자 챌린지</h4>
+                                                    <div class="btn btn-mint-outline btn-xs px-20">1개월 전</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="activity-box d-flex flex-column flex-xs-row flex-md-column flex-lg-row gap-15 gap-lg-25">
+                                            <a href="./ON-US-M2-S4-01.htm" class="activity-card ">
+                                                <div class="activity-img"><img src="./static/images/sub/ico_mypage_activity_3.png" alt=""></div>
+                                                <div class="activity-text">
+                                                    <h4 class=" text-md lh-1250 mb-10">함께 도전 챌린지</h4>
+                                                    <div class="btn btn-mint-outline btn-xs px-20">시작해 보세요</div>
+                                                </div>
+                                            </a>
+                                            <a href="./ON-US-M2-S5-01.htm" class="activity-card ">
+                                                <div class="activity-img"><img src="./static/images/sub/ico_mypage_activity_4.png" alt=""></div>
+                                                <div class="activity-text">
+                                                <h4 class=" text-md lh-1250 mb-10">마음회복 사례</h4>
+                                                <div class="btn btn-mint-outline btn-xs px-20">시작해 보세요</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- content start -->
+
+
+                <!-- content end -->
+                <div class="survey_box_wrap" id="survey"></div>
+            </article>
+
+        </section>
+
+
+        <a href="#" class="btn-scroll">
+            <img src="./static/images/common/btn_scroll.png" alt="페이지 최상단으로 가기">
+        </a>
+    </main>
+    <!-- footer-wrap -->
+    <footer class="footer" id="footer"></footer><script src="./static/js/modal.js"></script>
+
+
+<script src="./static/js/common_swiper.js"></script><script src="./static/js/loader.js"></script><script>     document.addEventListener("DOMContentLoaded", () => {          async function includeHTML(id, filePath) {             const html = await fetch(filePath).then(res => res.text());             document.getElementById(id).innerHTML = html;         }          Promise.all([             includeHTML("header", "./header.htm"),includeHTML("survey", "./survey.htm"),             includeHTML("footer", "./footer.htm")         ]).then(() => {             const script1 = document.createElement("script");             script1.src = "./static/js/header.js";             document.body.appendChild(script1);              const script2 = document.createElement("script");             script2.src = "./static/js/footer.js";             document.body.appendChild(script2);         });     });     </script><script src="./static/js/header.js"></script><script src="./static/js/common.js"></script><script src="./static/js/cdn/swiper-bundle.min.js"></script></body>
+
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>용산 온마음숲</title><link rel=" shortcut icon " href="./static/images/common/favicon.ico"><link rel="icon" href="./static/images/common/favicon.ico">
+    <link rel="stylesheet" href="./static/css/cdn/fontawesome.css" />
+    <link rel="stylesheet" as="style" crossorigin href="./static/css/fonts.css"/>
+    <link rel="stylesheet" href="./static/css/cdn/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./static/css/scheme_root.css">
+    <link rel="stylesheet" href="./static/css/common.css"><link rel="stylesheet" href="./static/css/grid.css"><link rel="stylesheet" href="./static/css/spacing.css"><link rel="stylesheet" href="./static/css/contrast.css"><link rel="stylesheet" href="./static/css/scheme.css">
+    <link rel="stylesheet" href="./static/css/header.css"> <link rel="stylesheet" href="./static/css/footer.css">
+    <link rel="stylesheet" href="./static/css/sub.css"><link rel="stylesheet" href="./static/css/cdn/bootstrap-icons.min.css">
+
+    <script src="./static/js/cdn/jquery-3.4.1.min.js"></script>
+    <script src="./static/js/subTab.js"></script>
+
+
+
+
+
+    <!--캘린더-->
+    <link rel="stylesheet" href="./static/css/fullCalendar.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js'></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    locale: 'ko',  // 한글 로케일
+
+                    dayHeaderFormat: { weekday: 'short' }, // 요일 형식 간략히 표시 (예: 월, 화, 수, ...)
+                    dayCellContent: function (info) {
+                        // 날짜 셀에서 '일'을 제거하고 숫자만 표시
+                        info.dayNumberText = info.dayNumberText.replace('일', '');
+                        return info.dayNumberText;
+                    },
+
+                    timezone: 'local',
+                    initialView: 'dayGridMonth',
+                    fixedWeekCount: false,
+                    events: [
+                    { title: 'ordinary', start: '2025-11-10', eventType: 'reservation' },
+                        { title: 'ordinary', start: '2025-11-18', eventType: 'reservation' },
+                        { title: 'ordinary', start: '2025-11-20', eventType: 'reservation' },
+                    ],
+
+                    headerToolbar: {
+                        left: 'prev',       // 왼쪽에 이전/다음 버튼
+                        center: 'title',    // 중앙에 제목
+                        right: 'next',      // 오른쪽에 다음 버튼
+                    },
+
+                    contentHeight: 'auto', // 높이를 자동으로 설정
+                    eventDidMount: function (info) {
+                        // 이벤트 날짜 정보
+                        var eventDate = info.event.startStr.split('T')[0];  // 'YYYY-MM-DD' 형식
+
+                        // 해당 날짜 셀 찾기
+                        var dateCell = document.querySelector(`td[data-date="${eventDate}"]`);
+                        if (dateCell) {
+                            dateCell.classList.add('has-event');
+                        }
+                    },
+
+                    // 날짜 셀 갱신 및 커스텀 타이틀 갱신
+                    datesSet: function() {
+                        // 이벤트 표시 갱신
+                        var allEvents = calendar.getEvents();
+                        allEvents.forEach(function(event) {
+                            var eventDate = event.startStr.split('T')[0];
+                            var dateCell = document.querySelector(`td[data-date="${eventDate}"]`);
+                            if (dateCell) {
+                                dateCell.classList.add('has-event');
+                            }
+                        });
+
+                        // 커스텀 타이틀 업데이트 (calendar 인스턴스 전달)
+                        updateCalendarTitle(calendarEl, calendar);
+                    }
+                });
+
+                // 캘린더 렌더링
+                calendar.render();
+
+                // 커스텀 타이틀 갱신 함수
+                function updateCalendarTitle(calendarEl, calendar) {
+                    const titleEl = calendarEl.querySelector('.fc-toolbar-title');
+                    if (!titleEl) return;
+
+                    // FullCalendar의 현재 뷰 타이틀을 직접 가져옴 (예: "2025년 11월")
+                    const text = calendar.view.title;
+                    const match = text.match(/(\d{4})년\s*(\d{1,2})월/);
+                    if (!match) return;
+
+                    const [, year, month] = match;
+
+                    // 기존 자식 제거
+                    while (titleEl.firstChild) titleEl.removeChild(titleEl.firstChild);
+
+                    // 연도 부분
+                    const yearWrapper = document.createElement('span');
+                    yearWrapper.className = 'fc-title-year';
+                    const yearNum = document.createElement('span');
+                    yearNum.className = 'fc-title-year-num';
+                    yearNum.textContent = year;
+                    const yearSuffix = document.createElement('span');
+                    yearSuffix.className = 'fc-title-year-suffix';
+                    yearSuffix.textContent = '년';
+                    yearWrapper.appendChild(yearNum);
+                    yearWrapper.appendChild(yearSuffix);
+
+                    // 월 부분
+                    const monthWrapper = document.createElement('span');
+                    monthWrapper.className = 'fc-title-month';
+                    const monthNum = document.createElement('span');
+                    monthNum.className = 'fc-title-month-num';
+                    monthNum.textContent = month;
+                    const monthSuffix = document.createElement('span');
+                    monthSuffix.className = 'fc-title-month-suffix';
+                    monthSuffix.textContent = '월';
+                    monthWrapper.appendChild(monthNum);
+                    monthWrapper.appendChild(monthSuffix);
+
+                    // 추가 (연도 + 월)
+                    titleEl.appendChild(yearWrapper);
+                    titleEl.appendChild(document.createTextNode(' ')); // 연도와 월 사이 공백
+                    titleEl.appendChild(monthWrapper);
+                }
+            });
+            </script>
+
+
+
+</head>
+<body data-current-page="menu-3-5"><div id="loading" class="loading-overlay"><div class="loader"></div></div>
+<div id="skipNavigation" title="스킵 내비게이션">
+	<a href="#contents">본문 내용 바로가기</a>
+	<a href="#header">상단메뉴 가기</a>
+</div>
+
+<header class="header-top" id="header"></header>
+
+              <noscript>자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
+              <!-- wrap -->
+              <main class="container" id="contents">
+
+
+
+
+
+
+                          <!-- content-area -->
+                          <section class="content-area" id="content-area">
+                              <!-- subTitle-wrapper -->
+                              <div class="subTitle-wrapper new-style01">
+                                  <div class="subTitle-wrap">
+                                      <div class="local-navigation">
+                                          <ul class="navigation-list">
+                                              <li class="home">
+                                                  <img src="./static/images/sub/snb_home.png"
+                                                      alt="홈">
+                                              </li>
+                                              <li>
+                                                  <a href="#">내 마음 돌보기</a>
+                                              </li>
+                                              <li>
+                                                  <a href="#">마음돌봄 프로그램 신청</a>
+                                              </li>
+
+                                          </ul>
+                                      </div>
+                                      <div class="title-box">
+                                            <div class="title-box-con">
+                                                <h2 class="title">
+                                                        마음돌봄 프로그램 신청
+                                          </h2>
+
+                                          <div class="title-btn">
+                                              <ul>
+                                                  <li class="scrap d-none">
+                                                      <a href="#"
+                                                          >
+                                                          <img src="./static/images/common/ico_scrap.png" alt="스크랩하기">
+                                                      </a>
+                                                  </li>
+                                              </ul>
+
+                                          </div>
+                                        </div>
+                                          <p>회복과 치유를 돕는 다양한 프로그램에 참여를 신청합니다.
+
+
+                                            </p>
+
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <!-- //subTitle-wrapper -->
+
+
+
+
+                              <article class="sub_wrap">
+
+
+                                <p class="mb-20">On마음숲은 따뜻할 온(On), 편안한 마음을 나누는 숲으로, 한 명의 마음이라도 더 건강해지도록 다양한 심리적 문제를 겪고 계신 분들에게 심리 상담을 제공합니다.
+                                </p>
+                                <div class="select_tab">
+                                        <ul class="sub-tabl1">
+                                                <li>
+                                                    <a href="./ON-US-M4-S3-01.htm">
+                                                        빠른예약
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                        <a href="./ON-US-M4-S3-02.htm">
+                                                            일대일 심리상담 예약
+                                                        </a>
+                                                    </li>
+                                                        <li class="on">
+                                                            <a href="./ON-US-M4-S3-03.htm" title="선택됨">
+                                                                마음돌봄 프로그램 신청
+                                                            </a>
+                                                        </li>
+                                            </ul>
+                                </div>
+
+                                <div class="divTab">
+
+                                        <h2 class="sub-tit2">회복심리상담</h2>
+                                        <div class="counsel-view-area px-0">
+                                                <!-- <div class="counsel-view-title ">
+                                                      <h3 class="text-xl font-w-600">회복심리상담</h3>
+                                                      <span class="item-label label-orange">전연령</span>
+                                                </div> -->
+
+                                                <div class="counsel-view flex-column flex-md-row">
+                                                  <div class="counsel-view-img">
+                                                      <img src="./static/images/sub/pic_counsel_detail_1.png" alt="">
+                                                  </div>
+
+                                                      <dl class="counsel-view-detail pl-0 pl-md-20 pl-lg-35">
+                                                          <div class="counsel-view-detail-item w-lg-50 w-100"><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                          <div class="counsel-view-detail-item w-lg-50 w-100"><dt>시간</dt><dd>10:00~16:00</dd></div>
+                                                          <div class="counsel-view-detail-item w-lg-50 w-100"><dt>정원</dt><dd>120명</dd></div>
+                                                          <div class="counsel-view-detail-item w-lg-50 w-100"><dt>수강신청방법</dt><dd>온라인(선착순)</dd></div>
+                                                          <div class="counsel-view-detail-item w-lg-50 w-100"><dt>수강료</dt><dd>무료</dd></div>
+                                                          <div class="counsel-view-detail-item w-lg-50 w-100"><dt>운영장소</dt><dd>용산구청 1층</dd></div>
+                                                          <div class="counsel-view-detail-item w-lg-50 w-100"><dt>참여대상</dt><dd>용산구에 주소를 둔 자</dd></div>
+                                                          <!-- <div class="counsel-view-detail-item w-lg-50 w-100"><dt>지역제한</dt><dd>서울시</dd></div> -->
+                                                          <div class="counsel-view-detail-item w-lg-50 w-100"><dt>신청기간</dt><dd>2025. 08. 18 ~ 2025. 09. 17</dd></div>
+                                                          <div class="counsel-view-detail-item w-100"><dt>설명</dt><dd class="rounded-10 bg-grey-f7 px-20 py-20">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 공개하지 아니한 회의내용의 공표에 관하여는 법률이 정하는 바에 의한다. 모든 국민은 직업선택의 자유를 가진다.</dd></div>
+                                                      </dl>
+
+                                                </div>
+                                              </div>
+
+                                        <!-- <h2 class="sub-tit2">시간 선택</h2>
+                                        <p class="pl-10">
+                                            상담을 희망하는 시간과 요일을 골라주세요.
+                                            </p>
+                                            <div class="reservation-page-area rounded-20 border-1px border-grey-e1 d-flex flex-column flex-sm-row bg-grey-f7 mt-35">
+                                                    <div class="reservation-page-calendar px-20 px-md-40 py-40 px-lg-70 ov-hidden bg-white" >
+                                                            <div id='calendar'></div>
+                                                    </div>
+                                                    <div class="reservation-page-condition py-30 px-30 px-lg-60">
+                                                        <h3 class="list-title-arrow font-w-700 ml-0">시간 선택</h3>
+                                                        <div class="reservation-page-condition-area mr-n-15">
+                                                            <div class="w-100 row g-15">
+                                                                <div class="col-md-4 col-xxs-6"><div class="reservation-item">
+                                                                <input type="radio"  name="time" id="time-period-1">
+                                                                <label for="time-period-1" class="">09:00-12:00</label>
+                                                            </div></div>
+                                                                <div class="col-md-4 col-xxs-6"><div class="reservation-item">
+                                                                    <input type="radio"  name="time" id="time-period-2">
+                                                                    <label for="time-period-2" class="">12:00-15:00</label>
+                                                                </div></div>
+                                                                <div class="col-md-4 col-xxs-6"><div class="reservation-item">
+                                                                        <input type="radio"  name="time" id="time-period-3">
+                                                                        <label for="time-period-3" class="">15:00-18:00</label>
+                                                                    </div></div>
+                                                                <div class="col-md-4 col-xxs-6"><div class="reservation-item">
+                                                                            <input type="radio"  name="time" id="time-period-4">
+                                                                            <label for="time-period-4" class="">18:00-21:00</label>
+                                                                        </div></div>
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                    </div>
+                                            </div> -->
+
+
+                                            <h2 class="sub-tit2 pt-15 pt-md-0">정보 입력</h2>
+                                            <div class="table  for-row-list text-left">
+                                                <table>
+                                                    <caption>신청자 이름, 성별, 생년, 주소, 연락처</caption>
+                                                    <colgroup>
+                                                        <col style="width: 25%;">
+                                                        <col style="width: auto">
+                                                    </colgroup>
+                                                    <thead class="blind">
+                                                        <tr>
+                                                            <th scope="col">회원정보 항목</th>
+                                                            <th scole="col">내용</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row" class=" font-w-600">신청자<span class="text-red ml-0 ml-md-5 text-left">*</span>
+                                                            </th>
+                                                            <td>
+                                                                홍길동
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row" class=" font-w-600">성별<span class="text-red ml-0 ml-md-5 text-left">*</span>
+                                                                </th>
+                                                            <td class="">
+
+                                                                <span class="radio-area">
+                                                                    <input type="radio" id="gender-m" name="gender" value="m"
+                                                                        checked disabled>
+                                                                    <label for="gender-m" >남</label>
+                                                                </span>
+                                                                <span class="radio-area">
+                                                                    <input type="radio" id="gender-f" name="gender" value="f" disabled>
+                                                                    <label for="gender-f">여</label>
+                                                                </span>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row" class=" font-w-600"><label for="birth-year">생년<span class="text-red ml-0 ml-md-5 text-left">*</span></label></th>
+                                                                <td><input type="number" id="birth-year" class="" disabled></td>
+                                                            </tr>
+                                                        <tr>
+                                                            <th scope="row" class=" font-w-600">주소<span class="text-red ml-0 ml-md-5 text-left">*</span>
+
+                                                           </th>
+                                                            <td>
+
+
+                                                                <div class="flexbox-ac-js w-100">
+
+                                                                    <div class="flexbox-ac-js w-sm-75 w-100 gap-10">
+
+                                                                                    <span class="radio-area">
+                                                                                        <input type="radio" id="region-ys" name="region" value="region-ys" checked="checked">
+                                                                                        <label for="region-ys">용산구민</label>
+                                                                                    </span>
+
+                                                                                <select name="" id="" class="select w-100">
+                                                                                        <option value=""></option>
+                                                                                    </select>
+
+                                                                    </div>
+                                                                </div>
+                                                                <hr class="my-15">
+                                                                <div class="w-100 flexbox-ac-js gap-10  w-sm-75 w-100">
+                                                                        <span class="radio-area white-space-nowrap mr-20">
+                                                                            <input type="radio" id="region-non-ys" name="region" value="region-non-ys">
+                                                                            <label for="region-non-ys">용산구민 아님</label>
+                                                                        </span>
+                                                                        <select name="" id="" class="select w-100">
+                                                                                <option value=""></option>
+                                                                            </select>
+
+                                                                    </div>
+
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row" class=" font-w-600"> <label for="input-mobile-1">연락처<span class="text-red ml-0 ml-md-5 text-left">*</span>
+
+                                                                </label></th>
+                                                            <td class="text-left">
+
+                                                                <div class="flexbox-ac-js flex-column flex-md-row w-100 w-sm-75 w-100 gap-10">
+                                                                    <div class="flexbox-ac-jc gap-10 w-100">
+                                                                        <input type="text" class="input-sm w-100" id="input-mobile-1" value="010" >-
+                                                                        <input type="text" class="input-sm w-100" id="input-mobile-2" value="****" >-
+                                                                        <input type="text" class="input-sm w-100" id="input-mobile-3" value="****" >
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                            <!-- <h3 class="text-lg mt-40 mb-20">개인정보 수집·이용 동의</h3> -->
+                                            <div class="box-paragraph box-grey box-scroll px-10 py-25 px-md-20 custom-scroll text-sm mt-40">
+                                                    <h6 class="list-title-arrow ml-5 mt-0">개인정보처리방침<small class="text-sm text-red font-w-400 pl-5">(필수사항)</small></h6>
+                                                    <p class="ml-15">
+                                                            On마음숲 홈페이지는 개인정보관련법률(개인정보법, 정보통신망 이용촉진 및 정보보호에 관한 법률)을 준수하며 수집된 개인정보는 해당 서비스 외에 다른 용도로 절대 사용하지 않으며 사용자 요청 시 바로 삭제할 수 있습니다. 아래와 같이 귀하의 개인정보를 수집 및 이용합니다.
+                                                    </p>
+                                                    <ol class="sub-list-ol ml-15">
+                                                        <li>수집•이용목적 : 빠른 예약을 위한 이름 및 연락처 수집</li>
+                                                        <li>필수 수집 개인정보
+                                                            <ul>
+                                                                <li>필수항목 : 이름, 연락처(휴대폰번호)</li>
+                                                                <li>선택항목 : 없음</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>개인정보 보유 및 이용기간 : 1개월 </li>
+
+                                                    </ol>
+                                                    <p class="ml-15">※동의 거부 시 불이익에 관한 사항 : 수집•이용에 관한 사항의 동의를 거부할 때에는 서비스 이용이 제한될 수 있습니다.</p>
+                                            </div>
+
+                                             <div>
+
+                                                <div class="d-flex w-100 justify-content-between flex-column flex-sm-row gap-10 mt-20 px-md-20">
+                                                    <div class=""><span>위와 같이 개인정보를 수집•이용하는 데에 동의하십니까?</span></div>
+
+                                                        <div>
+                                                                <span class="radio-area w-auto min-w-auto">
+                                                                        <input type="radio" id="answer-yes" name="used" value="yes"
+                                                                            checked="checked">
+                                                                        <label for="answer-yes">동의</label>
+                                                                    </span>
+                                                                    <span class="radio-area w-auto min-w-auto">
+                                                                        <input type="radio" id="answer-no" name="used" value="no">
+                                                                        <label for="answer-no">미동의</label>
+                                                                    </span>
+                                                        </div>
+                                                </div>
+
+
+
+
+                                                </div>
+                                                <div class="flexbox-ac-jc w-100 mt-30 mb-60 gap-10"><button class="btn btn-lg btn-mint rounded px-70 modal-show" data-modal="modal-book">예약하기</button></div>
+                                                <button class="btn btn-sm btn-pale rounded modal-show mr-5" data-modal="modal-full">횟수초과 모달</button><button class="btn btn-sm btn-pale rounded modal-show" data-modal="modal-lack">정보미입력 모달</button>
+                                </div>
+
+                                      <!-- content end -->
+
+
+                                  <!-- satisfaction -->
+                                  <script>
+                                      jQuery(function ($) {
+                                          $('.satisfactionBtn').on('click', function (e) {
+                                              e.preventDefault();
+                                              e.stopPropagation();
+                                              var menuId = $('#satisfactionForm [name=menuId]').val();
+                                              if (!menuId || (menuId != GLOBAL.menuId)) {
+                                                  alert('페이지정보가 없어 평가를 처리할 수 없습니다.');
+                                                  return;
+                                              }
+                                              if ($('#satisfactionForm [name=satisScore]:checked').length < 1) {
+                                                  alert('평가점수를 선택해 주세요.');
+                                                  return;
+                                              }
+                                              var params = $('#satisfactionForm').serialize();
+                                              $.ajax({
+                                                  url: $('#satisfactionForm').attr('action')
+                                                  , type: 'post'
+                                                  , data: params
+                                                  , context: this
+                                              }).done(function (data) {
+                                                  if (data.success) {
+                                                      alert('평가해주셔서 감사합니다.');
+                                                      location.reload();
+                                                  } else {
+                                                      alert(data.text);
+                                                  }
+                                              }).fail(function () {
+                                                  alert('서버오류로 평가를 처리하지 못하였습니다.[failure]');
+                                              });
+                                          });
+                                      });
+                                  </script>
+                                  <!-- satisfaction form -->
+                                  <div class="survey_box_wrap" id="survey">
+                                      <div class="satisfaction">
+                                          <!-- 담당부서 -->
+                                          <!-- page manager info -->
+                                          <div class="info-supply">
+                                              <div class="ask">
+                                                  <p class="p1">
+                                                      <span class="tag">담당부서</span>
+                                                      <span>민원행정과 민원행정팀</span>
+                                                  </p>
+                                                  <p class="p2">
+                                                      <span class="tag">문의</span>
+                                                      <span>02-3425-5340</span>
+                                                  </p>
+                                              </div>
+                                              <div class="date">
+                                                  <p class="p3">
+                                                      <span class="tag">최종수정일</span>
+                                                      <span>
+                                                          2023-11-15
+                                                      </span>
+                                                  </p>
+                                              </div>
+                                          </div>
+                                          <!-- 만족도조사 -->
+                                          <div class="satisfaction-check">
+                                              <p class="p1">오늘의 기분 상태는 어떠십니까?</p>
+                                              <form id="satisfactionForm" action="/web/newportal/satisfaction/api/evaluate" method="post">
+                                                  <input type="hidden" name="menuId" value="gdp_001_001_001_001" />
+                                                  <span>
+                                                      <input type="radio" id="sat5" name="satisScore" value="5" checked="checked">
+                                                      <label for="sat5">매우만족</label>
+                                                  </span>
+                                                  <span>
+                                                      <input type="radio" id="sat4" name="satisScore" value="4">
+                                                      <label for="sat4">만족</label>
+                                                  </span>
+                                                  <span>
+                                                      <input type="radio" id="sat3" name="satisScore" value="3">
+                                                      <label for="sat3">보통</label>
+                                                  </span>
+                                                  <span>
+                                                      <input type="radio" id="sat2" name="satisScore" value="2">
+                                                      <label for="sat2">불만</label>
+                                                  </span>
+                                                  <span>
+                                                      <input type="radio" id="sat1" name="satisScore" value="1">
+                                                      <label for="sat1">매우 불만족
+                                                      </label>
+                                                  </span>
+                                                  <div class="btn-evaluate">
+                                                      <a href="#" class="satisfactionBtn satisfaction-button">평가하기</a>
+                                                  </div>
+                                                  <div class="satisfaction-text clearfix mt-20">
+                                                      <div class="opi2">
+                                                          <input type="text" id="myopinion" name="myopinion" class="satisfaction-ipt-text"
+                                                              title="평가 입력" placeholder="여러분의 소중한 한마디를 부탁드립니다.">
+                                                      </div>
+                                                      <div class="opi3">
+                                                          <a href="#" class="satisfaction-button">확인</a>
+                                                      </div>
+                                                  </div>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </article>
+                              <!-- <script>
+                                  function fn_FooterUri(uri) {
+                                      if (uri != "") {
+                                          window.open(uri, '', );
+                                      }
+                                  }
+                                  function selLazyTab() {
+                                      var sSelLazyTab = "";
+                                      if (sSelLazyTab != "") {
+                                          $("[data-target=" + sSelLazyTab + "]").trigger("click");
+                                      } else {
+                                          $("[data-target=divTab1]").trigger('click');
+                                      }
+                                  }
+                              </script> -->
+                          </section>
+
+
+                  <a href="#" class="btn-scroll">
+                      <img src="./static/images/common/btn_scroll.png" alt="페이지 최상단으로 가기">
+                  </a>
+                </main>
+                <div class="modal" id="modal-book" tabindex="-1" role="dialog" aria-labelled-by="modaltitle">
+                        <div class="modal-content modal-sm rounded-xs text-center align-items-center shadow">
+                            <h5 id="modal_title" class="text-md" tabindex="-1">예약이 완료되었습니다.</h5>
+
+                            <div class="w-100 flexbox-center flex-row gap-10 mt-15">
+                                    <button class="btn btn-mint btn-md modal-close" aria-label="계속하기">확인</button>
+                            </div>
+
+
+
+                          <button class="modal-close border-0 bg-transparent absolute mr-20 mt-20 top-0 right-0">
+                            <!--<span class="blind">닫기</span><i class="fas fa-solid fa-times"></i>-->
+                            <img src="./static/images/common/ico_close.png" alt="닫기">
+                          </button> <!-- .modal-close -->
+                        </div> <!-- .modal-content -->
+                      </div> <!-- .modal -->
+                      <div class="modal" id="modal-full" tabindex="-1" role="dialog" aria-labelled-by="modaltitle">
+                            <div class="modal-content modal-sm rounded-xs text-center align-items-center shadow">
+                                <h5 id="modal_title" class="text-md" tabindex="-1">동일한 프로그램 예약 신청은<br>
+                                        1일 1회만 가능합니다.
+                                        </h5>
+
+                                <div class="w-100 flexbox-center flex-row gap-10 mt-15">
+                                        <button class="btn btn-mint btn-md modal-close" aria-label="계속하기">확인</button>
+                                </div>
+
+
+
+                              <button class="modal-close border-0 bg-transparent absolute mr-20 mt-20 top-0 right-0">
+                                <!--<span class="blind">닫기</span><i class="fas fa-solid fa-times"></i>-->
+                                <img src="./static/images/common/ico_close.png" alt="닫기">
+                              </button> <!-- .modal-close -->
+                            </div> <!-- .modal-content -->
+                          </div> <!-- .modal -->
+                          <div class="modal" id="modal-lack" tabindex="-1" role="dialog" aria-labelled-by="modaltitle">
+                                <div class="modal-content modal-sm rounded-xs text-center align-items-center shadow">
+                                    <h5 id="modal_title" class="text-md" tabindex="-1">예약에 필요한 정보를 입력해주세요.
+                                            </h5>
+
+                                    <div class="w-100 flexbox-center flex-row gap-10 mt-15">
+                                            <button class="btn btn-mint btn-md modal-close" aria-label="계속하기">확인</button>
+                                    </div>
+
+
+
+                                  <button class="modal-close border-0 bg-transparent absolute mr-20 mt-20 top-0 right-0">
+                                    <!--<span class="blind">닫기</span><i class="fas fa-solid fa-times"></i>-->
+                                    <img src="./static/images/common/ico_close.png" alt="닫기">
+                                  </button> <!-- .modal-close -->
+                                </div> <!-- .modal-content -->
+                              </div> <!-- .modal -->
+        <!-- footer-wrap -->
+        <footer class="footer" id="footer"></footer><script src="./static/js/modal.js"></script>
+
+        <script src="./static/js/common_swiper.js"></script><script src="./static/js/loader.js"></script><script>     document.addEventListener("DOMContentLoaded", () => {          async function includeHTML(id, filePath) {             const html = await fetch(filePath).then(res => res.text());             document.getElementById(id).innerHTML = html;         }          Promise.all([             includeHTML("header", "./header.htm"),includeHTML("survey", "./survey.htm"),             includeHTML("footer", "./footer.htm")         ]).then(() => {             const script1 = document.createElement("script");             script1.src = "./static/js/header.js";             document.body.appendChild(script1);              const script2 = document.createElement("script");             script2.src = "./static/js/footer.js";             document.body.appendChild(script2);         });     });     </script><script src="./static/js/header.js"></script><script src="./static/js/common.js"></script><script src="./static/js/cdn/swiper-bundle.min.js"></script>
+
+        <script>
+                document.querySelector('.modal-show').addEventListener('click', function () {
+                    const agreeValue = document.querySelector('input[name="used"]:checked').value;
+                    const modalTitle = document.getElementById('modal_title');
+
+                    if (agreeValue === 'yes') {
+                        modalTitle.textContent = '예약이 완료되었습니다.';
+                    } else {
+                        modalTitle.textContent = '개인정보 수집·이용 동의가 필요합니다.';
+                    }
+                });
+                </script>
+    </body>
+</html>

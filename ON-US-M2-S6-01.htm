@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>용산 온마음숲</title><link rel=" shortcut icon " href="./static/images/common/favicon.ico"><link rel="icon" href="./static/images/common/favicon.ico">
+    <link rel="stylesheet" href="./static/css/cdn/fontawesome.css" />
+    <link rel="stylesheet" as="style" crossorigin href="./static/css/fonts.css"/>
+    <link rel="stylesheet" href="./static/css/cdn/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./static/css/scheme_root.css">
+    <link rel="stylesheet" href="./static/css/common.css"><link rel="stylesheet" href="./static/css/grid.css"><link rel="stylesheet" href="./static/css/spacing.css"><link rel="stylesheet" href="./static/css/contrast.css"><link rel="stylesheet" href="./static/css/scheme.css">
+    <link rel="stylesheet" href="./static/css/header.css"> <link rel="stylesheet" href="./static/css/footer.css">
+    <link rel="stylesheet" href="./static/css/sub.css"><link rel="stylesheet" href="./static/css/cdn/bootstrap-icons.min.css">
+
+    <script src="./static/js/cdn/jquery-3.4.1.min.js"></script>
+    <script src="./static/js/subTab.js"></script>
+
+
+
+
+
+</head>
+<body data-current-page="menu-2-1"><div id="loading" class="loading-overlay"><div class="loader"></div></div>
+<div id="skipNavigation" title="스킵 내비게이션">
+	<a href="#contents">본문 내용 바로가기</a>
+	<a href="#header">상단메뉴 가기</a>
+</div>
+
+<header class="header-top" id="header"></header>
+
+              <noscript>자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
+              <!-- wrap -->
+              <main class="container" id="contents">
+
+
+
+
+
+
+                          <!-- content-area -->
+                          <section class="content-area" id="content-area">
+                              <!-- subTitle-wrapper -->
+                              <div class="subTitle-wrapper new-style01">
+                                  <div class="subTitle-wrap">
+                                      <div class="local-navigation">
+                                          <ul class="navigation-list">
+                                              <li class="home">
+                                                  <img src="./static/images/sub/snb_home.png"
+                                                      alt="홈">
+                                              </li>
+                                              <li>
+                                                  <a href="#">마음돌봄 프로그램</a>
+                                              </li>
+                                              <li>
+                                                  <a href="#">영유아동</a>
+                                              </li>
+
+                                          </ul>
+                                      </div>
+                                      <div class="title-box">
+                                            <div class="title-box-con">
+                                                <h2 class="title">
+                                                        마음돌봄 프로그램
+
+                                          </h2>
+
+                                          <div class="title-btn">
+                                              <ul>
+                                                  <li class="scrap">
+                                                      <a href="#"
+                                                          >
+                                                          <img src="./static/images/common/ico_scrap.png" alt="스크랩하기">
+                                                      </a>
+                                                  </li>
+                                              </ul>
+
+                                          </div>
+                                        </div>
+                                          <p>몸도 마음도 쑥쑥 성장하는 아이들을 위한 맞춤형 치유 활동이에요.
+                                            </p>
+
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <!-- //subTitle-wrapper -->
+
+
+                              <!-- <script>
+                                    $(document).ready(function () {
+                                        const $tabs = $('.sub-tabl1 li');
+                                        const $tabContents = $('.divTab');
+
+                                        // 최초 로딩 시 첫 번째 탭 영역을 포커스할 수 있게 설정
+                                        $tabContents.each(function () {
+                                            // $(this).attr('tabindex', '-1'); // 초기에는 모든 divTab는 포커스를 받을 수 없게 설정
+                                            $(this).hide(); // 모든 탭 영역은 숨김 처리
+                                        });
+
+                                        const $firstTab = $tabs.first();
+                                        const $firstTabContent = $($firstTab.find('a').attr('href'));
+
+                                        // 첫 번째 탭 활성화 처리
+                                        $firstTab.addClass('on');
+                                        $firstTabContent.show(); // 첫 번째 탭 영역만 보이도록 설정
+                                        // $firstTabContent.attr('tabindex', '0'); // 첫 번째 탭 영역은 포커스를 받을 수 있도록 설정
+
+                                        // 탭 클릭 시 활성화된 탭을 표시
+                                        $tabs.on('click', function (e) {
+                                            e.preventDefault();
+
+                                            // 모든 탭에서 'on' 클래스 제거 및 divTab 포커스 불가 처리
+                                            $tabs.removeClass('on');
+                                            $tabContents.each(function () {
+                                                // $(this).attr('tabindex', '-1'); // 모든 divTab는 포커스를 받을 수 없게 설정
+                                                $(this).hide(); // 모든 탭 영역을 숨김 처리
+                                            });
+
+                                            // 클릭된 탭에 'on' 클래스 추가
+                                            $(this).addClass('on');
+
+                                            // 해당 탭에 연결된 divTab 표시
+                                            const targetTab = $($(this).find('a').attr('href'));
+                                            targetTab.show(); // 해당 divTab만 보이도록 설정
+                                            // targetTab.attr('tabindex', '0'); // 해당 divTab에 포커스 가능
+                                        });
+
+                                        // // 탭 탐색 시 해당 영역에 포커스를 설정할 수 있도록
+                                        // $tabContents.on('focus', function () {
+                                        //     $(this).attr('tabindex', '0'); // 포커스를 받을 수 있도록 변경
+                                        // });
+
+                                        // // 최초 로딩 시 자동으로 첫 번째 탭 영역에 포커스
+                                        // const $firstTabButton = $tabs.first().find('a');
+                                        // $firstTabButton.attr('tabindex', '0'); // 첫 번째 탭 버튼은 기본적으로 포커스를 받을 수 있도록 설정
+                                    });
+
+                                </script> -->
+
+                              <article class="sub_wrap">
+
+                                    <div class="flexbox-ac-je flex-no-wrap w-100 mb-30">
+                                            <div class="d-flex flex-row gap-10 w-100 w-md-50">
+                                                    <input id="sv" name="sv" title="검색어를 입력하세요" type="text" value="" class="input-md w-100">
+                                                    <a class="btn btn-md btn-dark " href="javascript:void(0);">검색</a>
+                                            </div>
+
+
+                                    </div>
+
+                                            <div class="select_tab">
+                                                    <ul class="sub-tabl1">
+                                                            <li class="">
+                                                                    <a href="./ON-US-M2-S6-00.htm">
+                                                                        전체
+                                                                    </a>
+                                                                </li>
+                                                            <li class="on">
+                                                                <a href="#" title="선택됨">
+                                                                    영유아동
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./ON-US-M2-S6-01-2.htm">
+                                                                    청소년
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./ON-US-M2-S6-01-3.htm">
+                                                                    mom 쉼
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="./ON-US-M2-S6-01-4.htm">
+                                                                    성인기
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                    <a href="./ON-US-M2-S6-01-5.htm">
+                                                                        중장년
+                                                                    </a>
+                                                                </li>
+                                                        </ul>
+                                                </div>
+
+
+
+
+
+
+
+                                    <div class="divTab" id="divtab1">
+
+                                        <div class="gallery-area row g-10 g-lg-20">
+                                            <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                        <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                    </div>
+                                                    <div class="gallery-item-caption">
+                                                        <h3 class="text-lg">회복심리상담</h3>
+                                                        <div class="gallery-item-detail">
+                                                            <dl>
+                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                            <span class="item-label label-green">영유아동</span>
+                                                    </div>
+                                                </a></div>
+                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                        <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                    </div>
+                                                    <div class="gallery-item-caption">
+                                                        <h3 class="text-lg">가족 치유캠프</h3>
+                                                        <div class="gallery-item-detail">
+                                                            <dl>
+                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                            <span class="item-label label-green">영유아동</span>
+                                                    </div>
+                                                </a></div>
+                                            <div class="col-lg-4 col-md-6">
+                                                <a href="./ON-US-M2-S6-02-CASE2.htm" class="gallery-item relative">
+                                                    <div class="overlay flexbox-ac-jc">
+                                                            <h3 class="text-white absolute h-100 w-100 top-0 left-0 text-center flexbox-ac-jc">종료된 프로그램입니다.</h3>
+                                                    </div>
+                                                        <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                            <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                        </div>
+                                                        <div class="gallery-item-caption">
+                                                            <h3 class="text-lg">자아성취감 증진</h3>
+                                                            <div class="gallery-item-detail">
+                                                                <dl>
+                                                                    <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                    <div><dt>정원</dt><dd>120명</dd></div>
+                                                                    <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                <span class="item-label label-green">영유아동</span>
+                                                        </div>
+                                                    </a></div>
+                                            <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                        <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                    </div>
+                                                    <div class="gallery-item-caption">
+                                                        <h3 class="text-lg">회복심리상담</h3>
+                                                        <div class="gallery-item-detail">
+                                                            <dl>
+                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                            <span class="item-label label-green">영유아동</span>
+                                                    </div>
+                                                </a></div>
+                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                        <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                    </div>
+                                                    <div class="gallery-item-caption">
+                                                        <h3 class="text-lg">가족 치유캠프</h3>
+                                                        <div class="gallery-item-detail">
+                                                            <dl>
+                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                            </dl>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                            <span class="item-label label-green">영유아동</span>
+                                                    </div>
+                                                </a></div>
+                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                        <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                            <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                        </div>
+                                                        <div class="gallery-item-caption">
+                                                            <h3 class="text-lg">자아성취감 증진</h3>
+                                                            <div class="gallery-item-detail">
+                                                                <dl>
+                                                                    <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                    <div><dt>정원</dt><dd>120명</dd></div>
+                                                                    <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                <span class="item-label label-green">영유아동</span>
+                                                        </div>
+                                                </a></div>
+
+
+
+
+
+
+
+                                        </div>
+
+                                                <div class="paging-area">
+                                                        <div class="paging">
+                                                            <a href="#" class="" title="처음 페이지로 이동">
+                                                                <i class="fas fa-solid fa-angles-left text-grey-e1"></i>
+                                                                <span class="blind">처음 페이지로 이동</span>
+                                                            </a><a href="#" class="" title="이전 페이지로 이동">
+                                                                <i class="fas fa-solid fa-angle-left"></i><span class="blind">이전 페이지로 이동</span>
+                                                            </a><a href="#" class="on" title="1 페이지, 현재 페이지">
+                                                                1<span class="blind">1 페이지, 현재 페이지</span>
+                                                            </a><a href="#" class="" title="2 페이지">
+                                                                2<span class="blind">2 페이지</span>
+                                                            </a><a href="#" class="paging-pc-hide" title="모바일 페이지 축약">
+                                                                ...<span class="blind">모바일 페이지 축약</span>
+                                                            </a><a href="#" class="paging-m-hide" title="3 페이지">
+                                                                3<span class="blind">3 페이지</span>
+                                                            </a><a href="#" class="paging-m-hide" title="4 페이지">
+                                                                4<span class="blind">4 페이지</span>
+                                                            </a><a href="#" class="" title="5 페이지">
+                                                                5<span class="blind">5 페이지</span>
+                                                            </a><a href="#" class="" title="다음 페이지로 이동">
+                                                                <i class="fas fa-solid fa-angle-right"></i><span class="blind">다음 페이지로 이동</span>
+                                                            </a><a href="#" class="" title="마지막 페이지로 이동">
+                                                                <i class="fas fa-solid fa-angles-right text-grey-e1"></i>
+                                                                <span class="blind">마지막 페이지로 이동</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                        </div>
+
+                                        <!--<div class="divTab" id="divtab2">
+
+                                                <div class="gallery-area row g-10 g-lg-20">
+                                                    <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                            <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                            </div>
+                                                            <div class="gallery-item-caption">
+                                                                <h3 class="text-lg">회복심리상담</h3>
+                                                                <div class="gallery-item-detail">
+                                                                    <dl>
+                                                                        <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                        <div><dt>정원</dt><dd>120명</dd></div>
+                                                                        <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                    </dl>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                    <span class="item-label label-sky">mom쉼</span>
+                                                            </div>
+                                                        </a></div>
+                                                    <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                            <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                            </div>
+                                                            <div class="gallery-item-caption">
+                                                                <h3 class="text-lg">가족 치유캠프</h3>
+                                                                <div class="gallery-item-detail">
+                                                                    <dl>
+                                                                        <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                        <div><dt>정원</dt><dd>120명</dd></div>
+                                                                        <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                    </dl>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                    <span class="item-label label-sky">mom쉼</span>
+                                                            </div>
+                                                        </a></div>
+                                                    <div class="col-lg-4 col-md-6">
+                                                        <a href="./ON-US-M2-S6-02-CASE2.htm" class="gallery-item relative">
+                                                            <div class="overlay flexbox-ac-jc">
+                                                                    <h3 class="text-white absolute h-100 w-100 top-0 left-0 text-center flexbox-ac-jc">종료된 프로그램입니다.</h3>
+                                                            </div>
+                                                                <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                    <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                                </div>
+                                                                <div class="gallery-item-caption">
+                                                                    <h3 class="text-lg">자아성취감 증진</h3>
+                                                                    <div class="gallery-item-detail">
+                                                                        <dl>
+                                                                            <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                            <div><dt>정원</dt><dd>120명</dd></div>
+                                                                            <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                        </dl>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                        <span class="item-label label-sky">mom쉼</span>
+                                                                </div>
+                                                            </a></div>
+                                                    <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                            <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                            </div>
+                                                            <div class="gallery-item-caption">
+                                                                <h3 class="text-lg">회복심리상담</h3>
+                                                                <div class="gallery-item-detail">
+                                                                    <dl>
+                                                                        <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                        <div><dt>정원</dt><dd>120명</dd></div>
+                                                                        <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                    </dl>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                    <span class="item-label label-sky">mom쉼</span>
+                                                            </div>
+                                                        </a></div>
+                                                    <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                            <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                            </div>
+                                                            <div class="gallery-item-caption">
+                                                                <h3 class="text-lg">가족 치유캠프</h3>
+                                                                <div class="gallery-item-detail">
+                                                                    <dl>
+                                                                        <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                        <div><dt>정원</dt><dd>120명</dd></div>
+                                                                        <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                    </dl>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                    <span class="item-label label-sky">mom쉼</span>
+                                                            </div>
+                                                        </a></div>
+                                                    <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                    <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                                </div>
+                                                                <div class="gallery-item-caption">
+                                                                    <h3 class="text-lg">자아성취감 증진</h3>
+                                                                    <div class="gallery-item-detail">
+                                                                        <dl>
+                                                                            <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                            <div><dt>정원</dt><dd>120명</dd></div>
+                                                                            <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                        </dl>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                        <span class="item-label label-sky">mom쉼</span>
+                                                                </div>
+                                                        </a></div>
+
+
+
+
+
+
+
+                                                </div>
+
+                                                        <div class="paging-area">
+                                                                <div class="paging">
+                                                                    <a href="#" class="" title="처음 페이지로 이동">
+                                                                        <i class="fas fa-solid fa-angles-left text-grey-e1"></i>
+                                                                        <span class="blind">처음 페이지로 이동</span>
+                                                                    </a><a href="#" class="" title="이전 페이지로 이동">
+                                                                        <i class="fas fa-solid fa-angle-left"></i><span class="blind">이전 페이지로 이동</span>
+                                                                    </a><a href="#" class="on" title="1 페이지, 현재 페이지">
+                                                                        1<span class="blind">1 페이지, 현재 페이지</span>
+                                                                    </a><a href="#" class="" title="2 페이지">
+                                                                        2<span class="blind">2 페이지</span>
+                                                                    </a><a href="#" class="paging-pc-hide" title="모바일 페이지 축약">
+                                                                        ...<span class="blind">모바일 페이지 축약</span>
+                                                                    </a><a href="#" class="paging-m-hide" title="3 페이지">
+                                                                        3<span class="blind">3 페이지</span>
+                                                                    </a><a href="#" class="paging-m-hide" title="4 페이지">
+                                                                        4<span class="blind">4 페이지</span>
+                                                                    </a><a href="#" class="" title="5 페이지">
+                                                                        5<span class="blind">5 페이지</span>
+                                                                    </a><a href="#" class="" title="다음 페이지로 이동">
+                                                                        <i class="fas fa-solid fa-angle-right"></i><span class="blind">다음 페이지로 이동</span>
+                                                                    </a><a href="#" class="" title="마지막 페이지로 이동">
+                                                                        <i class="fas fa-solid fa-angles-right text-grey-e1"></i>
+                                                                        <span class="blind">마지막 페이지로 이동</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+
+                                                </div>
+                                                <div class="divTab" id="divtab3">
+
+                                                        <div class="gallery-area row g-10 g-lg-20">
+                                                            <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">회복심리상담</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-peach">시니어</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">가족 치유캠프</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-peach">시니어</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <a href="./ON-US-M2-S6-02-CASE2.htm" class="gallery-item relative">
+                                                                    <div class="overlay flexbox-ac-jc">
+                                                                            <h3 class="text-white absolute h-100 w-100 top-0 left-0 text-center flexbox-ac-jc">종료된 프로그램입니다.</h3>
+                                                                    </div>
+                                                                        <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                            <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                                                        </div>
+                                                                        <div class="gallery-item-caption">
+                                                                            <h3 class="text-lg">자아성취감 증진</h3>
+                                                                            <div class="gallery-item-detail">
+                                                                                <dl>
+                                                                                    <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                    <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                    <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                                </dl>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                                <span class="item-label label-peach">시니어</span>
+                                                                        </div>
+                                                                    </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">회복심리상담</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-peach">시니어</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">가족 치유캠프</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-peach">시니어</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                        <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                            <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                                                        </div>
+                                                                        <div class="gallery-item-caption">
+                                                                            <h3 class="text-lg">자아성취감 증진</h3>
+                                                                            <div class="gallery-item-detail">
+                                                                                <dl>
+                                                                                    <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                    <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                    <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                                </dl>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                                <span class="item-label label-peach">시니어</span>
+                                                                        </div>
+                                                                </a></div>
+
+
+
+
+
+
+
+                                                        </div>
+
+                                                                <div class="paging-area">
+                                                                        <div class="paging">
+                                                                            <a href="#" class="" title="처음 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angles-left text-grey-e1"></i>
+                                                                                <span class="blind">처음 페이지로 이동</span>
+                                                                            </a><a href="#" class="" title="이전 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angle-left"></i><span class="blind">이전 페이지로 이동</span>
+                                                                            </a><a href="#" class="on" title="1 페이지, 현재 페이지">
+                                                                                1<span class="blind">1 페이지, 현재 페이지</span>
+                                                                            </a><a href="#" class="" title="2 페이지">
+                                                                                2<span class="blind">2 페이지</span>
+                                                                            </a><a href="#" class="paging-pc-hide" title="모바일 페이지 축약">
+                                                                                ...<span class="blind">모바일 페이지 축약</span>
+                                                                            </a><a href="#" class="paging-m-hide" title="3 페이지">
+                                                                                3<span class="blind">3 페이지</span>
+                                                                            </a><a href="#" class="paging-m-hide" title="4 페이지">
+                                                                                4<span class="blind">4 페이지</span>
+                                                                            </a><a href="#" class="" title="5 페이지">
+                                                                                5<span class="blind">5 페이지</span>
+                                                                            </a><a href="#" class="" title="다음 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angle-right"></i><span class="blind">다음 페이지로 이동</span>
+                                                                            </a><a href="#" class="" title="마지막 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angles-right text-grey-e1"></i>
+                                                                                <span class="blind">마지막 페이지로 이동</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+
+                                                        </div>
+                                                <div class="divTab" id="divtab4">
+
+                                                        <div class="gallery-area row g-10 g-lg-20">
+                                                            <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">회복심리상담</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-violet">청년</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">가족 치유캠프</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-violet">청년</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <a href="./ON-US-M2-S6-02-CASE2.htm" class="gallery-item relative">
+                                                                    <div class="overlay flexbox-ac-jc">
+                                                                            <h3 class="text-white absolute h-100 w-100 top-0 left-0 text-center flexbox-ac-jc">종료된 프로그램입니다.</h3>
+                                                                    </div>
+                                                                        <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                            <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                                        </div>
+                                                                        <div class="gallery-item-caption">
+                                                                            <h3 class="text-lg">자아성취감 증진</h3>
+                                                                            <div class="gallery-item-detail">
+                                                                                <dl>
+                                                                                    <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                    <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                    <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                                </dl>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                                <span class="item-label label-violet">청년</span>
+                                                                        </div>
+                                                                    </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">회복심리상담</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-violet">청년</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">가족 치유캠프</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-violet">청년</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                        <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                            <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                                        </div>
+                                                                        <div class="gallery-item-caption">
+                                                                            <h3 class="text-lg">자아성취감 증진</h3>
+                                                                            <div class="gallery-item-detail">
+                                                                                <dl>
+                                                                                    <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                    <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                    <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                                </dl>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                                <span class="item-label label-violet">청년</span>
+                                                                        </div>
+                                                                </a></div>
+
+
+
+
+
+
+
+                                                        </div>
+
+                                                                <div class="paging-area">
+                                                                        <div class="paging">
+                                                                            <a href="#" class="" title="처음 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angles-left text-grey-e1"></i>
+                                                                                <span class="blind">처음 페이지로 이동</span>
+                                                                            </a><a href="#" class="" title="이전 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angle-left"></i><span class="blind">이전 페이지로 이동</span>
+                                                                            </a><a href="#" class="on" title="1 페이지, 현재 페이지">
+                                                                                1<span class="blind">1 페이지, 현재 페이지</span>
+                                                                            </a><a href="#" class="" title="2 페이지">
+                                                                                2<span class="blind">2 페이지</span>
+                                                                            </a><a href="#" class="paging-pc-hide" title="모바일 페이지 축약">
+                                                                                ...<span class="blind">모바일 페이지 축약</span>
+                                                                            </a><a href="#" class="paging-m-hide" title="3 페이지">
+                                                                                3<span class="blind">3 페이지</span>
+                                                                            </a><a href="#" class="paging-m-hide" title="4 페이지">
+                                                                                4<span class="blind">4 페이지</span>
+                                                                            </a><a href="#" class="" title="5 페이지">
+                                                                                5<span class="blind">5 페이지</span>
+                                                                            </a><a href="#" class="" title="다음 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angle-right"></i><span class="blind">다음 페이지로 이동</span>
+                                                                            </a><a href="#" class="" title="마지막 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angles-right text-grey-e1"></i>
+                                                                                <span class="blind">마지막 페이지로 이동</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+
+                                                        </div>
+                                                <div class="divTab" id="divtab5">
+
+                                                        <div class="gallery-area row g-10 g-lg-20">
+                                                            <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">회복심리상담</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-lime">누구나</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">가족 치유캠프</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-lime">누구나</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <a href="./ON-US-M2-S6-02-CASE2.htm" class="gallery-item relative">
+                                                                    <div class="overlay flexbox-ac-jc">
+                                                                            <h3 class="text-white absolute h-100 w-100 top-0 left-0 text-center flexbox-ac-jc">종료된 프로그램입니다.</h3>
+                                                                    </div>
+                                                                        <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                            <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                                                        </div>
+                                                                        <div class="gallery-item-caption">
+                                                                            <h3 class="text-lg">자아성취감 증진</h3>
+                                                                            <div class="gallery-item-detail">
+                                                                                <dl>
+                                                                                    <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                    <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                    <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                                </dl>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                                <span class="item-label label-lime">누구나</span>
+                                                                        </div>
+                                                                    </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="./ON-US-M2-S6-02.htm" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_1.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">회복심리상담</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-lime">누구나</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                    <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                        <img src="./static/images/sub/pic_counsel_2.png" alt="">
+                                                                    </div>
+                                                                    <div class="gallery-item-caption">
+                                                                        <h3 class="text-lg">가족 치유캠프</h3>
+                                                                        <div class="gallery-item-detail">
+                                                                            <dl>
+                                                                                <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                            <span class="item-label label-lime">누구나</span>
+                                                                    </div>
+                                                                </a></div>
+                                                            <div class="col-lg-4 col-md-6"><a href="#" class="gallery-item">
+                                                                        <div class="gallery-item-img bg-mint-60 text-white flexbox-ac-jc">
+                                                                            <img src="./static/images/sub/pic_counsel_3.png" alt="">
+                                                                        </div>
+                                                                        <div class="gallery-item-caption">
+                                                                            <h3 class="text-lg">자아성취감 증진</h3>
+                                                                            <div class="gallery-item-detail">
+                                                                                <dl>
+                                                                                    <div><dt>기간</dt><dd>2025. 09. 18 ~ 2025. 12. 25</dd></div>
+                                                                                    <div><dt>정원</dt><dd>120명</dd></div>
+                                                                                    <div><dt>설명</dt><dd class="ellipsis ellipsis-2">헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다.</dd></div>
+
+                                                                                </dl>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item-label-area flexbox-ac-je lign-self-end">
+                                                                                <span class="item-label label-lime">누구나</span>
+                                                                        </div>
+                                                                </a></div>
+
+
+
+
+
+
+
+                                                        </div>
+
+                                                                <div class="paging-area">
+                                                                        <div class="paging">
+                                                                            <a href="#" class="" title="처음 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angles-left text-grey-e1"></i>
+                                                                                <span class="blind">처음 페이지로 이동</span>
+                                                                            </a><a href="#" class="" title="이전 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angle-left"></i><span class="blind">이전 페이지로 이동</span>
+                                                                            </a><a href="#" class="on" title="1 페이지, 현재 페이지">
+                                                                                1<span class="blind">1 페이지, 현재 페이지</span>
+                                                                            </a><a href="#" class="" title="2 페이지">
+                                                                                2<span class="blind">2 페이지</span>
+                                                                            </a><a href="#" class="paging-pc-hide" title="모바일 페이지 축약">
+                                                                                ...<span class="blind">모바일 페이지 축약</span>
+                                                                            </a><a href="#" class="paging-m-hide" title="3 페이지">
+                                                                                3<span class="blind">3 페이지</span>
+                                                                            </a><a href="#" class="paging-m-hide" title="4 페이지">
+                                                                                4<span class="blind">4 페이지</span>
+                                                                            </a><a href="#" class="" title="5 페이지">
+                                                                                5<span class="blind">5 페이지</span>
+                                                                            </a><a href="#" class="" title="다음 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angle-right"></i><span class="blind">다음 페이지로 이동</span>
+                                                                            </a><a href="#" class="" title="마지막 페이지로 이동">
+                                                                                <i class="fas fa-solid fa-angles-right text-grey-e1"></i>
+                                                                                <span class="blind">마지막 페이지로 이동</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+
+                                                        </div>-->
+                                      <!-- satisfaction -->
+                                      <script>
+                                          jQuery(function ($) {
+                                              $('.satisfactionBtn').on('click', function (e) {
+                                                  e.preventDefault();
+                                                  e.stopPropagation();
+                                                  var menuId = $('#satisfactionForm [name=menuId]').val();
+                                                  if (!menuId || (menuId != GLOBAL.menuId)) {
+                                                      alert('페이지정보가 없어 평가를 처리할 수 없습니다.');
+                                                      return;
+                                                  }
+                                                  if ($('#satisfactionForm [name=satisScore]:checked').length < 1) {
+                                                      alert('평가점수를 선택해 주세요.');
+                                                      return;
+                                                  }
+                                                  var params = $('#satisfactionForm').serialize();
+                                                  $.ajax({
+                                                      url: $('#satisfactionForm').attr('action')
+                                                      , type: 'post'
+                                                      , data: params
+                                                      , context: this
+                                                  }).done(function (data) {
+                                                      if (data.success) {
+                                                          alert('평가해주셔서 감사합니다.');
+                                                          location.reload();
+                                                      } else {
+                                                          alert(data.text);
+                                                      }
+                                                  }).fail(function () {
+                                                      alert('서버오류로 평가를 처리하지 못하였습니다.[failure]');
+                                                  });
+                                              });
+                                          });
+                                      </script>
+                                      <!-- satisfaction form -->
+                                      <div class="survey_box_wrap" id="survey">
+
+                                      </div>
+                                  </article>
+                              <!-- <script>
+                                  function fn_FooterUri(uri) {
+                                      if (uri != "") {
+                                          window.open(uri, '', );
+                                      }
+                                  }
+                                  function selLazyTab() {
+                                      var sSelLazyTab = "";
+                                      if (sSelLazyTab != "") {
+                                          $("[data-target=" + sSelLazyTab + "]").trigger("click");
+                                      } else {
+                                          $("[data-target=divTab1]").trigger('click');
+                                      }
+                                  }
+                              </script> -->
+                          </section>
+
+
+                  <a href="#" class="btn-scroll">
+                      <img src="./static/images/common/btn_scroll.png" alt="페이지 최상단으로 가기">
+                  </a>
+                </main>
+        <!-- footer-wrap -->
+        <footer class="footer" id="footer"></footer><script src="./static/js/modal.js"></script>
+<script src="./static/js/common_swiper.js"></script><script src="./static/js/loader.js"></script><script>     document.addEventListener("DOMContentLoaded", () => {          async function includeHTML(id, filePath) {             const html = await fetch(filePath).then(res => res.text());             document.getElementById(id).innerHTML = html;         }          Promise.all([             includeHTML("header", "./header.htm"),includeHTML("survey", "./survey.htm"),             includeHTML("footer", "./footer.htm")         ]).then(() => {             const script1 = document.createElement("script");             script1.src = "./static/js/header.js";             document.body.appendChild(script1);              const script2 = document.createElement("script");             script2.src = "./static/js/footer.js";             document.body.appendChild(script2);         });     });     </script><script src="./static/js/header.js"></script><script src="./static/js/common.js"></script><script src="./static/js/cdn/swiper-bundle.min.js"></script></body>
+</html>

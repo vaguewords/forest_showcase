@@ -1,0 +1,31 @@
+<p class="p1">오늘의 기분 상태는 어떠십니까?</p>
+<form id="satisfactionForm" action="/web/newportal/satisfaction/api/evaluate" method="post">
+    <input type="hidden" name="menuId" value="gdp_001_001_001_001" />
+    <span>
+        <input type="radio" id="sat5" name="satisScore" value="5" checked="checked">
+        <label for="sat5">매우만족</label>
+    </span>
+    <span>
+        <input type="radio" id="sat4" name="satisScore" value="4">
+        <label for="sat4">만족</label>
+    </span>
+    <span>
+        <input type="radio" id="sat3" name="satisScore" value="3">
+        <label for="sat3">보통</label>
+    </span>
+    <span>
+        <input type="radio" id="sat2" name="satisScore" value="2">
+        <label for="sat2">불만</label>
+    </span>
+    <span>
+        <input type="radio" id="sat1" name="satisScore" value="1">
+        <label for="sat1">매우 불만족
+        </label>
+    </span>
+
+    <div class="mt-10 mr-0 d-flex flex-row gap-10 w-100">
+            <input type="text" id="myopinion" name="myopinion" class="input-md min-w-0 w-100"
+                title="평가 입력" placeholder="여러분의 소중한 한마디를 부탁드립니다.">
+                <a href="#" class="btn btn-md btn-dark">평가하기</a>
+    </div>
+</form>

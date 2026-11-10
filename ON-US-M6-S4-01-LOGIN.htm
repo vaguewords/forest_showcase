@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>용산 온마음숲</title><link rel=" shortcut icon " href="./static/images/common/favicon.ico"><link rel="icon" href="./static/images/common/favicon.ico">
+    <link rel="stylesheet" href="./static/css/cdn/fontawesome.css" />
+    <link rel="stylesheet" as="style" crossorigin href="./static/css/fonts.css"/>
+    <link rel="stylesheet" href="./static/css/cdn/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./static/css/scheme_root.css">
+    <link rel="stylesheet" href="./static/css/common.css"><link rel="stylesheet" href="./static/css/grid.css"><link rel="stylesheet" href="./static/css/spacing.css"><link rel="stylesheet" href="./static/css/contrast.css"><link rel="stylesheet" href="./static/css/scheme.css">
+    <link rel="stylesheet" href="./static/css/header.css"> <link rel="stylesheet" href="./static/css/footer.css">
+    <link rel="stylesheet" href="./static/css/sub.css"><link rel="stylesheet" href="./static/css/cdn/bootstrap-icons.min.css">
+
+    <script src="./static/js/cdn/jquery-3.4.1.min.js"></script>
+    <script src="./static/js/subTab.js"></script>
+
+
+
+
+
+</head>
+<body data-current-page="menu-5-4"><div id="loading" class="loading-overlay"><div class="loader"></div></div>
+<div id="skipNavigation" title="스킵 내비게이션">
+	<a href="#contents">본문 내용 바로가기</a>
+	<a href="#header">상단메뉴 가기</a>
+</div>
+
+
+<header class="header-top" id="header"></header>
+
+              <noscript>자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
+              <!-- wrap -->
+              <main class="container" id="contents">
+
+
+
+
+
+
+                          <!-- content-area -->
+                          <section class="content-area" id="content-area">
+                              <!-- subTitle-wrapper -->
+                              <div class="subTitle-wrapper new-style01">
+                                  <div class="subTitle-wrap">
+                                      <div class="local-navigation">
+                                          <ul class="navigation-list">
+                                              <li class="home">
+                                                  <img src="./static/images/sub/snb_home.png"
+                                                      alt="홈">
+                                              </li>
+                                              <li>
+                                                  <a href="#">마이페이지</a>
+                                              </li>
+                                              <li>
+                                                  <a href="#">내마음 일기장</a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="title-box">
+                                            <div class="title-box-con">
+                                                <h2 class="title">
+                                                        내마음 일기장
+                                          </h2>
+
+                                          <!-- <div class="title-btn">
+                                              <ul>
+                                                  <li class="scrap">
+                                                      <a href="#"
+                                                          >
+                                                          <img src="./static/images/common/ico_scrap.png" alt="스크랩하기">
+                                                      </a>
+                                                  </li>
+                                              </ul>
+
+                                          </div> -->
+                                        </div>
+                                          <p>오늘 하루 느꼈던 감정들을 솔직하고 담백하게 기록해 봐요.</p>
+
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <!-- //subTitle-wrapper -->
+
+
+
+
+                              <article class="sub_wrap">
+                                    <div class="text-center flexbox-center flex-column gap-10 py-40">
+                                            <img src="./static/images/common/logo.png" alt="on마음숲">
+                                                <h2 class="text-md mb-40">On마음숲 홈페이지 회원만 이용 가능합니다.</h2>
+                                            <a href="./ON-US-M5-S1-01.htm" class="btn btn-lg btn-mint px-70 rounded">회원가입(분기1)</a>
+                                            <button class="btn btn-lg btn-mint px-70 rounded modal-show" data-modal="join">회원가입(분기2)</button>
+                                        </div>
+
+
+
+
+                                      <!-- content start -->
+
+
+
+
+                                      <!-- content end -->
+
+
+
+                              </article>
+
+                          </section>
+
+
+                  <a href="#" class="btn-scroll">
+                      <img src="./static/images/common/btn_scroll.png" alt="페이지 최상단으로 가기">
+                  </a>
+                  <div class="modal" id="join" tabindex="-1" role="dialog" aria-labelled-by="modaltitle">
+                        <div class="modal-content modal-sm rounded-xs text-center align-items-center shadow">
+
+                            <p>
+                                    비회원 상태로 로그인되어 있습니다.<br>
+                                    로그아웃 후 회원가입 페이지로
+                                    이동하시겠습니까?
+
+                            </p>
+                            <div class="w-100 flexbox-center flex-row gap-10 mt-15">
+                                    <a href="./ON-US-M5-S1-01.htm" class="btn btn-mint btn-md">확인</a>
+                                    <button class="btn btn-grey btn-md modal-close">취소</button>
+                            </div>
+
+
+
+                          <button class="modal-close border-0 bg-transparent absolute mr-20 mt-20 top-0 right-0">
+                            <!--<span class="blind">닫기</span><i class="fas fa-solid fa-times"></i>-->
+                            <img src="./static/images/common/ico_close.png" alt="닫기">
+                          </button> <!-- .modal-close -->
+                        </div> <!-- .modal-content -->
+                      </div> <!-- .modal -->
+                </main>
+        <!-- footer-wrap -->
+        <footer class="footer" id="footer"></footer><script src="./static/js/modal.js"></script>
+
+<script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.dataset.tab;
+
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.setAttribute('aria-selected', 'false');
+    });
+
+    document.querySelectorAll('.tab-content').forEach(tab => {
+      tab.classList.remove('active');
+      tab.setAttribute('aria-hidden', 'true');
+    });
+
+    btn.setAttribute('aria-selected', 'true');
+
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.classList.add('active');
+      target.setAttribute('aria-hidden', 'false');
+    }
+  });
+});
+
+</script>
+
+<script src="./static/js/common_swiper.js"></script><script src="./static/js/loader.js"></script><script>     document.addEventListener("DOMContentLoaded", () => {          async function includeHTML(id, filePath) {             const html = await fetch(filePath).then(res => res.text());             document.getElementById(id).innerHTML = html;         }          Promise.all([             includeHTML("header", "./header.htm"),        includeHTML("footer", "./footer.htm")         ]).then(() => {             const script1 = document.createElement("script");             script1.src = "./static/js/header.js";             document.body.appendChild(script1);              const script2 = document.createElement("script");             script2.src = "./static/js/footer.js";             document.body.appendChild(script2);         });     });     </script><script src="./static/js/header.js"></script><script src="./static/js/common.js"></script><script src="./static/js/cdn/swiper-bundle.min.js"></script></body>
+</html>

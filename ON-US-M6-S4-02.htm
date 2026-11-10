@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>용산 온마음숲</title><link rel=" shortcut icon " href="./static/images/common/favicon.ico"><link rel="icon" href="./static/images/common/favicon.ico">
+    <link rel="stylesheet" href="./static/css/cdn/fontawesome.css" />
+    <link rel="stylesheet" as="style" crossorigin href="./static/css/fonts.css"/>
+    <link rel="stylesheet" href="./static/css/cdn/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./static/css/scheme_root.css">
+    <link rel="stylesheet" href="./static/css/common.css"><link rel="stylesheet" href="./static/css/grid.css"><link rel="stylesheet" href="./static/css/spacing.css"><link rel="stylesheet" href="./static/css/contrast.css"><link rel="stylesheet" href="./static/css/scheme.css">
+    <link rel="stylesheet" href="./static/css/header.css"> <link rel="stylesheet" href="./static/css/footer.css">
+    <link rel="stylesheet" href="./static/css/sub.css"><link rel="stylesheet" href="./static/css/cdn/bootstrap-icons.min.css">
+
+
+    <script src="./static/js/cdn/jquery-3.4.1.min.js"></script>
+    <script src="./static/js/subTab.js"></script>
+
+
+
+
+
+</head>
+<body data-current-page="menu-5-4"><div id="loading" class="loading-overlay"><div class="loader"></div></div>
+<div id="skipNavigation" title="스킵 내비게이션">
+	<a href="#contents">본문 내용 바로가기</a>
+	<a href="#header">상단메뉴 가기</a>
+</div>
+
+
+<header class="header-top" id="header"></header>
+
+              <noscript>자바스크립트를 지원하지 않는 브라우저에서는 일부 기능을 사용하실 수 없습니다.</noscript>
+              <!-- wrap -->
+              <main class="container" id="contents">
+
+
+
+
+
+
+                          <!-- content-area -->
+                          <section class="content-area" id="content-area">
+                              <!-- subTitle-wrapper -->
+                              <div class="subTitle-wrapper new-style01">
+                                  <div class="subTitle-wrap">
+                                      <div class="local-navigation">
+                                          <ul class="navigation-list">
+                                              <li class="home">
+                                                  <img src="./static/images/sub/snb_home.png"
+                                                      alt="홈">
+                                              </li>
+                                              <li>
+                                                  <a href="#">마이페이지</a>
+                                              </li>
+                                              <li>
+                                                  <a href="#">내마음 일기장</a>
+                                              </li>
+                                              <li>
+                                                <a href="#">내마음 일기장 작성</a>
+                                            </li>
+                                          </ul>
+                                      </div>
+                                      <div class="title-box">
+                                            <div class="title-box-con">
+                                                <h2 class="title">
+                                                        내마음 일기장 작성
+                                          </h2>
+
+                                          <!-- <div class="title-btn">
+                                              <ul>
+                                                  <li class="scrap">
+                                                      <a href="#"
+                                                          >
+                                                          <img src="./static/images/common/ico_scrap.png" alt="스크랩하기">
+                                                      </a>
+                                                  </li>
+                                              </ul>
+
+                                          </div> -->
+                                        </div>
+                                          <p>오늘 하루 느꼈던 감정들을 솔직하고 담백하게 기록해 봐요.</p>
+
+                                      </div>
+                                  </div>
+
+                              </div>
+                              <!-- //subTitle-wrapper -->
+
+
+
+
+                              <article class="sub_wrap">
+
+                                <!-- <h2 class="text-lg">내마음 일기장</h2> -->
+                                <p class="text-md text-mint-60 mb-20">오늘의 마음을 기록하는 공간입니다. 혼자만의 기록을 남겨보세요.</p>
+
+                                      <!-- content start -->
+                                      <div class="table  for-row-list">
+                                        <table class="">
+                                            <caption>작성 글 제목, 오늘의 감정, 내용, 첨부파일</caption>
+                                            <colgroup>
+                                                <col style="width:24%">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" class="font-w-600 ">
+                                                        <label for="counsel-title">제목(10자 이상)</label>
+                                                    </th>
+                                                    <td><input type="text" class="input-sm w-100" name="제목" title="제목을 입력해주세요" id="counsel-title" placeholder="제목을 입력해주세요(10자 이상)"></td>
+                                                </tr>
+                                                <tr>
+                                                        <th scope="row" class="font-w-600 word-keep-all ">
+                                                            오늘의 감정을 선택해주세요
+                                                            </th>
+                                                        <td>
+
+                                                            <ul class="my-page-feeling-icon-area gap-5 gap-xs-10 justify-content-start">
+
+                                                                    <label for="feel5-great" class="blind">매우좋음</label>
+                                                                    <input type="checkbox" id="feel5-great" class="my-page-feeling-icon feel5" >
+                                                                    <label for="feel4-good" class="blind">좋음</label>
+                                                                    <input type="checkbox" id="feel4-good" class="my-page-feeling-icon feel4" >
+                                                                    <label for="feel3-ordinary" class="blind">보통</label>
+                                                                    <input type="checkbox" id="feel3-ordinary" class="my-page-feeling-icon feel3" >
+                                                                    <label for="feel2-bad" class="blind">나쁨</label>
+                                                                    <input type="checkbox" id="feel2-bad" class="my-page-feeling-icon feel2" >
+                                                                    <label for="feel1-worse" class="blind">매우나쁨</label>
+                                                                    <input type="checkbox" id="feel1-worse" class="my-page-feeling-icon feel1" >
+                                                                </ul>
+                                                        </td>
+                                                    </tr>
+                                                  <tr>
+                                                          <th scope="row" class="font-w-600 ">
+                                                            <label for="counsel-detail">일기 내용</label></th>
+                                                          <td>
+
+                                                              <textarea name="일기 내용" id="counsel-detail" cols="30" rows="10" class="w-100 " placeholder="일기 내용을 적어 주세요."></textarea>
+                                                          </td>
+                                                  </tr>
+                                                  <tr>
+                                                          <th scope="row" class="font-w-600 ">이미지 업로드</th>
+                                                          <td class="text-left">
+
+                                                            <span class="text-sm text-mint-60">이미지는 자동으로 크기에 맞게 조정됩니다.
+                                                                </span>
+                                                              <ul class="w-100 flexbox-as-js flex-column">
+                                                                  <li class="file-attachment-area flexbox-as-js justify-content-start justify-content-md-between mb-10 text-sm w-100 flex-column flex-xs-row gap-10">
+                                                                        <div class="file-name-area w-100 flexbox-ac-js">
+                                                                            <input type="file" id="file-attach" class="sr-only">
+                                                                        <label for="file-attach" class="file-button btn btn-light btn-sm mr-10">파일첨부</label>
+
+                                                                                <div class="file-name w-100">이미지.png [용량:121.7 KByte](파일첨부 시 여기에 파일명이 표시됩니다. 삭제 클릭 시 파일명 제거)</div>
+                                                                        </div>
+
+
+                                                                        <button class="btn btn-sm btn-dark bg-grey-66 px-15">삭제<i class="fas fa-solid fa-minus text-white ml-5"></i></button>
+
+                                                                  </li>
+
+
+                                                              </ul>
+
+                                                          </td>
+                                                  </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d-flex justify-content-end pt-20 pb-10 gap-10"><button class="btn btn-md btn-mint px-25 modal-show" data-modal="modal">등록</button><a href="./ON-US-M6-S4-01.htm" class="btn btn-md btn-dark bg-grey-44 px-25">취소</a></div>
+                                      <!-- content end -->
+
+
+                                  <!-- satisfaction -->
+                                  <script>
+                                      jQuery(function ($) {
+                                          $('.satisfactionBtn').on('click', function (e) {
+                                              e.preventDefault();
+                                              e.stopPropagation();
+                                              var menuId = $('#satisfactionForm [name=menuId]').val();
+                                              if (!menuId || (menuId != GLOBAL.menuId)) {
+                                                  alert('페이지정보가 없어 평가를 처리할 수 없습니다.');
+                                                  return;
+                                              }
+                                              if ($('#satisfactionForm [name=satisScore]:checked').length < 1) {
+                                                  alert('평가점수를 선택해 주세요.');
+                                                  return;
+                                              }
+                                              var params = $('#satisfactionForm').serialize();
+                                              $.ajax({
+                                                  url: $('#satisfactionForm').attr('action')
+                                                  , type: 'post'
+                                                  , data: params
+                                                  , context: this
+                                              }).done(function (data) {
+                                                  if (data.success) {
+                                                      alert('평가해주셔서 감사합니다.');
+                                                      location.reload();
+                                                  } else {
+                                                      alert(data.text);
+                                                  }
+                                              }).fail(function () {
+                                                  alert('서버오류로 평가를 처리하지 못하였습니다.[failure]');
+                                              });
+                                          });
+                                      });
+                                  </script>
+                                  <!-- satisfaction form -->
+                                  <div class="survey_box_wrap" id="survey">
+
+                                  </div>
+                              </article>
+                              <!-- <script>
+                                  function fn_FooterUri(uri) {
+                                      if (uri != "") {
+                                          window.open(uri, '', );
+                                      }
+                                  }
+                                  function selLazyTab() {
+                                      var sSelLazyTab = "";
+                                      if (sSelLazyTab != "") {
+                                          $("[data-target=" + sSelLazyTab + "]").trigger("click");
+                                      } else {
+                                          $("[data-target=divTab1]").trigger('click');
+                                      }
+                                  }
+                              </script> -->
+                          </section>
+
+
+                  <a href="#" class="btn-scroll">
+                      <img src="./static/images/common/btn_scroll.png" alt="페이지 최상단으로 가기">
+                  </a>
+                </main>
+
+                <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelled-by="modaltitle">
+                        <div class="modal-content modal-xs rounded-xs text-center shadow">
+                          <h5 id="modal_title" class="text-md" tabindex="-1">등록이 완료되었습니다.</h5>
+                          <p>작성한 글은 마이페이지에서<br>확인할 수 있습니다.</p>
+                          <a href="ON-US-M6-S4-01.htm" class="btn btn-mint btn-md mt-20 px-30 modal-confirm">이동</a>
+                            <button class="btn btn-dark btn-md mt-20 px-30 modal-confirm">확인</button>
+
+                          <button class="modal-close border-0 bg-transparent absolute mr-20 mt-20 top-0 right-0">
+                            <!--<span class="blind">닫기</span><i class="fas fa-solid fa-times"></i>-->
+                            <img src="./static/images/common/ico_close.png" alt="닫기">
+                          </button> <!-- .modal-close -->
+                        </div> <!-- .modal-content -->
+                      </div> <!-- .modal -->
+
+        <!-- footer-wrap -->
+        <footer class="footer" id="footer"></footer><script src="./static/js/modal.js"></script>
+
+
+<script src="./static/js/common_swiper.js"></script><script src="./static/js/loader.js"></script><script>     document.addEventListener("DOMContentLoaded", () => {          async function includeHTML(id, filePath) {             const html = await fetch(filePath).then(res => res.text());             document.getElementById(id).innerHTML = html;         }          Promise.all([             includeHTML("header", "./header.htm"),includeHTML("survey", "./survey.htm"),             includeHTML("footer", "./footer.htm")         ]).then(() => {             const script1 = document.createElement("script");             script1.src = "./static/js/header.js";             document.body.appendChild(script1);              const script2 = document.createElement("script");             script2.src = "./static/js/footer.js";             document.body.appendChild(script2);         });     });     </script><script src="./static/js/header.js"></script><script src="./static/js/common.js"></script><script src="./static/js/cdn/swiper-bundle.min.js"></script></body>
+</html>
